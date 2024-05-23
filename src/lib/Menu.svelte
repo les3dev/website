@@ -22,7 +22,7 @@
                 <a href="#{slug}" on:click={() => (isOpen = false)}>{label}</a>
             {/each}
         </div>
-        <button on:click={() => (isOpen = true)}><MenuIcon /></button>
+        <button class:isOpen on:click={() => (isOpen = true)}><MenuIcon /></button>
     {:else if $isMobile !== null}
         <div class="bar">
             {#each links as { slug, label }}
@@ -36,6 +36,10 @@
     button {
         width: 4.5rem;
         height: 4.5rem;
+        transition: 0.3s scale;
+    }
+    button.isOpen {
+        scale: 0;
     }
     nav {
         position: fixed;
