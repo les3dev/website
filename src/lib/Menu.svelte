@@ -13,6 +13,17 @@
     const isMobile = mediaQueries('(max-width: 720px)');
 
     let isOpen = false;
+    let isHidden = false;
+    
+    let timeout: number | undefined;
+
+    window.addEventListener('scroll', s => {
+        isHidden = true;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            isHidden = false;
+        }, 350);
+    });
 </script>
 
 <nav>
@@ -22,9 +33,9 @@
                 <a href="#{slug}" on:click={() => (isOpen = false)}>{label}</a>
             {/each}
         </div>
-        <button class:isOpen on:click={() => (isOpen = true)}><MenuIcon /></button>
+        <button class:isOpen class:isHidden on:click={() => (isOpen = true)}><MenuIcon /></button>
     {:else if $isMobile !== null}
-        <div class="bar">
+        <div class="bar" class:isHidden>
             {#each links as { slug, label }}
                 <a href="#{slug}">{label}</a>
             {/each}
@@ -38,7 +49,7 @@
         height: 4.5rem;
         transition: 0.3s scale;
     }
-    button.isOpen {
+    button.isOpen, button.isHidden {
         scale: 0;
     }
     nav {
@@ -56,6 +67,10 @@
         padding: 1rem;
         border-radius: 3rem;
         z-index: 2;
+        transition: 0.3s transform;
+    }
+    nav .bar.isHidden {
+        transform: translateY(10rem);
     }
     nav a {
         color: var(--color-white);
