@@ -14,17 +14,19 @@
 
     let isOpen = false;
     let isHidden = false;
-    
-    let timeout: number | undefined;
 
-    window.addEventListener('scroll', s => {
+    let timeout: number | undefined;
+</script>
+
+<svelte:window
+    on:scroll={() => {
         isHidden = true;
         clearTimeout(timeout);
         timeout = setTimeout(() => {
             isHidden = false;
         }, 350);
-    });
-</script>
+    }}
+/>
 
 <nav>
     {#if $isMobile}
@@ -49,7 +51,8 @@
         height: 4.5rem;
         transition: 0.3s scale;
     }
-    button.isOpen, button.isHidden {
+    button.isOpen,
+    button.isHidden {
         scale: 0;
     }
     nav {
