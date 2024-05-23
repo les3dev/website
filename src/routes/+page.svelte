@@ -205,7 +205,7 @@
     section > h2:not(.big) {
         margin-top: 0;
         margin-bottom: 0.3em;
-        font-size: clamp(2rem, 6vw, 4rem);
+        font-size: clamp(2.5rem, 6vw, 4rem);
         text-align: center;
         letter-spacing: -1px;
         text-wrap: balance;
