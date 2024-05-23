@@ -5,6 +5,7 @@
 :root {
     --font-brand: 'Bricolage Grotesque', sans-serif; /* The font that is mainly used on the website */
     --color-black: #000000;
+    --color-black-1: #333333;
     --color-white: #ffffff;
     --color-white-1: #cccccc;
     --color-indigo: #716ff7;

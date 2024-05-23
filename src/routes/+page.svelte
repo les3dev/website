@@ -96,33 +96,47 @@
 <section id="faq" class="top">
     <h2>Foire aux questions</h2>
     <details>
-        <summary>Pourquoi 3 développeurs ?</summary>
-        Nous avons l’habitude de travailler ensemble depuis plusieurs années. Grâce à cette experience et nos différentes affinités et domaines d’expertise nous
-        pouvons nous répartir efficacement pour répondre à vos demandes les plus folles.
+        <summary>Pourquoi pas du No-code ?</summary>
+        Nous avons pu utiliser et même créer des outils No-Code puis plusieurs années. Nous sommes donc bien placés pour en comprendre les avantages mais aussi les
+        limitations. Le no-code est très bien pour créer rapidement une version basique et "jetable" de votre idée. En revanche, si vous voulez un projet qualitatif,
+        performant et maintenable sur du long terme, on vous conseille de plutôt vous tourner vers le code "classique".
     </details>
     <details>
-        <summary>Pourquoi pas du No-code ?</summary>
-        Nous avons développés plusieurs outils No-Code, nous sommes bien placés pour comprendre ses avantages et limitations. Nous arriverons à vous fournir un résultat
-        plus qualitatif, performant et maintenable avec du code à l'ancienne
+        <summary>Pourquoi 3 développeurs ?</summary>
+        Nous avons l’habitude de travailler ensemble depuis plusieurs années. Grâce à nos différentes affinités et domaines d’expertise nous pouvons nous répartir
+        efficacement pour répondre au mieux à toutes vos demandes aussi variées soient-elles.
+    </details>
+    <details>
+        <summary>Combien de temps prendrait la réalisation de mon projet ?</summary>
+        Cela déprendra de l'urgence de votre côté mais également de nos disponibilités. Nous avons l'habitude de travailler plutôt rapidement et vous fournir des
+        résultats de l'avancement au fur et à mesure. <a href="mailto:contact@les3.dev">Contactez-nous</a> dès maintenant pour avoir une estimation !
     </details>
     <details>
         <summary>Comment puis-je modifier mon projet ?</summary>
-        Nous vous fournirons toujours le code source, vous seul en serez le propriétaire. Si vous voulez modifier votre projet, vous pouvez le faire vous-mêmes,
-        refaire appel à nous ou même à d'autres dev. Nous pouvons également développer des solutions afin que vous puissiez facilement faire évoluer votre produit.
+        Dans un soucis de transparence, nous vous fournirons toujours le code source du projet, vous seul.e en serez propriétaire. Si vous voulez modifier votre
+        projet, vous pouvez refaire appel à nous quand vous voulez ou même à d'autres developpeur.ses. Nous pouvons également développer des solutions afin que vous
+        puissiez facilement faire évoluer votre produit comme une interface d'admin adaptée à vos besoin par exemple.
     </details>
     <details>
         <summary>Quel type de projet & fonctionnalités peuvent être réalisées ?</summary>
-        Probablement tout ce que vous voulez. Avec nos 10 ans d'experiences, on a rencontrés beaucoup de problèmes et tout autant de solution. Nous avons réalisés
-        un grand nombre d'applications ou de sites avec des fonctionnalités très différentes (realtime, collaboration, 3D)
+        Probablement tout ce que vous pourriez imaginer. Avec nos 10 ans d'experiences, on a rencontrés beaucoup de problèmes et tout autant de solution. Nous avons
+        réalisés un grand nombre d'applications ou de sites avec des fonctionnalités très différentes (realtime, collaboration, 3D). On avons créé des produits sur
+        le long terme, des MVPs pour des startups mais également pour de plus grands organismes comme Decathlon, BNP Paribas ou la base spaciale.
     </details>
     <details>
         <summary>Où sont stockées les données ?</summary>
-        À vous de voir. Ça peut être chez vous, chez d'autres, mais pas chez nous. Nous ne voulons pas prendre la responsabilité de vos données.
+        À vous de voir. Ça peut être sur vos serveurs, chez d'autres services en ligne, mais pas chez nous. Nous ne voulons pas prendre la responsabilité du stockage
+        de vos données.
     </details>
     <details>
         <summary>Ai-je accès au code du projet ?</summary>
         Oui, le code que nous écrivons n'a qu'un seul destinataire : vous. Lorsque nous aurons fini le projet, nous vous donnerons toutes les clés pour que vous
-        soyez propriétaire du projet.
+        soyez propriétaire du projet et que vous puissiez le faire évoluer comme bon vous semble.
+    </details>
+    <details>
+        <summary>Est-ce que je dois m'occuper du design ?</summary>
+        La plupart des projets nécéssitent ne sont pas uniquement du code, mais également du design. Nous nous occupons de cette partie également pour la majorité
+        de nos projets. Cependant, nous pouvons nous adapter en fonction de votre existent (identité visuelle, logo, etc.) et vos besoins personnels.
     </details>
 </section>
 <section id="contact" class="center">
@@ -292,9 +306,15 @@
     #faq details {
         font-size: 1.2rem;
         max-width: var(--page-width);
+        color: var(--color-black-1);
         margin: auto;
+        line-height: 1.6;
+    }
+    #faq details a {
+        color: var(--color-indigo);
     }
     #faq summary {
+        color: var(--color-black);
         font-size: 1.6rem;
         font-weight: bold;
         cursor: pointer;
