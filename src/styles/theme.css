@@ -1,0 +1,308 @@
+/* Project specific styles */
+
+/* Theme */
+:root {
+    --font-ui: 'Bricolage Grotesque', sans-serif; /* The font that is mainly used on the website */
+    --font-mono: 'Menlo', monospace; /* Used for code */
+    --font-heading: 'Bricolage Grotesque', sans-serif; /* Used for titles and headings */
+    --font-content: 'Bricolage Grotesque', sans-serif; /* Used for longer text content like articles */
+    --color-fg: #dddddd; /* The main neutral color used for important texts and icons */
+    --color-fg-1: #aaaaaa; /* Similar to fg but for slightly less important texts */
+    --color-bg: #161616; /* The main background color of the website */
+    --color-bg-1: #1e1e1e; /* Used for areas like cards to separate from the background */
+    --color-bg-2: #303030; /* A little more contrasted than area, used for smaller things like lines */
+    --color-primary: #5292d2; /* The main color, usually your brand color it can be used for stuffs like links and buttons */
+    --color-link-visited: #c690e8; /* Used for already visisted link, usually some kind of purple */
+    --color-error: #e15757; /* Used for errors, usually some kind of red */
+    --color-error-1: #2d1d1d; /* Used to contrast with the  */
+
+    /* Custom semantique colors */
+    --color-quiz: #ffdf6b;
+    --color-guide: #7ad3ce;
+    --color-github: #eeeeee;
+    --color-discord: #6c76ea;
+    --color-upgrade: #e6b873;
+    --color-exercise: #9dd357;
+    --color-streak: #ea8f44;
+}
+
+/* Root */
+
+body {
+    color: var(--color-fg);
+    margin: 0;
+    font-family: var(--font-ui);
+    background-color: #726ff7;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    height: 100svh;
+}
+
+* {
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: transparent;
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+
+        background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        transition: background-color 0.3s;
+        border-radius: 3px;
+        background-color: rgba(130, 130, 130, 0.4);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        border-radius: 3px;
+        background-color: rgba(130, 130, 130, 0.5);
+    }
+
+    ::-webkit-scrollbar-button {
+        width: 0;
+        height: 0;
+        display: none;
+    }
+
+    ::-webkit-scrollbar-corner {
+        background-color: transparent;
+    }
+}
+
+/* Button */
+
+a[role='button'],
+button {
+    color: var(--fg, var(--color-bg-1));
+    background: var(--bg, var(--color-fg));
+    border: none;
+    transition: var(--transition, all 0.3s);
+    font-family: var(--font-ui);
+    font-weight: bold;
+    border-radius: 2em;
+
+    &:hover {
+        translate: 0 -0.1em;
+        border-radius: 1em;
+    }
+    &:active {
+        translate: 0 0.2em;
+        border-radius: 2em;
+    }
+    &:disabled {
+        color: var(--color-fg-1);
+        cursor: default;
+        pointer-events: none;
+        background-color: var(--color-bg-1);
+    }
+
+    &.loading {
+        cursor: default;
+        pointer-events: none;
+        filter: brightness(0.8);
+    }
+
+    /* padding should only be based on text not icons */
+    & > svg {
+        margin: -1rem 0;
+    }
+}
+
+a[role='button'] > svg,
+button > svg,
+a[role='button'].circle > svg,
+button.circle > svg {
+    color: var(--fg, var(--color-bg-1));
+}
+
+a[role='button'].circle,
+button.circle {
+    height: var(--size, 2.5rem);
+    width: var(--size, 2.5rem);
+    padding: 0.3rem;
+    border-radius: 50%;
+    &:hover {
+        border-radius: 50%;
+        translate: none;
+        scale: 1.05;
+    }
+    &:active {
+        border-radius: 50%;
+        translate: none;
+        scale: 0.95;
+    }
+}
+
+.iconBtn {
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    display: flex;
+    background-color: transparent;
+}
+
+/* Tables */
+
+th,
+td {
+    border: 2px solid var(--color-bg-2);
+}
+
+/* Big title */
+
+h1.big,
+h2.big {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: clamp(3rem, 8vw, 6rem);
+    text-align: center;
+    letter-spacing: -1px;
+}
+
+/* Page */
+
+.page {
+    margin: auto;
+    padding: 1em 2em 2em;
+    max-width: 48rem;
+}
+
+/* Prose */
+
+.prose {
+    color: var(--color-fg-1);
+    font-family: var(--font-content);
+}
+
+.prose :is(h1, h2, h3, h4, h5, h6) {
+    color: var(--color-fg);
+    font-family: var(--font-heading);
+}
+
+.prose p {
+    text-wrap: pretty;
+}
+
+.prose h2 {
+    font-size: 2.2rem;
+    margin-block-end: 0.3em;
+}
+
+.prose h3 {
+    font-size: 1.6rem;
+    margin-block-end: 0.2em;
+}
+
+.prose :is(h4, h5, h6) {
+    color: red; /* should not be used */
+}
+
+.prose :is(p, ol, ul) {
+    line-height: 1.7;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-top: 0.6rem;
+    margin-bottom: 0.8rem;
+}
+
+.prose strong {
+    color: var(--color-fg);
+}
+
+.prose blockquote {
+    margin-left: 10px;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border-left: 3px solid var(--color-fg);
+}
+
+.prose blockquote > p {
+    font-style: italic;
+    margin: 0;
+}
+
+.prose img {
+    margin: 0.8rem auto;
+    display: block;
+    max-width: 100%;
+}
+
+.prose a:not([role='button']) {
+    color: var(--color-primary);
+}
+
+.prose a:not([role='button']):visited {
+    color: var(--color-link-visited);
+}
+
+.prose a:hover {
+    filter: brightness(1.3);
+}
+
+.prose :is(h1, h2, h3) > a,
+.prose :is(h1, h2, h3) > a:visited,
+.prose :is(h1, h2, h3) > a:not([role='button']),
+.prose :is(h1, h2, h3) > a:not([role='button']):visited {
+    color: var(--color-fg);
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .prose h2 {
+        font-size: 1.8rem;
+    }
+    .prose h3 {
+        font-size: 1.4rem;
+    }
+    .prose :is(p, ol, ul) {
+        font-size: 1rem;
+    }
+}
+
+/* Code */
+
+code {
+    color: var(--color-fg);
+    font-family: var(--font-mono);
+    padding: 0.2em 0.4em;
+    font-size: 0.8em;
+    white-space: nowrap;
+    border-radius: 0.5em;
+    background-color: var(--color-bg-1);
+}
+
+pre {
+    font-family: var(--font-mono);
+    padding: 1em;
+    overflow: auto;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    border-radius: 0.5em;
+    background-color: var(--color-bg-1);
+}
+
+@media (max-width: 600px) {
+    pre {
+        font-size: 1rem;
+    }
+}
+
+pre code {
+    padding: 0;
+    white-space: pre;
+}
+
+[color-scheme='dark'] [data-theme='light'],
+[color-scheme='dark'] .shiki.light-plus {
+    display: none;
+}
+
+[color-scheme='light'] [data-theme='dark'],
+[color-scheme='light'] .shiki.dark-plus {
+    display: none;
+}

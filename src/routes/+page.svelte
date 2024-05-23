@@ -1,21 +1,23 @@
-<script lang="ts">
+<script>
+    import Logo from '$lib/icons/Logo.svelte';
 </script>
 
 <header>
-    <div id="logo">les3dev</div>
+    <div id="logo"><Logo /></div>
     <nav>
         <a href="#intro">Intro</a>
         <a href="#projects">Projets</a>
+        <a href="#team">L'équipe</a>
         <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
 
-<section>
-    <h1>Vous avez les idées,<br />On les fait marcher.</h1>
-    <a role="button" href="mailto:contact@les3.dev">Demander un devis</a>
+<section id="intro" class="center">
+    <h1 class="big">Vous avez les idées,<br />On les fait marcher.</h1>
+    <a role="button" href="mailto:contact@les3.dev" class="cta">Demander un devis</a>
 </section>
-<section>
+<section id="projects">
     <h2>Nos projets</h2>
     <div class="subtitle">Échantillion non-exaustif de notre travail de ces dernières années</div>
     <article>
@@ -108,7 +110,72 @@
         Vous avez les clés
     </details>
 </section>
-<section id="contact">
-    <h2>Nous contacter</h2>
-    <a role="button" href="mailto:contact@les3.dev">Demander un devis</a>
+<section id="contact" class="center">
+    <h2 class="big">Envie de travailler avec nous ?</h2>
+    <a role="button" href="mailto:contact@les3.dev" class="cta">Demander un devis</a>
 </section>
+<footer>Copyright © 2024 les3dev</footer>
+
+<style>
+    header {
+        position: sticky;
+        top: 0;
+        display: flex;
+        max-width: 70rem;
+        width: 100%;
+        margin: auto;
+        background-color: #726ff7;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem 3rem;
+    }
+    header nav {
+        display: flex;
+        font-size: 1.2rem;
+        gap: 1rem;
+    }
+    header nav a {
+        color: var(--color-fg);
+        text-decoration: none;
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+        transition: background-color 0.3s;
+    }
+    header nav a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    section {
+        width: 100%;
+        max-width: 60rem;
+        min-height: 100vh;
+        margin-top: -6rem;
+        margin-inline: auto;
+        padding-block: 6rem;
+        padding-inline: 2rem;
+    }
+    section.center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .cta {
+        font-size: 1.4rem;
+    }
+    section > h2:not(.big) {
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+        font-size: clamp(2rem, 6vw, 4rem);
+        text-align: center;
+        letter-spacing: -1px;
+    }
+    .subtitle {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    footer {
+        padding-bottom: 2rem;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+</style>
