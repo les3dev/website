@@ -106,8 +106,29 @@
         pouvons nous répartir efficacement pour répondre à vos demandes les plus folles.
     </details>
     <details>
-        <summary>Comment faire évoluer mon projet ?</summary>
-        Vous avez les clés
+        <summary>Pourquoi pas du No-code ?</summary>
+        Nous avons développés plusieurs outils No-Code, nous sommes bien placés pour comprendre ses avantages et limitations.
+        Nous arriverons à vous fournir un résultat plus qualitatif, performant et maintenable avec du code à l'ancienne
+    </details>
+    <details>
+        <summary>Comment puis-je modifier mon projet ?</summary>
+        Nous vous fournirons toujours le code source, vous seul en serez le propriétaire. Si vous voulez modifier votre projet,
+        vous pouvez le faire vous-mêmes, refaire appel à nous ou même à d'autres dev. Nous pouvons également développer des solutions
+        afin que vous puissiez facilement faire évoluer votre produit.
+    </details>
+    <details>
+        <summary>Quel type de projet & fonctionnalités peuvent être réalisées ?</summary>
+        Probablement tout ce que vous voulez. Avec nos 10 ans d'experiences, on a rencontrés beaucoup de problèmes et tout autant de solution.
+        Nous avons réalisés un grand nombre d'applications ou de sites avec des fonctionnalités très différentes (realtime, collaboration, 3D)
+    </details>
+    <details>
+        <summary>Où sont stockées les données ?</summary>
+        À vous de voir. Ça peut être chez vous, chez d'autres, mais pas chez nous. Nous ne voulons pas prendre la responsabilité de vos données.
+    </details>
+    <details>
+        <summary>Ai-je accès au code du projet ?</summary>
+        Oui, le code que nous écrivons n'a qu'un seul destinataire : vous. Lorsque nous aurons fini le projet, nous vous donnerons toutes les clés
+        pour que vous soyez propriétaire du projet.
     </details>
 </section>
 <section id="contact" class="center">
