@@ -166,6 +166,7 @@
     }
     section.top {
         padding-top: 5rem;
+        padding-bottom: 3rem;
     }
 
     .grid {
