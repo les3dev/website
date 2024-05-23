@@ -1,12 +1,6 @@
-<nav>
-    <div class="bar">
-        <a href="#intro">Intro</a>
-        <a href="#projects">Projets</a>
-        <a href="#team">L'équipe</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-    </div>
-</nav>
+<script>
+    import Menu from '$lib/Menu.svelte';
+</script>
 
 <section id="intro" class="center">
     <div id="logo">les3dev</div>
@@ -136,36 +130,9 @@
     <a role="button" href="mailto:contact@les3.dev" class="cta">Demander un devis</a>
 </section>
 
+<Menu />
+
 <style>
-    /* Nav */
-
-    nav {
-        position: fixed;
-        bottom: 1rem;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-    nav .bar {
-        background-color: var(--color-black);
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 1rem;
-        border-radius: 3rem;
-    }
-    nav a {
-        color: var(--color-white);
-        font-weight: bold;
-        text-decoration: none;
-        padding: 1rem 2rem;
-        border-radius: 2rem;
-        transition: background-color 0.3s;
-    }
-    nav a:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-    }
-
     /* Section layouts */
 
     section {
@@ -222,7 +189,7 @@
     #logo {
         font-family: 'Remora Camilla', sans-serif;
         color: var(--color-white);
-        font-size: clamp(2rem, 6vw, 6rem);
+        font-size: clamp(2.5rem, 6vw, 6rem);
     }
 
     h1.big,
@@ -236,7 +203,8 @@
     }
 
     section > h2:not(.big) {
-        margin-block: 0;
+        margin-top: 0;
+        margin-bottom: 0.3em;
         font-size: clamp(2rem, 6vw, 4rem);
         text-align: center;
         letter-spacing: -1px;
@@ -246,7 +214,7 @@
         font-size: 1.4rem;
         text-wrap: balance;
         text-align: center;
-        margin-bottom: 2rem;
+        margin-bottom: 2em;
     }
     @media (max-width: 50rem) {
         .subtitle {
@@ -262,7 +230,7 @@
     }
     #intro .cta {
         background-color: var(--color-yellow);
-        margin-bottom: 4rem;
+        margin-bottom: 6rem;
     }
     #contact .cta {
         background-color: var(--color-lime);
@@ -304,6 +272,7 @@
     .profile img {
         border-radius: 50%;
         max-width: 13rem;
+        border: 1rem solid var(--color-white);
     }
     .profile .name {
         font-weight: bold;
@@ -316,5 +285,19 @@
     }
     #team article {
         text-align: center;
+    }
+
+    /* Faq */
+
+    #faq details {
+        font-size: 1.2rem;
+        max-width: var(--page-width);
+        margin: auto;
+    }
+    #faq summary {
+        font-size: 1.6rem;
+        font-weight: bold;
+        cursor: pointer;
+        margin: 1rem 0;
     }
 </style>
