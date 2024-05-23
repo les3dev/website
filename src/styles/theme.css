@@ -6,7 +6,7 @@
     --font-mono: 'Menlo', monospace; /* Used for code */
     --font-heading: 'Bricolage Grotesque', sans-serif; /* Used for titles and headings */
     --font-content: 'Bricolage Grotesque', sans-serif; /* Used for longer text content like articles */
-    --color-fg: #dddddd; /* The main neutral color used for important texts and icons */
+    --color-fg: #ffffff; /* The main neutral color used for important texts and icons */
     --color-fg-1: #aaaaaa; /* Similar to fg but for slightly less important texts */
     --color-bg: #161616; /* The main background color of the website */
     --color-bg-1: #1e1e1e; /* Used for areas like cards to separate from the background */
@@ -32,7 +32,6 @@ body {
     color: var(--color-fg);
     margin: 0;
     font-family: var(--font-ui);
-    background-color: #726ff7;
 }
 
 #root {
