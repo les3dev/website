@@ -112,16 +112,21 @@
         résultats de l'avancement au fur et à mesure. <a href="mailto:contact@les3.dev">Contactez-nous</a> dès maintenant pour avoir une estimation !
     </details>
     <details>
-        <summary>Comment puis-je modifier mon projet ?</summary>
-        Dans un soucis de transparence, nous vous fournirons toujours le code source du projet, vous seul.e en serez propriétaire. Si vous voulez modifier votre
-        projet, vous pouvez refaire appel à nous quand vous voulez ou même à d'autres developpeur.ses. Nous pouvons également développer des solutions afin que vous
-        puissiez facilement faire évoluer votre produit comme une interface d'admin adaptée à vos besoin par exemple.
+        <summary>Est-ce que je dois m'occuper du design ?</summary>
+        La plupart des projets ne nécéssitent pas uniquement du code, mais également du design. Nous nous occupons de cette partie également la plupart du temps.
+        Cependant, nous pouvons nous adapter en fonction de votre existent (identité visuelle, logo, etc.) et vos besoins personnels.
     </details>
     <details>
         <summary>Quel type de projet & fonctionnalités peuvent être réalisées ?</summary>
         Probablement tout ce que vous pourriez imaginer. Avec nos 10 ans d'experiences, on a rencontrés beaucoup de problèmes et tout autant de solution. Nous avons
         réalisés un grand nombre d'applications ou de sites avec des fonctionnalités très différentes (realtime, collaboration, 3D). On avons créé des produits sur
         le long terme, des MVPs pour des startups mais également pour de plus grands organismes comme Decathlon, BNP Paribas ou la base spaciale.
+    </details>
+    <details>
+        <summary>Comment puis-je modifier mon projet ?</summary>
+        Dans un soucis de transparence, nous vous fournirons toujours le code source du projet, vous seul.e en serez propriétaire. Si vous voulez modifier votre
+        projet, vous pouvez refaire appel à nous quand vous voulez ou même à d'autres developpeur.ses. Nous pouvons également développer des solutions afin que vous
+        puissiez facilement faire évoluer votre produit comme une interface d'admin adaptée à vos besoin par exemple.
     </details>
     <details>
         <summary>Où sont stockées les données ?</summary>
@@ -134,9 +139,9 @@
         soyez propriétaire du projet et que vous puissiez le faire évoluer comme bon vous semble.
     </details>
     <details>
-        <summary>Est-ce que je dois m'occuper du design ?</summary>
-        La plupart des projets nécéssitent ne sont pas uniquement du code, mais également du design. Nous nous occupons de cette partie également pour la majorité
-        de nos projets. Cependant, nous pouvons nous adapter en fonction de votre existent (identité visuelle, logo, etc.) et vos besoins personnels.
+        <summary>Quels outils & technologies utilise-t-on ?</summary>
+        Nous privilegons autant que possible les technologies matures et si possible open-source pour créer des projets durables et performants. Nous avons quelques
+        préférences mais nous nous adaptons en fonction des besoins du projet.
     </details>
 </section>
 <section id="contact" class="center">
