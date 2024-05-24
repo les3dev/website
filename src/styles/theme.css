@@ -20,10 +20,10 @@
     scroll-behavior: smooth;
 }
 body {
-    color: var(--color-black);
+    color: var(--color-white);
     margin: 0;
     font-family: var(--font-brand);
-    background-color: var(--color-indigo);
+    background-color: var(--color-black);
 }
 
 * {
