@@ -50,6 +50,7 @@
         width: 4.5rem;
         height: 4.5rem;
         transition: 0.3s scale;
+        pointer-events: all;
     }
     button.isOpen,
     button.isHidden {
@@ -61,8 +62,10 @@
         width: 100%;
         display: flex;
         justify-content: center;
+        pointer-events: none;
     }
     nav .bar {
+        pointer-events: all;
         background-color: var(--color-black);
         display: flex;
         align-items: center;
@@ -101,6 +104,7 @@
         align-content: center;
         transition: 0.3s translate;
         translate: 0 100%;
+        pointer-events: all;
     }
     .fullscreen.isOpen {
         translate: 0 0;
