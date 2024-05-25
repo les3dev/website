@@ -9,13 +9,13 @@
 </section>
 <section id="projects" class="top">
     <h2>Quelques réalisations pour l'inspiration</h2>
-    <div class="subtitle">Échantillion non-exaustif de notre travail de ces dernières années</div>
+    <div class="subtitle">Échantillon non-exhaustif de notre travail de ces dernières années</div>
     <div class="grid">
         <article class="project">
             <a href="https://demo.voltask.tech" target="_blank">
                 <img src="/images/voltask.png" alt="" />
                 <h3>Voltask</h3>
-                <p>Outil no-code collaboratif dans le navigateur pour créer des automatisations avec des scénarios visuels.</p>
+                <p>Outil No-code collaboratif dans le navigateur pour créer des automatisations avec des scénarios visuels.</p>
             </a>
         </article>
         <article class="project">
@@ -36,14 +36,14 @@
             <a href="https://editor.voltapp.tech" target="_blank">
                 <img src="/images/voltapp.png" alt="" />
                 <h3>Voltapp</h3>
-                <p>Voltapp est un outil no-code permettant de créer des applications web grâce à la programmation visuelle.</p>
+                <p>Voltapp est un outil No-code permettant de créer des applications web grâce à la programmation visuelle.</p>
             </a>
         </article>
         <article class="project">
             <a href="https://creator.celestory.io" target="_blank">
                 <img src="/images/celestory.png" alt="" />
                 <h3>Celestory</h3>
-                <p>Outil pour créer des serious games, formations et visual novels avec un système de choix et de variables en no-code.</p>
+                <p>Outil pour créer des serious games, formations et visual novels avec un système de choix et de variables en No-code.</p>
             </a>
         </article>
         <article class="project">
@@ -97,9 +97,9 @@
     <h2>Foire aux questions</h2>
     <details>
         <summary>Pourquoi pas du No-code ?</summary>
-        Nous avons pu utiliser et même créer des outils No-Code puis plusieurs années. Nous sommes donc bien placés pour en comprendre les avantages mais aussi les
-        limitations. Le no-code est très bien pour créer rapidement une version basique et "jetable" de votre idée. En revanche, si vous voulez un projet qualitatif,
-        performant et maintenable sur du long terme, on vous conseille de plutôt vous tourner vers le code "classique".
+        Nous avons pu utiliser et même créer des outils No-code depuis plusieurs années. Nous sommes donc bien placés pour en comprendre les avantages mais aussi
+        les limitations. Le No-code est très bien pour créer rapidement une version basique et "jetable" de votre idée. En revanche, si vous voulez un projet qualitatif,
+        performant et maintenable sur du long terme, nous vous conseillons de plutôt vous tourner vers du code "classique".
     </details>
     <details>
         <summary>Pourquoi 3 développeurs ?</summary>
@@ -113,24 +113,24 @@
     </details>
     <details>
         <summary>Est-ce que je dois m'occuper du design ?</summary>
-        La plupart des projets ne nécéssitent pas uniquement du code, mais également du design. Nous nous occupons de cette partie également la plupart du temps.
+        La plupart des projets ne nécessitent pas uniquement du code, mais également du design. Nous nous occupons de cette partie également la plupart du temps.
         Cependant, nous pouvons nous adapter en fonction de votre existent (identité visuelle, logo, etc.) et vos besoins personnels.
     </details>
     <details>
         <summary>Quel type de projet & fonctionnalités peuvent être réalisées ?</summary>
-        Probablement tout ce que vous pourriez imaginer. Avec nos 10 ans d'experiences, on a rencontrés beaucoup de problèmes et tout autant de solution. Nous avons
-        réalisés un grand nombre d'applications ou de sites avec des fonctionnalités très différentes (realtime, collaboration, 3D). On avons créé des produits sur
-        le long terme, des MVPs pour des startups mais également pour de plus grands organismes comme Decathlon, BNP Paribas ou la base spaciale.
+        Probablement tout ce que vous pourriez imaginer. Avec nos 10 ans d'expériences, on a rencontrés beaucoup de problèmes et tout autant de solution. Nous avons
+        réalisés un grand nombre d'applications ou de sites avec des fonctionnalités très différentes (realtime, collaboration, 3D). Mais aussi des produits sur
+        le long terme, des MVPs pour des startups mais également pour de plus grands organismes comme Decathlon, BNP Paribas ou la base spatiale.
     </details>
     <details>
         <summary>Comment puis-je modifier mon projet ?</summary>
         Dans un soucis de transparence, nous vous fournirons toujours le code source du projet, vous seul.e en serez propriétaire. Si vous voulez modifier votre
-        projet, vous pouvez refaire appel à nous quand vous voulez ou même à d'autres developpeur.ses. Nous pouvons également développer des solutions afin que vous
-        puissiez facilement faire évoluer votre produit comme une interface d'admin adaptée à vos besoin par exemple.
+        projet, vous pouvez refaire appel à nous quand vous voulez ou même à d'autres développeur.ses. Nous pouvons également développer des solutions afin que vous
+        puissiez facilement faire évoluer votre produit comme une interface d'admin adaptée à vos besoins.
     </details>
     <details>
         <summary>Où sont stockées les données ?</summary>
-        À vous de voir. Ça peut être sur vos serveurs, chez d'autres services en ligne, mais pas chez nous. Nous ne voulons pas prendre la responsabilité du stockage
+        À vous de voir. Ça peut être sur vos serveurs ou ceux d'autres services en ligne, mais pas chez nous. Nous ne voulons pas prendre la responsabilité du stockage
         de vos données.
     </details>
     <details>
@@ -140,7 +140,7 @@
     </details>
     <details>
         <summary>Quels outils & technologies utilise-t-on ?</summary>
-        Nous privilegons autant que possible les technologies matures et si possible open-source pour créer des projets durables et performants. Nous avons quelques
+        Nous privilégions autant que possible les technologies matures et si possible open-source pour créer des projets durables et performants. Nous avons quelques
         préférences mais nous nous adaptons en fonction des besoins du projet.
     </details>
 </section>
