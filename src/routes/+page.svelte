@@ -1,20 +1,56 @@
 <script lang="ts">
-    import {browser} from '$app/environment';
     import Menu from '$lib/Menu.svelte';
-    import {mediaQueries} from '$lib/mediaqueries';
+    import {browser} from '$app/environment';
     import {onMount} from 'svelte';
+    import {mediaQueries} from '$lib/mediaqueries';
 
     const isMobile = mediaQueries('(max-width: 720px)');
+
+    type State = 'intro' | 'projects' | 'team' | 'faq' | 'contact';
+
+    const introElement = browser ? document.querySelector('#intro') : null;
+    const projectsElement = browser ? document.querySelector('#projects') : null;
+    const teamElement = browser ? document.querySelector('#team') : null;
+    const faqElement = browser ? document.querySelector('#faq') : null;
+    const contactElement = browser ? document.querySelector('#contact') : null;
     const projectsElements = browser ? document.querySelectorAll('.project') : [];
+
+    let state = 'intro' as State;
+
+    function isInRect(rect: DOMRect | undefined) {
+        if (!rect) {
+            return false;
+        }
+        return document.documentElement.clientHeight - rect.top >= document.documentElement.clientHeight / 2;
+    }
 
     function handleScroll() {
         const bodyRect = document.body.getBoundingClientRect();
-        const projectsRect = document.querySelector('#projects')!.getBoundingClientRect();
-        const projectsPosition = projectsRect.top - bodyRect.top;
+        const introRect = introElement?.getBoundingClientRect();
+        const projectsRect = projectsElement?.getBoundingClientRect();
+        const teamRect = teamElement?.getBoundingClientRect();
+        const faqRect = faqElement?.getBoundingClientRect();
+        const contactRect = contactElement?.getBoundingClientRect();
+
+        if (isInRect(introRect)) {
+            state = 'intro';
+        }
+        if (isInRect(projectsRect)) {
+            state = 'projects';
+        }
+        if (isInRect(teamRect)) {
+            state = 'team';
+        }
+        if (isInRect(faqRect)) {
+            state = 'faq';
+        }
+        if (isInRect(contactRect)) {
+            state = 'contact';
+        }
         for (const projectElement of projectsElements) {
             const bbox = projectElement.getBoundingClientRect();
             const delta = 0;
-            if (isMobile && bbox.top >= -delta && bbox.bottom <= projectsPosition - delta) {
+            if (isMobile && bbox.top >= -delta && bbox.bottom <= projectsRect!.top - bodyRect.top - delta) {
                 projectElement.classList.add('focus');
             } else {
                 projectElement.classList.remove('focus');
@@ -27,12 +63,12 @@
 
 <svelte:window on:scroll={handleScroll} />
 
-<section id="intro" class="center">
+<section id="intro" class="center" class:focus={state === 'intro'}>
     <div id="logo">les3dev</div>
     <h1 class="big">Vous avez les idées,<br />On les réalise.</h1>
     <a role="button" href="#contact" class="cta">Nous contacter</a>
 </section>
-<section id="projects" class="top">
+<section id="projects" class="top" class:focus={state === 'projects'}>
     <h2>Quelques réalisations pour l'inspiration</h2>
     <div class="subtitle">Échantillon non-exhaustif de notre travail de ces dernières années</div>
     <div class="grid">
@@ -94,7 +130,7 @@
         </article>
     </div>
 </section>
-<section id="team" class="center">
+<section id="team" class="center" class:focus={state === 'team'}>
     <h2>Qui sommes-nous ?</h2>
     <div class="subtitle">3 amis développeurs avec plus de 10 ans expérience chacun pour transformer vos souhaits en réalité !</div>
     <div class="grid">
@@ -118,7 +154,7 @@
         </article>
     </div>
 </section>
-<section id="faq" class="top">
+<section id="faq" class="top" class:focus={state === 'faq'}>
     <h2>Foire aux questions</h2>
     <details>
         <summary>Pourquoi pas du No-code ?</summary>
@@ -169,7 +205,7 @@
         préférences mais nous nous adaptons en fonction des besoins du projet.
     </details>
 </section>
-<section id="contact" class="center">
+<section id="contact" class="center" class:focus={state === 'contact'}>
     <h2 class="big">Envie de travailler avec nous ?</h2>
     <div class="options">
         <a role="button" href="https://calendly.com/les3dev/30min">Prendre un RDV</a>
@@ -274,6 +310,19 @@
         }
     }
 
+    /* Sections */
+
+    section {
+        opacity: 0.75;
+        filter: blur(0.2rem) saturate(0.3);
+        transition: all 0.5s;
+    }
+
+    section.focus {
+        opacity: 1;
+        filter: blur(0);
+    }
+
     /* CTAs */
 
     .cta {
@@ -329,14 +378,9 @@
     }
 
     @media (min-width: 720px) {
-        #projects .grid:hover article.project a {
-            opacity: 0.75;
-            filter: blur(0.2rem) saturate(0.3);
-        }
-
         #projects .grid:hover article.project a:hover {
             opacity: 1;
-            filter: blur(0);
+            scale: 1.03;
         }
     }
 
