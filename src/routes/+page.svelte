@@ -5,7 +5,7 @@
 <section id="intro" class="center">
     <div id="logo">les3dev</div>
     <h1 class="big">Vous avez les idées,<br />On les réalise.</h1>
-    <a role="button" href="mailto:contact@les3.dev" class="cta">Demander un devis</a>
+    <a role="button" href="#contact" class="cta">Nous contacter</a>
 </section>
 <section id="projects" class="top">
     <h2>Quelques réalisations pour l'inspiration</h2>
@@ -146,7 +146,10 @@
 </section>
 <section id="contact" class="center">
     <h2 class="big">Envie de travailler avec nous ?</h2>
-    <a role="button" href="mailto:contact@les3.dev" class="cta">Demander un devis</a>
+    <div class="options">
+        <a role="button" href="https://calendly.com/les3dev/30min">Prendre un RDV</a>
+        <a role="button" href="mailto:contact@les3.dev">Envoyer un mail</a>
+    </div>
 </section>
 
 <Menu />
@@ -215,11 +218,15 @@
     h1.big,
     h2.big {
         margin-top: 0;
-        margin-bottom: 1.5rem;
+        margin-bottom: 0.5em;
         font-size: clamp(3rem, 9vw, 8rem);
         text-align: center;
         letter-spacing: -1px;
         text-wrap: balance;
+    }
+
+    h2.big {
+        max-width: 65rem;
     }
 
     section > h2:not(.big) {
@@ -252,8 +259,16 @@
         background-color: var(--color-yellow);
         margin-bottom: 6rem;
     }
-    #contact .cta {
-        background-color: var(--color-lime);
+    #contact .options {
+        gap: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 1.4rem;
+        justify-content: center;
+    }
+    #contact .options a {
+        color: var(--color-black);
+        background-color: var(--color-yellow);
     }
 
     /* Projects */
