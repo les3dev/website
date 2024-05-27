@@ -1,6 +1,31 @@
-<script>
+<script lang="ts">
+    import {browser} from '$app/environment';
     import Menu from '$lib/Menu.svelte';
+    import {mediaQueries} from '$lib/mediaqueries';
+    import {onMount} from 'svelte';
+
+    const isMobile = mediaQueries('(max-width: 720px)');
+    const projectsElements = browser ? document.querySelectorAll('.project') : [];
+
+    function handleScroll() {
+        const bodyRect = document.body.getBoundingClientRect();
+        const projectsRect = document.querySelector('#projects')!.getBoundingClientRect();
+        const projectsPosition = projectsRect.top - bodyRect.top;
+        for (const projectElement of projectsElements) {
+            const bbox = projectElement.getBoundingClientRect();
+            const delta = 0;
+            if (isMobile && bbox.top >= -delta && bbox.bottom <= projectsPosition - delta) {
+                projectElement.classList.add('focus');
+            } else {
+                projectElement.classList.remove('focus');
+            }
+        }
+    }
+
+    onMount(handleScroll);
 </script>
+
+<svelte:window on:scroll={handleScroll} />
 
 <section id="intro" class="center">
     <div id="logo">les3dev</div>
@@ -303,14 +328,29 @@
         border-radius: 1.5rem;
     }
 
-    #projects .grid:hover article.project a {
-        opacity: 0.75;
-        filter: blur(0.2rem) saturate(0.3);
+    @media (min-width: 720px) {
+        #projects .grid:hover article.project a {
+            opacity: 0.75;
+            filter: blur(0.2rem) saturate(0.3);
+        }
+
+        #projects .grid:hover article.project a:hover {
+            opacity: 1;
+            filter: blur(0);
+        }
     }
 
-    #projects .grid:hover article.project a:hover {
-        opacity: 1;
-        filter: blur(0);
+    @media (max-width: 720px) {
+        #projects .grid article.project {
+            opacity: 0.75;
+            filter: blur(0.2rem) saturate(0.3);
+            transition: 0.5s all;
+        }
+
+        #projects .grid :global(article.project.focus) {
+            opacity: 1;
+            filter: blur(0);
+        }
     }
 
     /* Profiles */

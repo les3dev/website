@@ -14,17 +14,15 @@
 
     let isOpen = false;
     let isHidden = false;
-
-    let timeout: number | undefined;
 </script>
 
 <svelte:window
-    on:scroll={() => {
-        isHidden = true;
-        clearTimeout(timeout);
-        timeout = setTimeout(() => {
+    on:wheel={(e) => {
+        if (e.deltaY > 0) {
+            isHidden = true;
+        } else if (e.deltaY < 0) {
             isHidden = false;
-        }, 350);
+        }
     }}
 />
 
