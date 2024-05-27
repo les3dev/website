@@ -272,13 +272,6 @@
         background-color: var(--color-yellow);
     }
 
-    #contact .options a:first-of-type {
-        animation: breath 3s infinite 0.3s;
-    }
-    #contact .options a:last-of-type {
-        animation: breath 3s infinite;
-    }
-
     /* Projects */
     #projects .grid {
         pointer-events: none;
