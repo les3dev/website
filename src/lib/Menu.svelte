@@ -69,8 +69,7 @@
         background-color: var(--color-black);
         display: flex;
         align-items: center;
-        gap: 0.5rem;
-        padding: 1rem;
+        padding: 0.5rem;
         border-radius: 3rem;
         z-index: 2;
         transition: 0.3s transform;
