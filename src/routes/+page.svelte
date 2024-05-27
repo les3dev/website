@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Eyevatar from '$lib/Eyevatar.svelte';
     import Menu from '$lib/Menu.svelte';
     import {browser} from '$app/environment';
     import {onMount} from 'svelte';
@@ -133,21 +134,21 @@
 <section id="team" class="center" class:focus={state === 'team'}>
     <h2>Qui sommes-nous ?</h2>
     <div class="subtitle">3 amis développeurs avec plus de 10 ans expérience chacun pour transformer vos souhaits en réalité !</div>
-    <div class="grid">
+    <div class="wrap-center">
         <article class="profile">
-            <img src="/images/jeremie.png" alt="" />
+            <Eyevatar src="/images/jeremie.png" left={{x: 84, y: 80}} right={{x: 110, y: 80}} />
             <div class="name">Jeremie</div>
             <a href="https://www.linkedin.com/in/jeremie-taboada-16495959/" target="_blank">Linked In</a>
             <a href="https://github.com/jeremt" target="_blank">Github</a>
         </article>
         <article class="profile">
-            <img src="/images/jonathan.png" alt="" />
+            <Eyevatar src="/images/jonathan.png" left={{x: 84, y: 82}} right={{x: 110, y: 80}} />
             <div class="name">Jonathan</div>
             <a href="https://www.linkedin.com/in/jonathanpicques/" target="_blank">Linked In</a>
             <a href="https://github.com/jonathanpicques" target="_blank">Github</a>
         </article>
         <article class="profile">
-            <img src="/images/vincent.png" alt="" />
+            <Eyevatar src="/images/vincent.png" left={{x: 72, y: 78}} right={{x: 100, y: 75}} />
             <div class="name">Vincent</div>
             <a href="https://www.linkedin.com/in/vincentneel/" target="_blank">Linked In</a>
             <a href="https://github.com/pikanezi" target="_blank">Github</a>
@@ -399,11 +400,6 @@
 
     /* Profiles */
 
-    .profile img {
-        border-radius: 50%;
-        max-width: 13rem;
-        border: 1rem solid var(--color-white);
-    }
     .profile .name {
         font-weight: bold;
         font-size: 1.5rem;

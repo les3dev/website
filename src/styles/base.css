@@ -58,3 +58,10 @@ td {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(var(--col, 18rem), 1fr));
 }
+
+.wrap-center {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: center;
+}
