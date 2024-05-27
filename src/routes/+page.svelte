@@ -289,7 +289,7 @@
 
     #projects .grid:hover article.project a {
         opacity: 0.75;
-        filter: blur(0.2rem);
+        filter: blur(0.2rem) saturate(0.3);
     }
 
     #projects .grid:hover article.project a:hover {
