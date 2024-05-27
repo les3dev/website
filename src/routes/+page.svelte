@@ -254,6 +254,7 @@
     .cta {
         color: var(--color-black);
         font-size: 1.4rem;
+        animation: breath 3s infinite;
     }
     #intro .cta {
         background-color: var(--color-yellow);
@@ -269,6 +270,13 @@
     #contact .options a {
         color: var(--color-black);
         background-color: var(--color-yellow);
+    }
+
+    #contact .options a:first-of-type {
+        animation: breath 3s infinite 0.3s;
+    }
+    #contact .options a:last-of-type {
+        animation: breath 3s infinite;
     }
 
     /* Projects */
@@ -350,5 +358,17 @@
         font-weight: bold;
         cursor: pointer;
         margin: 1rem 0;
+    }
+
+    @keyframes breath {
+        0% {
+            translate: 0 0;
+        }
+        50% {
+            translate: 0 1rem;
+        }
+        100% {
+            translate: 0 0;
+        }
     }
 </style>
