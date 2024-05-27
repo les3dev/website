@@ -257,17 +257,17 @@
     }
 
     /* Projects */
-
+    #projects .grid {
+        pointer-events: none;
+    }
     article.project a {
+        pointer-events: all;
         text-decoration: none;
         padding: 1rem;
         display: block;
-        transition: 0.5s scale;
         border-radius: 2rem;
+        transition: 0.3s all;
         border: 3px solid transparent;
-    }
-    article.project a:hover {
-        scale: 1.1;
     }
     article.project h3 {
         padding-inline: 1rem;
@@ -285,6 +285,16 @@
     article img {
         max-width: 100%;
         border-radius: 1.5rem;
+    }
+
+    #projects .grid:hover article.project a {
+        opacity: 0.75;
+        filter: blur(0.2rem);
+    }
+
+    #projects .grid:hover article.project a:hover {
+        opacity: 1;
+        filter: blur(0);
     }
 
     /* Profiles */
