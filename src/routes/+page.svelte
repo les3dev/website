@@ -189,51 +189,80 @@
     <h2 use:scrollEffect={0.5} class="appear">Foire aux questions</h2>
     <details use:scrollEffect={0.5} class="appear">
         <summary>Pourquoi pas du No-code ?</summary>
-        Nous avons pu utiliser et même créer des outils No-code depuis plusieurs années. Nous sommes donc bien placés pour en comprendre les avantages mais aussi
-        les limitations. Le No-code est très bien pour créer rapidement une version basique et "jetable" de votre idée. En revanche, si vous voulez un projet qualitatif,
-        performant et maintenable sur du long terme, nous vous conseillons de plutôt vous tourner vers du code "classique".
+        <div>
+            Nous avons pu utiliser et même créer des outils No-code depuis plusieurs années. Nous sommes donc bien placés pour en comprendre les avantages mais
+            aussi les limitations. Le No-code est très bien pour créer rapidement une version basique et "jetable" de votre idée. En revanche, si vous voulez un
+            projet qualitatif, performant et maintenable sur du long terme, nous vous conseillons de plutôt vous tourner vers du code "classique".
+        </div>
+    </details>
+    <details use:scrollEffect={0.5} class="appear">
+        <summary>Pourquoi (ne pas) recruter un CTO ?</summary>
+        <div>
+            Avoir un CTO est la solution idéale sur le moyen/long terme pour une startup. Cependant, cela peut-être compliqué et très cher de choisir cette
+            solution au début. C'est pour cela qu'une équipe de développeur.ses experimentée peut vous permettre de faire une première version de qualité de
+            votre produit. Aussi, un CTO a souvent son mot à dire sur la vision de votre société et de votre produit. En travaillant avec des développeur.ses
+            indépendant (comme nous), vous vous assurez que votre vision soit respectée.
+        </div>
     </details>
     <details use:scrollEffect={0.5} class="appear">
         <summary>Pourquoi 3 développeurs ?</summary>
-        Nous avons l’habitude de travailler ensemble depuis plusieurs années. Grâce à nos différentes affinités et domaines d’expertise nous pouvons nous répartir
-        efficacement pour répondre au mieux à toutes vos demandes aussi variées soient-elles.
+        <div>
+            Nous avons l’habitude de travailler ensemble depuis plusieurs années. Grâce à nos différentes affinités et domaines d’expertise nous pouvons nous
+            répartir efficacement pour répondre au mieux à toutes vos demandes aussi variées soient-elles.
+        </div>
     </details>
     <details use:scrollEffect={0.5} class="appear">
         <summary>Combien de temps prendrait la réalisation de mon projet ?</summary>
-        Cela déprendra de l'urgence de votre côté mais également de nos disponibilités. Nous avons l'habitude de travailler plutôt rapidement et vous fournir des
-        résultats de l'avancement au fur et à mesure. <a href="mailto:contact@les3.dev">Contactez-nous</a> dès maintenant pour avoir une estimation !
+        <div>
+            Cela déprendra de l'urgence de votre côté mais également de nos disponibilités. Nous avons l'habitude de travailler plutôt rapidement et vous
+            fournir des résultats de l'avancement au fur et à mesure. <a href="mailto:contact@les3.dev">Contactez-nous</a> dès maintenant pour avoir une estimation
+            !
+        </div>
     </details>
     <details use:scrollEffect={0.5} class="appear">
         <summary>Est-ce que je dois m'occuper du design ?</summary>
-        La plupart des projets ne nécessitent pas uniquement du code, mais également du design. Nous nous occupons de cette partie également la plupart du temps.
-        Cependant, nous pouvons nous adapter en fonction de votre existent (identité visuelle, logo, etc.) et vos besoins personnels.
+        <div>
+            La plupart des projets ne nécessitent pas uniquement du code, mais également du design. Nous nous occupons de cette partie également la plupart du
+            temps. Cependant, nous pouvons nous adapter en fonction de votre existent (identité visuelle, logo, etc.) et vos besoins personnels.
+        </div>
     </details>
     <details use:scrollEffect={0.5} class="appear">
         <summary>Quel type de projet & fonctionnalités peuvent être réalisées ?</summary>
-        Probablement tout ce que vous pourriez imaginer. Avec nos 10 ans d'expériences, on a rencontrés beaucoup de problèmes et tout autant de solution. Nous avons
-        réalisés un grand nombre d'applications ou de sites avec des fonctionnalités très différentes (realtime, collaboration, 3D). Mais aussi des produits sur
-        le long terme, des MVPs pour des startups mais également pour de plus grands organismes comme Decathlon, BNP Paribas ou la base spatiale.
+        <div>
+            Probablement tout ce que vous pourriez imaginer. Avec nos 10 ans d'expériences, on a rencontrés beaucoup de problèmes et tout autant de solution.
+            Nous avons réalisés un grand nombre d'applications ou de sites avec des fonctionnalités très différentes (realtime, collaboration, 3D). Mais aussi
+            des produits sur le long terme, des MVPs pour des startups mais également pour de plus grands organismes comme Decathlon, BNP Paribas ou la base
+            spatiale.
+        </div>
     </details>
     <details use:scrollEffect={0.5} class="appear">
         <summary>Comment puis-je modifier mon projet ?</summary>
-        Dans un soucis de transparence, nous vous fournirons toujours le code source du projet, vous seul.e en serez propriétaire. Si vous voulez modifier votre
-        projet, vous pouvez refaire appel à nous quand vous voulez ou même à d'autres développeur.ses. Nous pouvons également développer des solutions afin que vous
-        puissiez facilement faire évoluer votre produit comme une interface d'admin adaptée à vos besoins.
+        <div>
+            Dans un soucis de transparence, nous vous fournirons toujours le code source du projet, vous seul.e en serez propriétaire. Si vous voulez modifier
+            votre projet, vous pouvez refaire appel à nous quand vous voulez ou même à d'autres développeur.ses. Nous pouvons également développer des solutions
+            afin que vous puissiez facilement faire évoluer votre produit comme une interface d'admin adaptée à vos besoins.
+        </div>
     </details>
     <details use:scrollEffect={0.5} class="appear">
         <summary>Où sont stockées les données ?</summary>
-        À vous de voir. Ça peut être sur vos serveurs ou ceux d'autres services en ligne, mais pas chez nous. Nous ne voulons pas prendre la responsabilité du stockage
-        de vos données.
+        <div>
+            À vous de voir. Ça peut être sur vos serveurs ou ceux d'autres services en ligne, mais pas chez nous. Nous ne voulons pas prendre la responsabilité
+            du stockage de vos données.
+        </div>
     </details>
     <details use:scrollEffect={0.5} class="appear">
         <summary>Ai-je accès au code du projet ?</summary>
-        Oui, le code que nous écrivons n'a qu'un seul destinataire : vous. Lorsque nous aurons fini le projet, nous vous donnerons toutes les clés pour que vous
-        soyez propriétaire du projet et que vous puissiez le faire évoluer comme bon vous semble.
+        <div>
+            Oui, le code que nous écrivons n'a qu'un seul destinataire : vous. Lorsque nous aurons fini le projet, nous vous donnerons toutes les clés pour que
+            vous soyez propriétaire du projet et que vous puissiez le faire évoluer comme bon vous semble.
+        </div>
     </details>
     <details use:scrollEffect={0.5} class="appear">
         <summary>Quels outils & technologies utilise-t-on ?</summary>
-        Nous privilégions autant que possible les technologies matures et si possible open-source pour créer des projets durables et performants. Nous avons quelques
-        préférences mais nous nous adaptons en fonction des besoins du projet.
+        <div>
+            Nous privilégions autant que possible les technologies matures et si possible open-source pour créer des projets durables et performants. Nous avons
+            quelques préférences mais nous nous adaptons en fonction des besoins du projet.
+        </div>
     </details>
 </section>
 <section id="contact" class="center" class:focus={section === 'contact'} bind:this={contactElement}>
@@ -465,12 +494,20 @@
     #faq details a {
         color: var(--color-indigo);
     }
-    #faq summary {
+    #faq details summary {
         color: var(--color-black);
         font-size: 1.6rem;
         font-weight: bold;
         cursor: pointer;
         margin: 1rem 0;
+    }
+    #faq details div {
+        transition: 0.3s all; /* TODO: why anim not working :/ */
+        max-height: 0;
+        padding-inline: 2rem;
+    }
+    #faq details[open] div {
+        max-height: fit-content;
     }
 
     /* Animations */
