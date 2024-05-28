@@ -51,46 +51,17 @@
             section = 'contact';
         }
 
-        {
-            // projects
-            const h2 = document.querySelector<HTMLHeadingElement>('#projects>h2');
-            const h2Rect = h2!.getBoundingClientRect();
-            const h2Progress = clamp(((document.documentElement.clientHeight - h2Rect.top) * 0.5) / h2Rect.height, 0, 1);
-            h2!.style.setProperty('--progress', h2Progress.toString());
-
-            const subtitle = document.querySelector<HTMLDivElement>('#projects>.subtitle');
-            const subtitleRect = subtitle!.getBoundingClientRect();
-            const subtitleProgress = clamp(((document.documentElement.clientHeight - subtitleRect.top) * 0.5) / subtitleRect.height, 0, 1);
-            subtitle?.style.setProperty('--progress', subtitleProgress.toString());
-
-            for (let i = 0; i < projectsElements!.length; ++i) {
-                const projectElement = projectsElements![i];
-                const rect = projectElement.getBoundingClientRect();
-                const progress = clamp(((document.documentElement.clientHeight - rect.top) * 3) / rect.height, 0, 1);
-                projectElement.style.setProperty('--progress', progress.toString());
-                // blur projects on mobile
-                if (isMobile) {
-                    const delta = 0;
-                    if (rect.top >= -delta && rect.bottom <= projectsRect!.top - bodyRect.top - delta) {
-                        projectElement.classList.add('focus');
-                    } else {
-                        projectElement.classList.remove('focus');
-                    }
+        for (let i = 0; i < projectsElements!.length; ++i) {
+            const projectElement = projectsElements![i];
+            const rect = projectElement.getBoundingClientRect();
+            // blur projects on mobile
+            if (isMobile) {
+                const delta = 0;
+                if (rect.top >= -delta && rect.bottom <= projectsRect!.top - bodyRect.top - delta) {
+                    projectElement.classList.add('focus');
+                } else {
+                    projectElement.classList.remove('focus');
                 }
-            }
-        }
-        {
-            // faq
-            const h2 = document.querySelector<HTMLHeadingElement>('#faq>h2');
-            const h2Rect = h2!.getBoundingClientRect();
-            const h2Progress = clamp(((document.documentElement.clientHeight - h2Rect.top) * 0.5) / h2Rect.height, 0, 1);
-            h2!.style.setProperty('--progress', h2Progress.toString());
-            const questionsElements = faqElement!.querySelectorAll('details');
-            for (let i = 0; i < questionsElements.length; ++i) {
-                const questionElement = questionsElements[i];
-                const rect = questionElement.getBoundingClientRect();
-                const progress = clamp(((document.documentElement.clientHeight - rect.top) * 0.5) / rect.height, 0, 1);
-                questionElement.style.setProperty('--progress', progress.toString());
             }
         }
     }
@@ -99,6 +70,20 @@
         projectsElements = document.querySelectorAll('.project');
         handleScroll();
     });
+
+    function scrollEffect(element: HTMLElement, factor = 1) {
+        const onScroll = () => {
+            const rect = element.getBoundingClientRect();
+            const progress = clamp(((document.documentElement.clientHeight - rect.top) * factor) / rect.height, 0, 1);
+            element.style.setProperty('--progress', progress.toString());
+        };
+        window.addEventListener('scroll', onScroll);
+        return {
+            destroy: () => {
+                window.removeEventListener('scroll', onScroll);
+            },
+        };
+    }
 </script>
 
 <svelte:window on:scroll={handleScroll} />
@@ -109,59 +94,59 @@
     <a role="button" href="#contact" class="cta">Nous contacter</a>
 </section>
 <section id="projects" class="top" class:focus={section === 'projects'} bind:this={projectsElement}>
-    <h2>Quelques réalisations pour l'inspiration</h2>
-    <div class="subtitle">Échantillon non-exhaustif de notre travail de ces dernières années</div>
+    <h2 use:scrollEffect={0.5} class="appear">Quelques réalisations pour l'inspiration</h2>
+    <div use:scrollEffect={0.5} class="subtitle appear">Échantillon non-exhaustif de notre travail de ces dernières années</div>
     <div class="grid">
-        <article class="project">
+        <article class="project appear" use:scrollEffect={3}>
             <a href="https://demo.voltask.tech" target="_blank">
                 <img src="/images/voltask.png" alt="" />
                 <h3>Voltask</h3>
                 <p>Outil No-code collaboratif dans le navigateur pour créer des automatisations avec des scénarios visuels.</p>
             </a>
         </article>
-        <article class="project">
+        <article class="project appear" use:scrollEffect={3}>
             <a href="https://codepassport.dev" target="_blank">
                 <img src="/images/codepassport.png" alt="" />
                 <h3>Code Passport</h3>
                 <p>Site web interactif destiné à l'apprentissage du code (JS, HTML & CSS).</p>
             </a>
         </article>
-        <article class="project">
+        <article class="project appear" use:scrollEffect={3}>
             <a href="https://chat.voltask.tech" target="_blank">
                 <img src="/images/voltask-ai.png" alt="" />
                 <h3>Voltask AI</h3>
                 <p>Chatbot IA pour lancer des automatisations Voltask.</p>
             </a>
         </article>
-        <article class="project">
+        <article class="project appear" use:scrollEffect={3}>
             <a href="https://editor.voltapp.tech" target="_blank">
                 <img src="/images/voltapp.png" alt="" />
                 <h3>Voltapp</h3>
                 <p>Voltapp est un outil No-code permettant de créer des applications web grâce à la programmation visuelle.</p>
             </a>
         </article>
-        <article class="project">
+        <article class="project appear" use:scrollEffect={3}>
             <a href="https://creator.celestory.io" target="_blank">
                 <img src="/images/celestory.png" alt="" />
                 <h3>Celestory</h3>
                 <p>Outil pour créer des serious games, formations et visual novels avec un système de choix et de variables en No-code.</p>
             </a>
         </article>
-        <article class="project">
+        <article class="project appear" use:scrollEffect={3}>
             <a href="https://ttmc-ui.vercel.app" target="_blank">
                 <img src="/images/ttmc-for-dev.png" alt="" />
                 <h3>TTMC for dev</h3>
                 <p>Inspiré par le jeu "Tu te mets combien ?" pour aider les apprenti.e.s développeur.ses à améliorer leur culture tech.</p>
             </a>
         </article>
-        <article class="project">
+        <article class="project appear" use:scrollEffect={3}>
             <a href="https://photomapper.io" target="_blank">
                 <img src="/images/photomapper.png" alt="" />
                 <h3>Photomapper</h3>
                 <p>Application mobile de partage de photos géolocalisées partout dans le monde.</p>
             </a>
         </article>
-        <article class="project">
+        <article class="project appear" use:scrollEffect={3}>
             <a href="https://apps.apple.com/us/app/crafter-ar-build-battle/id1389840361" target="_blank">
                 <img src="/images/crafter-ar.png" alt="" />
                 <h3>Crafter AR</h3>
@@ -171,22 +156,24 @@
     </div>
 </section>
 <section id="team" class="center" class:focus={section === 'team'} bind:this={teamElement}>
-    <h2>Qui sommes-nous ?</h2>
-    <div class="subtitle">3 amis développeurs avec plus de 10 ans expérience chacun pour transformer vos souhaits en réalité !</div>
+    <h2 use:scrollEffect={0.5} class="appear">Qui sommes-nous ?</h2>
+    <div use:scrollEffect={0.5} class="subtitle appear">
+        3 amis développeurs avec plus de 10 ans expérience chacun pour transformer vos souhaits en réalité !
+    </div>
     <div class="wrap-center">
-        <article class="profile">
+        <article class="profile appear" use:scrollEffect={1.4}>
             <Eyevatar src="/images/jeremie.png" left={{x: 84, y: 80}} right={{x: 110, y: 80}} />
             <div class="name">Jeremie</div>
             <a href="https://www.linkedin.com/in/jeremie-taboada-16495959/" target="_blank">Linked In</a>
             <a href="https://github.com/jeremt" target="_blank">Github</a>
         </article>
-        <article class="profile">
+        <article class="profile appear" use:scrollEffect={1}>
             <Eyevatar src="/images/jonathan.png" left={{x: 84, y: 82}} right={{x: 110, y: 80}} />
             <div class="name">Jonathan</div>
             <a href="https://www.linkedin.com/in/jonathanpicques/" target="_blank">Linked In</a>
             <a href="https://github.com/jonathanpicques" target="_blank">Github</a>
         </article>
-        <article class="profile">
+        <article class="profile appear" use:scrollEffect={0.6}>
             <Eyevatar src="/images/vincent.png" left={{x: 72, y: 78}} right={{x: 100, y: 75}} />
             <div class="name">Vincent</div>
             <a href="https://www.linkedin.com/in/vincentneel/" target="_blank">Linked In</a>
@@ -195,59 +182,59 @@
     </div>
 </section>
 <section id="faq" class="top" class:focus={section === 'faq'} bind:this={faqElement}>
-    <h2>Foire aux questions</h2>
-    <details>
+    <h2 use:scrollEffect={0.5} class="appear">Foire aux questions</h2>
+    <details use:scrollEffect={0.5} class="appear">
         <summary>Pourquoi pas du No-code ?</summary>
         Nous avons pu utiliser et même créer des outils No-code depuis plusieurs années. Nous sommes donc bien placés pour en comprendre les avantages mais aussi
         les limitations. Le No-code est très bien pour créer rapidement une version basique et "jetable" de votre idée. En revanche, si vous voulez un projet qualitatif,
         performant et maintenable sur du long terme, nous vous conseillons de plutôt vous tourner vers du code "classique".
     </details>
-    <details>
+    <details use:scrollEffect={0.5} class="appear">
         <summary>Pourquoi 3 développeurs ?</summary>
         Nous avons l’habitude de travailler ensemble depuis plusieurs années. Grâce à nos différentes affinités et domaines d’expertise nous pouvons nous répartir
         efficacement pour répondre au mieux à toutes vos demandes aussi variées soient-elles.
     </details>
-    <details>
+    <details use:scrollEffect={0.5} class="appear">
         <summary>Combien de temps prendrait la réalisation de mon projet ?</summary>
         Cela déprendra de l'urgence de votre côté mais également de nos disponibilités. Nous avons l'habitude de travailler plutôt rapidement et vous fournir des
         résultats de l'avancement au fur et à mesure. <a href="mailto:contact@les3.dev">Contactez-nous</a> dès maintenant pour avoir une estimation !
     </details>
-    <details>
+    <details use:scrollEffect={0.5} class="appear">
         <summary>Est-ce que je dois m'occuper du design ?</summary>
         La plupart des projets ne nécessitent pas uniquement du code, mais également du design. Nous nous occupons de cette partie également la plupart du temps.
         Cependant, nous pouvons nous adapter en fonction de votre existent (identité visuelle, logo, etc.) et vos besoins personnels.
     </details>
-    <details>
+    <details use:scrollEffect={0.5} class="appear">
         <summary>Quel type de projet & fonctionnalités peuvent être réalisées ?</summary>
         Probablement tout ce que vous pourriez imaginer. Avec nos 10 ans d'expériences, on a rencontrés beaucoup de problèmes et tout autant de solution. Nous avons
         réalisés un grand nombre d'applications ou de sites avec des fonctionnalités très différentes (realtime, collaboration, 3D). Mais aussi des produits sur
         le long terme, des MVPs pour des startups mais également pour de plus grands organismes comme Decathlon, BNP Paribas ou la base spatiale.
     </details>
-    <details>
+    <details use:scrollEffect={0.5} class="appear">
         <summary>Comment puis-je modifier mon projet ?</summary>
         Dans un soucis de transparence, nous vous fournirons toujours le code source du projet, vous seul.e en serez propriétaire. Si vous voulez modifier votre
         projet, vous pouvez refaire appel à nous quand vous voulez ou même à d'autres développeur.ses. Nous pouvons également développer des solutions afin que vous
         puissiez facilement faire évoluer votre produit comme une interface d'admin adaptée à vos besoins.
     </details>
-    <details>
+    <details use:scrollEffect={0.5} class="appear">
         <summary>Où sont stockées les données ?</summary>
         À vous de voir. Ça peut être sur vos serveurs ou ceux d'autres services en ligne, mais pas chez nous. Nous ne voulons pas prendre la responsabilité du stockage
         de vos données.
     </details>
-    <details>
+    <details use:scrollEffect={0.5} class="appear">
         <summary>Ai-je accès au code du projet ?</summary>
         Oui, le code que nous écrivons n'a qu'un seul destinataire : vous. Lorsque nous aurons fini le projet, nous vous donnerons toutes les clés pour que vous
         soyez propriétaire du projet et que vous puissiez le faire évoluer comme bon vous semble.
     </details>
-    <details>
+    <details use:scrollEffect={0.5} class="appear">
         <summary>Quels outils & technologies utilise-t-on ?</summary>
         Nous privilégions autant que possible les technologies matures et si possible open-source pour créer des projets durables et performants. Nous avons quelques
         préférences mais nous nous adaptons en fonction des besoins du projet.
     </details>
 </section>
 <section id="contact" class="center" class:focus={section === 'contact'} bind:this={contactElement}>
-    <h2 class="big">Envie de travailler avec nous ?</h2>
-    <div class="options">
+    <h2 class="big appear" use:scrollEffect={1}>Envie de travailler avec nous ?</h2>
+    <div class="options appear" use:scrollEffect={1}>
         <a role="button" href="https://calendly.com/les3dev/30min">Prendre un RDV</a>
         <a role="button" href="mailto:contact@les3.dev">Envoyer un mail</a>
     </div>
@@ -294,14 +281,6 @@
     #projects {
         color: var(--color-white);
         background-color: var(--color-black);
-    }
-    #projects > h2 {
-        opacity: var(--progress);
-        translate: 0 calc((1 - var(--progress)) * 2rem);
-    }
-    #projects > .subtitle {
-        opacity: var(--progress);
-        translate: 0 calc((1 - var(--progress)) * 2rem);
     }
     #team {
         color: black;
@@ -413,8 +392,6 @@
     }
 
     #projects .grid article.project {
-        opacity: var(--progress);
-        translate: 0 calc((1 - var(--progress)) * 2rem);
         transition: 0.3s all;
     }
 
@@ -459,14 +436,7 @@
 
     /* Faq */
 
-    #faq > h2 {
-        opacity: var(--progress);
-        translate: 0 calc((1 - var(--progress)) * 2rem);
-    }
-
     #faq details {
-        opacity: var(--progress);
-        translate: 0 calc((1 - var(--progress)) * 2rem);
         font-size: 1.2rem;
         max-width: var(--page-width);
         color: var(--color-black-1);
@@ -484,6 +454,8 @@
         margin: 1rem 0;
     }
 
+    /* Animations */
+
     @keyframes breath {
         0% {
             translate: 0 0;
@@ -494,5 +466,10 @@
         100% {
             translate: 0 0;
         }
+    }
+
+    .appear {
+        opacity: var(--progress);
+        translate: 0 calc((1 - var(--progress)) * 2rem);
     }
 </style>
