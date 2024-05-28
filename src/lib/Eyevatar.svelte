@@ -3,28 +3,51 @@
     export let left: {x: number; y: number};
     export let right: {x: number; y: number};
 
-    let wrapperEl: HTMLDivElement | null = null;
-    let wrapperRect: DOMRect | null = null;
-    $: if (wrapperEl) {
-        wrapperRect = wrapperEl.getBoundingClientRect();
-    }
-    function movePupil(event: MouseEvent) {
-        if (!wrapperRect) {
-            return;
-        }
-        const center = {
-            x: wrapperRect.left + left.y + 10,
-            y: wrapperRect.top + left.x,
+    let leftOffset = {x: 0, y: 0};
+    let rightOffset = {x: 0, y: 0};
+
+    function moveToward(source: {x: number; y: number}, target: {x: number; y: number}, distance = 5) {
+        const dx = target.x - source.x;
+        const dy = target.y - source.y;
+        const dot = Math.sqrt(dx * dx + dy * dy);
+        const x = dot === 0 ? 0 : (dx / dot) * Math.min(distance, dot);
+        const y = dot === 0 ? 0 : (dy / dot) * Math.min(distance, dot);
+
+        return {
+            x,
+            y,
         };
-        // console.log(center, {x: event.clientX, y: event.clientY});
+    }
+
+    function movePupil(event: MouseEvent & {currentTarget: HTMLDivElement}) {
+        const wrapperRect = event.currentTarget.getBoundingClientRect();
+        const target = {x: event.clientX, y: event.clientY};
+        leftOffset = moveToward(
+            {
+                x: wrapperRect.left + left.x + 10,
+                y: wrapperRect.top + left.y + 10,
+            },
+            target,
+        );
+        rightOffset = moveToward(
+            {
+                x: wrapperRect.left + right.x + 10,
+                y: wrapperRect.top + right.y + 10,
+            },
+            target,
+        );
     }
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div bind:this={wrapperEl} class="wrapper" on:mousemove={movePupil}>
+<div class="wrapper" on:mousemove={movePupil}>
     <img {src} alt="" />
-    <div class="left eye" style:--x="{left.x}px" style:--y="{left.y}px"><div class="pupil"></div></div>
-    <div class="right eye" style:--x="{right.x}px" style:--y="{right.y}px"><div class="pupil"></div></div>
+    <div class="left eye" style:--x="{left.x}px" style:--y="{left.y}px">
+        <div class="pupil" style:--x="{leftOffset.x}px" style:--y="{leftOffset.y}px"></div>
+    </div>
+    <div class="right eye" style:--x="{right.x}px" style:--y="{right.y}px">
+        <div class="pupil" style:--x="{rightOffset.x}px" style:--y="{rightOffset.y}px"></div>
+    </div>
 </div>
 
 <style>
@@ -34,7 +57,7 @@
     }
 
     .eye {
-        display: none;
+        scale: 0;
         position: absolute;
         top: var(--y);
         left: var(--x);
@@ -42,18 +65,20 @@
         width: 20px;
         height: 20px;
         border-radius: 50%;
-        border: 0.1rem solid var(--color-black);
+        border: 1px solid var(--color-black);
+        transition: all 0.2s ease-out;
     }
-    /* .wrapper:hover .eye {
-        display: block;
-    } */
+    .wrapper:hover .eye {
+        scale: 1;
+    }
     .pupil {
         position: absolute;
         width: 4px;
         height: 4px;
         border-radius: 50%;
-        top: calc(50% - 2px);
-        left: calc(50% - 2px);
+        top: calc(50% - 2px + var(--y));
+        left: calc(50% - 2px + var(--x));
+        transition: all 0.05s;
         background-color: var(--color-black);
     }
     img {
