@@ -21,6 +21,7 @@
     scroll-behavior: smooth;
 }
 body {
+    overflow-x: hidden; /* squiz clouds */
     color: var(--color-white);
     margin: 0;
     font-family: var(--font-brand);
