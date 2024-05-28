@@ -3,6 +3,7 @@
     import Menu from '$lib/Menu.svelte';
     import {onMount} from 'svelte';
     import {mediaQueries} from '$lib/mediaqueries';
+    import Cloud from '$lib/Cloud.svelte';
 
     const isMobile = mediaQueries('(max-width: 720px)');
 
@@ -89,6 +90,9 @@
 <svelte:window on:scroll={handleScroll} />
 
 <section id="intro" class="center" class:focus={section === 'intro'} bind:this={introElement}>
+    {#each [[10, 1], [30, 0.7], [50, 0.5], [65, 1], [80, 1.2]] as [y, size], i}
+        <Cloud {y} {size} direction={i % 2 ? -1 : 1} />
+    {/each}
     <div id="logo">les3dev</div>
     <h1 class="big">Vous avez les idées,<br />On les réalise.</h1>
     <a role="button" href="#contact" class="cta">Nous contacter</a>
@@ -298,7 +302,7 @@
     /* Titles */
 
     #logo {
-        font-family: 'Remora Camilla', sans-serif;
+        font-family: var(--font-logo);
         color: var(--color-white);
         font-size: clamp(2.5rem, 6vw, 6rem);
     }
@@ -342,7 +346,6 @@
     .cta {
         color: var(--color-black);
         font-size: 1.4rem;
-        animation: breath 3s infinite;
     }
 
     #intro .cta {
@@ -352,6 +355,7 @@
     #intro .cta:hover,
     #intro .cta:focus {
         outline: none;
+        padding-inline: 1.2em;
         background-color: var(--color-white);
     }
     #contact .options {
@@ -368,6 +372,7 @@
     #contact .options a:hover,
     #contact .options a:focus {
         outline: none;
+        padding-inline: 1.2em;
         background-color: var(--color-white);
     }
 
@@ -482,6 +487,33 @@
         }
     }
 
+    @keyframes appear {
+        from {
+            opacity: 0;
+            translate: 0 3rem;
+        }
+        to {
+            opacity: 1;
+            translate: 0 0;
+        }
+    }
+
+    #logo {
+        opacity: 0;
+        animation: appear 1s forwards;
+    }
+    h1.big {
+        opacity: 0;
+        animation: appear 1s forwards;
+        animation-delay: 0.2s;
+    }
+    #intro .cta {
+        opacity: 0;
+        animation:
+            appear 1s forwards,
+            breath 3s infinite;
+        animation-delay: 0.4s;
+    }
     .appear {
         opacity: var(--progress);
         translate: 0 calc((1 - var(--progress)) * 2rem);
