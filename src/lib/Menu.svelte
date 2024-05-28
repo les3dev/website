@@ -47,7 +47,7 @@
     button {
         width: 4.5rem;
         height: 4.5rem;
-        transition: 0.3s scale;
+        transition: 0.3s all;
         pointer-events: all;
     }
     button.isOpen,
@@ -81,10 +81,13 @@
         text-decoration: none;
         padding: 1rem 2rem;
         border-radius: 2rem;
-        transition: background-color 0.3s;
+        scale: 0.95;
+        transition: scale 0.3s;
     }
     nav a:hover {
-        background-color: rgba(255, 255, 255, 0.2);
+        scale: 1;
+        color: var(--color-black);
+        background-color: var(--color-white);
     }
 
     /* mobile */
