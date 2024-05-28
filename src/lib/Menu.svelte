@@ -84,9 +84,11 @@
         scale: 0.95;
         transition: scale 0.3s;
     }
-    nav a:hover {
+    nav a:hover,
+    nav a:focus {
         scale: 1;
         color: var(--color-black);
+        outline: none;
         background-color: var(--color-white);
     }
 

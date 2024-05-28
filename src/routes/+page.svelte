@@ -344,9 +344,15 @@
         font-size: 1.4rem;
         animation: breath 3s infinite;
     }
+
     #intro .cta {
         background-color: var(--color-yellow);
         margin-bottom: 6rem;
+    }
+    #intro .cta:hover,
+    #intro .cta:focus {
+        outline: none;
+        background-color: var(--color-white);
     }
     #contact .options {
         gap: 1rem;
@@ -357,7 +363,12 @@
     }
     #contact .options a {
         color: var(--color-black);
-        background-color: var(--color-yellow);
+        background-color: var(--color-lime);
+    }
+    #contact .options a:hover,
+    #contact .options a:focus {
+        outline: none;
+        background-color: var(--color-white);
     }
 
     /* Projects */
@@ -372,6 +383,9 @@
         border-radius: 2rem;
         transition: 0.3s all;
         border: 3px solid transparent;
+    }
+    article.project a:focus {
+        outline: 2px solid var(--color-white);
     }
     article.project h3 {
         padding-inline: 1rem;
