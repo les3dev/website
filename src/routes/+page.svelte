@@ -1,22 +1,21 @@
 <script lang="ts">
     import Eyevatar from '$lib/Eyevatar.svelte';
     import Menu from '$lib/Menu.svelte';
-    import {browser} from '$app/environment';
     import {onMount} from 'svelte';
     import {mediaQueries} from '$lib/mediaqueries';
 
     const isMobile = mediaQueries('(max-width: 720px)');
 
-    type State = 'intro' | 'projects' | 'team' | 'faq' | 'contact';
+    type Section = 'intro' | 'projects' | 'team' | 'faq' | 'contact';
 
-    const introElement = browser ? document.querySelector('#intro') : null;
-    const projectsElement = browser ? document.querySelector('#projects') : null;
-    const teamElement = browser ? document.querySelector('#team') : null;
-    const faqElement = browser ? document.querySelector('#faq') : null;
-    const contactElement = browser ? document.querySelector('#contact') : null;
-    const projectsElements = browser ? document.querySelectorAll('.project') : [];
+    let introElement: HTMLElement | null = null;
+    let projectsElement: HTMLElement | null = null;
+    let teamElement: HTMLElement | null = null;
+    let faqElement: HTMLElement | null = null;
+    let contactElement: HTMLElement | null = null;
+    let projectsElements: NodeListOf<HTMLDivElement> | null = null;
 
-    let state = 'intro' as State;
+    let section = 'intro' as Section;
 
     function isInRect(rect: DOMRect | undefined) {
         if (!rect) {
@@ -25,6 +24,9 @@
         return document.documentElement.clientHeight - rect.top >= document.documentElement.clientHeight / 2;
     }
 
+    function clamp(value: number, min: number, max: number) {
+        return Math.min(Math.max(value, min), max);
+    }
     function handleScroll() {
         const bodyRect = document.body.getBoundingClientRect();
         const introRect = introElement?.getBoundingClientRect();
@@ -34,42 +36,79 @@
         const contactRect = contactElement?.getBoundingClientRect();
 
         if (isInRect(introRect)) {
-            state = 'intro';
+            section = 'intro';
         }
         if (isInRect(projectsRect)) {
-            state = 'projects';
+            section = 'projects';
         }
         if (isInRect(teamRect)) {
-            state = 'team';
+            section = 'team';
         }
         if (isInRect(faqRect)) {
-            state = 'faq';
+            section = 'faq';
         }
         if (isInRect(contactRect)) {
-            state = 'contact';
+            section = 'contact';
         }
-        for (const projectElement of projectsElements) {
-            const bbox = projectElement.getBoundingClientRect();
-            const delta = 0;
-            if (isMobile && bbox.top >= -delta && bbox.bottom <= projectsRect!.top - bodyRect.top - delta) {
-                projectElement.classList.add('focus');
-            } else {
-                projectElement.classList.remove('focus');
+
+        {
+            // projects
+            const h2 = document.querySelector<HTMLHeadingElement>('#projects>h2');
+            const h2Rect = h2!.getBoundingClientRect();
+            const h2Progress = clamp(((document.documentElement.clientHeight - h2Rect.top) * 0.5) / h2Rect.height, 0, 1);
+            h2!.style.setProperty('--progress', h2Progress.toString());
+
+            const subtitle = document.querySelector<HTMLDivElement>('#projects>.subtitle');
+            const subtitleRect = subtitle!.getBoundingClientRect();
+            const subtitleProgress = clamp(((document.documentElement.clientHeight - subtitleRect.top) * 0.5) / subtitleRect.height, 0, 1);
+            subtitle?.style.setProperty('--progress', subtitleProgress.toString());
+
+            for (let i = 0; i < projectsElements!.length; ++i) {
+                const projectElement = projectsElements![i];
+                const rect = projectElement.getBoundingClientRect();
+                const progress = clamp(((document.documentElement.clientHeight - rect.top) * 3) / rect.height, 0, 1);
+                projectElement.style.setProperty('--progress', progress.toString());
+                // blur projects on mobile
+                if (isMobile) {
+                    const delta = 0;
+                    if (rect.top >= -delta && rect.bottom <= projectsRect!.top - bodyRect.top - delta) {
+                        projectElement.classList.add('focus');
+                    } else {
+                        projectElement.classList.remove('focus');
+                    }
+                }
+            }
+        }
+        {
+            // faq
+            const h2 = document.querySelector<HTMLHeadingElement>('#faq>h2');
+            const h2Rect = h2!.getBoundingClientRect();
+            const h2Progress = clamp(((document.documentElement.clientHeight - h2Rect.top) * 0.5) / h2Rect.height, 0, 1);
+            h2!.style.setProperty('--progress', h2Progress.toString());
+            const questionsElements = faqElement!.querySelectorAll('details');
+            for (let i = 0; i < questionsElements.length; ++i) {
+                const questionElement = questionsElements[i];
+                const rect = questionElement.getBoundingClientRect();
+                const progress = clamp(((document.documentElement.clientHeight - rect.top) * 0.5) / rect.height, 0, 1);
+                questionElement.style.setProperty('--progress', progress.toString());
             }
         }
     }
 
-    onMount(handleScroll);
+    onMount(() => {
+        projectsElements = document.querySelectorAll('.project');
+        handleScroll();
+    });
 </script>
 
 <svelte:window on:scroll={handleScroll} />
 
-<section id="intro" class="center" class:focus={state === 'intro'}>
+<section id="intro" class="center" class:focus={section === 'intro'} bind:this={introElement}>
     <div id="logo">les3dev</div>
     <h1 class="big">Vous avez les idées,<br />On les réalise.</h1>
     <a role="button" href="#contact" class="cta">Nous contacter</a>
 </section>
-<section id="projects" class="top" class:focus={state === 'projects'}>
+<section id="projects" class="top" class:focus={section === 'projects'} bind:this={projectsElement}>
     <h2>Quelques réalisations pour l'inspiration</h2>
     <div class="subtitle">Échantillon non-exhaustif de notre travail de ces dernières années</div>
     <div class="grid">
@@ -131,7 +170,7 @@
         </article>
     </div>
 </section>
-<section id="team" class="center" class:focus={state === 'team'}>
+<section id="team" class="center" class:focus={section === 'team'} bind:this={teamElement}>
     <h2>Qui sommes-nous ?</h2>
     <div class="subtitle">3 amis développeurs avec plus de 10 ans expérience chacun pour transformer vos souhaits en réalité !</div>
     <div class="wrap-center">
@@ -155,7 +194,7 @@
         </article>
     </div>
 </section>
-<section id="faq" class="top" class:focus={state === 'faq'}>
+<section id="faq" class="top" class:focus={section === 'faq'} bind:this={faqElement}>
     <h2>Foire aux questions</h2>
     <details>
         <summary>Pourquoi pas du No-code ?</summary>
@@ -206,7 +245,7 @@
         préférences mais nous nous adaptons en fonction des besoins du projet.
     </details>
 </section>
-<section id="contact" class="center" class:focus={state === 'contact'}>
+<section id="contact" class="center" class:focus={section === 'contact'} bind:this={contactElement}>
     <h2 class="big">Envie de travailler avec nous ?</h2>
     <div class="options">
         <a role="button" href="https://calendly.com/les3dev/30min">Prendre un RDV</a>
@@ -255,6 +294,14 @@
     #projects {
         color: var(--color-white);
         background-color: var(--color-black);
+    }
+    #projects > h2 {
+        opacity: var(--progress);
+        translate: 0 calc((1 - var(--progress)) * 2rem);
+    }
+    #projects > .subtitle {
+        opacity: var(--progress);
+        translate: 0 calc((1 - var(--progress)) * 2rem);
     }
     #team {
         color: black;
@@ -311,19 +358,6 @@
         }
     }
 
-    /* Sections */
-
-    section {
-        opacity: 0.75;
-        filter: blur(0.2rem) saturate(0.3);
-        transition: all 0.5s;
-    }
-
-    section.focus {
-        opacity: 1;
-        filter: blur(0);
-    }
-
     /* CTAs */
 
     .cta {
@@ -378,10 +412,21 @@
         border-radius: 1.5rem;
     }
 
+    #projects .grid article.project {
+        opacity: var(--progress);
+        translate: 0 calc((1 - var(--progress)) * 2rem);
+        transition: 0.3s all;
+    }
+
     @media (min-width: 720px) {
+        #projects .grid:hover article.project a {
+            opacity: 0.75;
+            filter: blur(0.2rem) saturate(0.3);
+        }
+
         #projects .grid:hover article.project a:hover {
             opacity: 1;
-            scale: 1.03;
+            filter: blur(0);
         }
     }
 
@@ -389,7 +434,6 @@
         #projects .grid article.project {
             opacity: 0.75;
             filter: blur(0.2rem) saturate(0.3);
-            transition: 0.5s all;
         }
 
         #projects .grid :global(article.project.focus) {
@@ -415,7 +459,14 @@
 
     /* Faq */
 
+    #faq > h2 {
+        opacity: var(--progress);
+        translate: 0 calc((1 - var(--progress)) * 2rem);
+    }
+
     #faq details {
+        opacity: var(--progress);
+        translate: 0 calc((1 - var(--progress)) * 2rem);
         font-size: 1.2rem;
         max-width: var(--page-width);
         color: var(--color-black-1);
