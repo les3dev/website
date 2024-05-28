@@ -99,7 +99,7 @@
 </section>
 <section id="projects" class="top" class:focus={section === 'projects'} bind:this={projectsElement}>
     <h2 use:scrollEffect={0.5} class="appear">Aperçu de notre travail</h2>
-    <div use:scrollEffect={0.5} class="subtitle appear">Échantillon de projets réalisés par nous ces dernières années</div>
+    <div use:scrollEffect={0.5} class="subtitle appear">Échantillon de quelques projets réalisés par notre équipe ces dernières années</div>
     <div class="grid">
         <article class="project appear" use:scrollEffect={3}>
             <a href="https://demo.voltask.tech" target="_blank">
