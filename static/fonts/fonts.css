@@ -13,3 +13,11 @@
     font-display: swap;
     src: url('/fonts/BricolageGrotesque-Bold.woff2') format('woff2');
 }
+
+@font-face {
+    font-family: 'Remora Camilla';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/RemoraCamilla-Regular.woff2') format('woff2');
+}
