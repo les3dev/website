@@ -110,9 +110,11 @@
 <svelte:window on:scroll={handleScroll} />
 
 <section id="intro" class="center" class:focus={section === 'intro'} bind:this={introElement}>
-    {#each [[10, 1], [30, 0.7], [50, 0.5], [65, 1], [80, 1.2]] as [y, size], i}
-        <Cloud {y} {size} direction={i % 2 ? -1 : 1} />
-    {/each}
+    <div id="sky">
+        {#each [[10, 1], [30, 0.7], [50, 0.5], [65, 1], [80, 1.2]] as [y, size], i}
+            <Cloud {y} {size} direction={i % 2 ? -1 : 1} />
+        {/each}
+    </div>
     <div id="logo">les3dev</div>
     <h1 class="big">Vous avez les idées,<br />On les réalise.</h1>
     <a role="button" href="#contact" class="cta">Nous contacter</a>
@@ -300,7 +302,8 @@
 
     section {
         --page-width: 65rem;
-        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
         min-height: 100svh;
         margin-inline: auto;
         padding-inline: 2rem;
@@ -395,6 +398,15 @@
     .cta {
         color: var(--color-black);
         font-size: 1.4rem;
+    }
+
+    /* Intro */
+
+    #sky {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
     }
 
     #intro .cta {
