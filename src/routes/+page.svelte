@@ -14,7 +14,6 @@
     let teamElement: HTMLElement | null = null;
     let faqElement: HTMLElement | null = null;
     let contactElement: HTMLElement | null = null;
-    let projectsElements: NodeListOf<HTMLDivElement> | null = null;
 
     let section = 'intro' as Section;
 
@@ -29,7 +28,6 @@
         return Math.min(Math.max(value, min), max);
     }
     function handleScroll() {
-        const bodyRect = document.body.getBoundingClientRect();
         const introRect = introElement?.getBoundingClientRect();
         const projectsRect = projectsElement?.getBoundingClientRect();
         const teamRect = teamElement?.getBoundingClientRect();
@@ -51,24 +49,9 @@
         if (isInRect(contactRect)) {
             section = 'contact';
         }
-
-        for (let i = 0; i < projectsElements!.length; ++i) {
-            const projectElement = projectsElements![i];
-            const rect = projectElement.getBoundingClientRect();
-            // blur projects on mobile
-            if (isMobile) {
-                const delta = 0;
-                if (rect.top >= -delta && rect.bottom <= projectsRect!.top - bodyRect.top - delta) {
-                    projectElement.classList.add('focus');
-                } else {
-                    projectElement.classList.remove('focus');
-                }
-            }
-        }
     }
 
     onMount(() => {
-        projectsElements = document.querySelectorAll('.project');
         handleScroll();
     });
 
@@ -482,18 +465,6 @@
         }
 
         #projects .grid:hover article.project a:hover {
-            opacity: 1;
-            filter: blur(0);
-        }
-    }
-
-    @media (max-width: 720px) {
-        #projects .grid article.project {
-            opacity: 0.75;
-            filter: blur(0.2rem) saturate(0.3);
-        }
-
-        #projects .grid :global(article.project.focus) {
             opacity: 1;
             filter: blur(0);
         }
