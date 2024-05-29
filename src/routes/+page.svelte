@@ -85,7 +85,27 @@
             },
         };
     }
+
+    const meta = {
+        title: 'Les trois dev',
+        siteUrl: 'https://les3.dev',
+        description: 'Agence de développeurs web & mobile en freelance',
+        thumbnail: '/thumbnail.png',
+    };
 </script>
+
+<svelte:head>
+    <title>{meta.title}</title>
+    <meta name="description" content={meta.description} />
+    <meta property="og:title" content={meta.title} />
+    <meta property="og:site_name" content={meta.title} />
+    <meta property="og:image" content={meta.thumbnail} />
+    <meta property="og:url" content={meta.siteUrl} />
+    <meta property="og:description" content={meta.description} />
+    <meta property="twitter:title" content={meta.title} />
+    <meta property="twitter:description" content={meta.description} />
+    <meta property="twitter:image" content={meta.thumbnail} />
+</svelte:head>
 
 <svelte:window on:scroll={handleScroll} />
 
