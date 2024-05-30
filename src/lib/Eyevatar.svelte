@@ -2,6 +2,7 @@
     export let src = '';
     export let left: {x: number; y: number};
     export let right: {x: number; y: number};
+    export let bg: `var(--${string})`;
 
     let leftOffset = {x: 0, y: 0};
     let rightOffset = {x: 0, y: 0};
@@ -40,7 +41,7 @@
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div class="wrapper" on:mousemove={movePupil}>
+<div class="wrapper" style:--color-bg={bg} on:mousemove={movePupil}>
     <img {src} alt="" />
     <div class="left eye" style:--x="{left.x}px" style:--y="{left.y}px">
         <div class="pupil" style:--x="{leftOffset.x}px" style:--y="{leftOffset.y}px"></div>
@@ -54,6 +55,34 @@
     .wrapper {
         position: relative;
         max-width: 13rem;
+        max-height: 13rem;
+        background-color: var(--color-bg);
+        border-radius: 50%;
+    }
+
+    .wrapper:hover {
+        animation: rainbow 0.5s infinite linear;
+    }
+
+    @keyframes rainbow {
+        0% {
+            background-color: var(--color-indigo);
+        }
+        20% {
+            background-color: var(--color-cyan);
+        }
+        40% {
+            background-color: var(--color-lime);
+        }
+        60% {
+            background-color: var(--color-yellow);
+        }
+        80% {
+            background-color: var(--color-pink);
+        }
+        100% {
+            background-color: var(--color-indigo);
+        }
     }
 
     .eye {
@@ -82,8 +111,13 @@
         background-color: var(--color-black);
     }
     img {
+        filter: saturate(0);
+        transition: 0.3s filter;
         width: 100%;
         border-radius: 50%;
         border: 0.5rem solid var(--color-white);
+    }
+    img:hover {
+        filter: saturate(1);
     }
 </style>

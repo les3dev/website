@@ -171,19 +171,19 @@
     </div>
     <div class="wrap-center">
         <article class="profile appear" use:scrollEffect={1.4}>
-            <Eyevatar src="/images/jeremie.png" left={{x: 84, y: 80}} right={{x: 110, y: 80}} />
+            <Eyevatar src="/images/jeremie.png" left={{x: 84, y: 80}} right={{x: 110, y: 80}} bg="var(--color-pink)" />
             <div class="name">Jeremie</div>
             <a href="https://www.linkedin.com/in/jeremie-taboada-16495959/" target="_blank">Linked In</a>
             <a href="https://github.com/jeremt" target="_blank">Github</a>
         </article>
         <article class="profile appear" use:scrollEffect={1}>
-            <Eyevatar src="/images/jonathan.png" left={{x: 84, y: 82}} right={{x: 110, y: 80}} />
+            <Eyevatar src="/images/jonathan.png" left={{x: 84, y: 82}} right={{x: 110, y: 80}} bg="var(--color-cyan)" />
             <div class="name">Jonathan</div>
             <a href="https://www.linkedin.com/in/jonathanpicques/" target="_blank">Linked In</a>
             <a href="https://github.com/jonathanpicques" target="_blank">Github</a>
         </article>
         <article class="profile appear" use:scrollEffect={0.6}>
-            <Eyevatar src="/images/vincent.png" left={{x: 72, y: 78}} right={{x: 100, y: 75}} />
+            <Eyevatar src="/images/vincent.png" left={{x: 72, y: 78}} right={{x: 100, y: 75}} bg="var(--color-indigo)" />
             <div class="name">Vincent</div>
             <a href="https://www.linkedin.com/in/vincentneel/" target="_blank">Linked In</a>
             <a href="https://github.com/pikanezi" target="_blank">Github</a>
@@ -276,6 +276,7 @@
         <a role="button" href="https://calendly.com/les3dev/30min">Prendre un RDV</a>
         <a role="button" href="mailto:contact@les3.dev">Envoyer un mail</a>
     </div>
+    <div class="subtitle" style:margin-top="2em">(On vous aide gratuitement à définir clairement votre besoin et établir un devis)</div>
 </section>
 
 <Menu />
