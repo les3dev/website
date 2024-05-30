@@ -174,19 +174,19 @@
     <div class="wrap-center">
         <article class="profile appear" use:scrollEffect={1.4}>
             <Eyevatar src="/images/jeremie.png" left={{x: 84, y: 80}} right={{x: 110, y: 80}} bg="var(--color-pink)" />
-            <div class="name">👨‍🎨 Jeremie</div>
+            <div class="name">Jeremie</div>
             <a href="https://www.linkedin.com/in/jeremie-taboada-16495959/" target="_blank"><LinkedInIcon /></a>
             <a href="https://github.com/jeremt" target="_blank"><GithubIcon /></a>
         </article>
         <article class="profile appear" use:scrollEffect={1}>
             <Eyevatar src="/images/jonathan.png" left={{x: 84, y: 82}} right={{x: 110, y: 80}} bg="var(--color-cyan)" />
-            <div class="name">🧠 Jonathan</div>
+            <div class="name">Jonathan</div>
             <a href="https://www.linkedin.com/in/jonathanpicques/" target="_blank"><LinkedInIcon /></a>
             <a href="https://github.com/jonathanpicques" target="_blank"><GithubIcon /></a>
         </article>
         <article class="profile appear" use:scrollEffect={0.6}>
             <Eyevatar src="/images/vincent.png" left={{x: 72, y: 78}} right={{x: 100, y: 75}} bg="var(--color-indigo)" />
-            <div class="name">👨‍💻 Vincent</div>
+            <div class="name">Vincent</div>
             <a href="https://www.linkedin.com/in/vincentneel/" target="_blank"><LinkedInIcon /></a>
             <a href="https://github.com/pikanezi" target="_blank"><GithubIcon /></a>
         </article>
