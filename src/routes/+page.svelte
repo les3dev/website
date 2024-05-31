@@ -29,7 +29,11 @@
     function clamp(value: number, min: number, max: number) {
         return Math.min(Math.max(value, min), max);
     }
+
+    let movedAfterScroll = false;
+
     function handleScroll() {
+        movedAfterScroll = false;
         const introRect = introElement?.getBoundingClientRect();
         const projectsRect = projectsElement?.getBoundingClientRect();
         const teamRect = teamElement?.getBoundingClientRect();
@@ -92,7 +96,7 @@
     <meta property="twitter:image" content={meta.thumbnail} />
 </svelte:head>
 
-<svelte:window on:scroll={handleScroll} />
+<svelte:window on:scroll={handleScroll} on:mousemove={() => (movedAfterScroll = true)} />
 
 <section id="intro" class="center" class:focus={section === 'intro'} bind:this={introElement}>
     <div id="sky">
@@ -104,7 +108,7 @@
     <h1 class="big">Vous avez les idées,<br />On les réalise.</h1>
     <a role="button" href="#contact" class="cta">Nous contacter</a>
 </section>
-<section id="projects" class="top" class:focus={section === 'projects'} bind:this={projectsElement}>
+<section id="projects" class="top" class:focus={section === 'projects'} class:active={movedAfterScroll} bind:this={projectsElement}>
     <h2 use:scrollEffect={0.5} class="appear">Aperçu de notre travail</h2>
     <div use:scrollEffect={0.5} class="subtitle appear">Échantillon de quelques projets réalisés par notre équipe ces dernières années</div>
     <div class="grid">
@@ -462,7 +466,7 @@
     }
 
     @media (min-width: 720px) {
-        #projects .grid:hover article.project a {
+        #projects.active .grid:hover article.project a {
             opacity: 0.75;
             filter: blur(0.2rem) saturate(0.3);
         }
