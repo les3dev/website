@@ -111,13 +111,8 @@
         background-color: var(--color-black);
     }
     img {
-        filter: saturate(0);
-        transition: 0.3s filter;
         width: 100%;
         border-radius: 50%;
         border: 0.5rem solid var(--color-white);
-    }
-    img:hover {
-        filter: saturate(1);
     }
 </style>
