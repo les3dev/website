@@ -234,7 +234,7 @@
         <summary>Est-ce que je dois m'occuper du design ?</summary>
         <div>
             La plupart des projets ne nécessitent pas uniquement du code, mais également du design. Nous nous occupons de cette partie également la plupart du
-            temps. Cependant, nous pouvons nous adapter en fonction de votre existent (identité visuelle, logo, etc.) et vos besoins personnels.
+            temps. Cependant, nous pouvons nous adapter en fonction de votre existant (identité visuelle, logo, etc.) et vos besoins personnels.
         </div>
     </details>
     <details use:scrollEffect={0.5} class="appear">
