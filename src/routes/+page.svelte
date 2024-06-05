@@ -7,8 +7,6 @@
     import LinkedInIcon from '$lib/LinkedInIcon.svelte';
     import GithubIcon from '$lib/GithubIcon.svelte';
 
-    const isMobile = mediaQueries('(max-width: 720px)');
-
     type Section = 'intro' | 'projects' | 'team' | 'faq' | 'contact';
 
     let introElement: HTMLElement | null = null;
@@ -76,7 +74,7 @@
     }
 
     const meta = {
-        title: 'Les trois dev',
+        title: 'Les 3 dev - Agence de développment web & mobile',
         siteUrl: 'https://les3.dev',
         description: 'Agence de développeurs web & mobile en freelance',
         thumbnail: '/thumbnail.png',
@@ -104,13 +102,15 @@
             <Cloud {y} {size} direction={i % 2 ? -1 : 1} />
         {/each}
     </div>
-    <div id="logo">les3dev</div>
     <h1 class="big">Vous avez les idées,<br />On les réalise.</h1>
+    <div class="subtitle">
+        <strong class="logo">Les3dev</strong> est une agence de développement logiciel et de création d'applications web et mobiles sur-mesure basée à Paris.
+    </div>
     <a role="button" href="#contact" class="cta">Nous contacter</a>
 </section>
 <section id="projects" class="top" class:focus={section === 'projects'} class:active={movedAfterScroll} bind:this={projectsElement}>
     <h2 use:scrollEffect={0.5} class="appear">Aperçu de notre travail</h2>
-    <div use:scrollEffect={0.5} class="subtitle appear">Échantillon de quelques projets réalisés par notre équipe ces dernières années</div>
+    <div use:scrollEffect={0.5} class="subtitle appear">Quelques projets réalisés par notre équipe au cours de ces dernières années</div>
     <div class="grid">
         <article class="project appear" use:scrollEffect={3}>
             <a href="https://demo.voltask.tech" target="_blank">
@@ -173,7 +173,7 @@
 <section id="team" class="center" class:focus={section === 'team'} bind:this={teamElement}>
     <h2 use:scrollEffect={0.5} class="appear">Qui sommes-nous ?</h2>
     <div use:scrollEffect={0.5} class="subtitle appear">
-        3 amis développeurs avec plus de 10 ans expérience chacun pour transformer vos souhaits en réalité !
+        3 amis développeurs avec plus de 10 ans d'expérience, pour vous créer des sites web et applications accessibles, innovantes et performantes !
     </div>
     <div class="wrap-center">
         <article class="profile appear" use:scrollEffect={1.4}>
@@ -343,17 +343,11 @@
 
     /* Titles */
 
-    #logo {
-        font-family: var(--font-logo);
-        color: var(--color-white);
-        font-size: clamp(2.5rem, 6vw, 6rem);
-    }
-
     h1.big,
     h2.big {
         margin-top: 0;
-        margin-bottom: 0.5em;
-        font-size: clamp(3rem, 9vw, 8rem);
+        margin-bottom: 0.3em;
+        font-size: clamp(3rem, 9vw, 7.5rem);
         text-align: center;
         letter-spacing: -1px;
         text-wrap: balance;
@@ -374,8 +368,15 @@
     .subtitle {
         font-size: 1.4rem;
         text-wrap: balance;
+        line-height: 1.6;
         text-align: center;
         margin-bottom: 2em;
+        margin-inline: auto;
+        max-width: 60rem;
+    }
+    .logo {
+        font-family: var(--font-logo);
+        font-weight: normal;
     }
     @media (max-width: 50rem) {
         .subtitle {
@@ -558,14 +559,15 @@
         }
     }
 
-    #logo {
-        opacity: 0;
-        animation: appear 1s forwards;
-    }
     h1.big {
         opacity: 0;
         animation: appear 1s forwards;
         animation-delay: 0.2s;
+    }
+    #intro .subtitle {
+        opacity: 0;
+        animation: appear 1s forwards;
+        animation-delay: 0.3s;
     }
     #intro .cta {
         opacity: 0;
