@@ -74,7 +74,7 @@
     }
 
     const meta = {
-        title: 'Les 3 dev - Agence de développment web & mobile',
+        title: 'Les 3 dev - Agence de développement web & mobile',
         siteUrl: 'https://les3.dev',
         description: 'Agence de développeurs web & mobile en freelance',
         thumbnail: '/thumbnail.png',
