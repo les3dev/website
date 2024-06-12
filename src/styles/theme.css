@@ -19,6 +19,12 @@
 :root {
     scroll-behavior: smooth;
 }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.3s;
+}
+
 body {
     color: var(--color-white);
     margin: 0;
@@ -91,7 +97,7 @@ button {
     }
 
     /* padding should only be based on text not icons */
-    & > svg {
+    & > svg + * {
         margin: -1rem 0;
     }
 }
