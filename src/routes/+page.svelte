@@ -493,6 +493,11 @@
         font-size: 1.5rem;
         margin-top: 1rem;
     }
+    .profile a {
+        color: var(--color-black);
+        transition: all 0.2s;
+        text-decoration: none;
+    }
     .profile a:not(.developer) {
         font-size: 1.2rem;
         margin: 0.3rem;
@@ -505,10 +510,6 @@
         color: var(--color-black);
         background-color: var(--color-white);
         transition: 0.3s all;
-    }
-    .profile a:hover {
-        color: var(--color-white);
-        background-color: var(--color-black);
     }
     #team article {
         text-align: center;

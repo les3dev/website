@@ -43,7 +43,7 @@
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div class="wrapper" style:--color-bg={bg} on:mousemove={movePupil}>
-    <img {src} alt="" style:--color-bg={bg} style:view-transition-name={name} />
+    <img {src} alt="" style:view-transition-name={name} />
     <div class="left eye" style:--x="{left.x}px" style:--y="{left.y}px">
         <div class="pupil" style:--x="{leftOffset.x}px" style:--y="{leftOffset.y}px"></div>
     </div>
@@ -114,7 +114,6 @@
     img {
         width: 100%;
         border-radius: 50%;
-        background-color: var(--color-bg);
         border: 0.5rem solid var(--color-white);
     }
 </style>
