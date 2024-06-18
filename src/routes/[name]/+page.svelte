@@ -35,11 +35,11 @@
         padding: 3rem 2rem;
         background: #fff;
         width: 100vw;
-        height: 100vh;
+        min-height: 100vh;
         align-items: flex-start;
     }
     section {
-        max-width: 30rem;
+        max-width: 38rem;
         margin: 0 auto;
         display: flex;
         align-items: center;
@@ -60,6 +60,7 @@
         scale: 1.05;
     }
     img {
+        margin-top: 3rem;
         opacity: 0;
         background-color: var(--color-bg);
         animation: appear 1s 0.2s forwards;
@@ -72,6 +73,8 @@
         opacity: 0;
         animation: appear 1s 0.3s forwards;
         color: var(--color-black);
+        font-size: 2.2rem;
+        text-align: center;
     }
 
     article {
@@ -79,6 +82,8 @@
         animation: appear 1s 0.5s forwards;
         white-space: pre-line;
         color: var(--color-black);
+        font-size: 1.1rem;
+        line-height: 1.5;
     }
 
     @keyframes appear {
