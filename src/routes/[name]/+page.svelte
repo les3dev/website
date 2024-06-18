@@ -12,7 +12,7 @@
     </a>
     <section>
         <img
-            src="/images/{data.developer.name.toLocaleLowerCase()}.png"
+            src="/images/profiles/{data.developer.name.toLocaleLowerCase()}.png"
             style:--color-bg={data.developer.color}
             style:--transition-name={data.developer.name.toLocaleLowerCase()}
             alt=""

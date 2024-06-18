@@ -114,61 +114,71 @@
     <div class="grid">
         <article class="project appear" use:scrollEffect={3}>
             <a href="https://demo.voltask.tech" target="_blank">
-                <img src="/images/voltask.png" alt="" />
+                <img src="/images/projects/voltask.png" alt="" />
                 <h3>Voltask</h3>
                 <p>Outil No-code collaboratif dans le navigateur pour créer des automatisations avec des scénarios visuels.</p>
             </a>
         </article>
         <article class="project appear" use:scrollEffect={3}>
             <a href="https://codepassport.dev" target="_blank">
-                <img src="/images/codepassport.png" alt="" />
+                <img src="/images/projects/codepassport.png" alt="" />
                 <h3>Code Passport</h3>
                 <p>Site web interactif destiné à l'apprentissage du code (JS, HTML & CSS).</p>
             </a>
         </article>
         <article class="project appear" use:scrollEffect={3}>
             <a href="https://chat.voltask.tech" target="_blank">
-                <img src="/images/voltask-ai.png" alt="" />
+                <img src="/images/projects/voltask-ai.png" alt="" />
                 <h3>Voltask AI</h3>
                 <p>Chatbot IA pour lancer des automatisations Voltask.</p>
             </a>
         </article>
         <article class="project appear" use:scrollEffect={3}>
             <a href="https://editor.voltapp.tech" target="_blank">
-                <img src="/images/voltapp.png" alt="" />
+                <img src="/images/projects/voltapp.png" alt="" />
                 <h3>Voltapp</h3>
                 <p>Voltapp est un outil No-code permettant de créer des applications web grâce à la programmation visuelle.</p>
             </a>
         </article>
         <article class="project appear" use:scrollEffect={3}>
             <a href="https://creator.celestory.io" target="_blank">
-                <img src="/images/celestory.png" alt="" />
+                <img src="/images/projects/celestory.png" alt="" />
                 <h3>Celestory</h3>
                 <p>Outil pour créer des serious games, formations et visual novels avec un système de choix et de variables en No-code.</p>
             </a>
         </article>
         <article class="project appear" use:scrollEffect={3}>
             <a href="https://ttmc-ui.vercel.app" target="_blank">
-                <img src="/images/ttmc-for-dev.png" alt="" />
+                <img src="/images/projects/ttmc-for-dev.png" alt="" />
                 <h3>TTMC for dev</h3>
                 <p>Inspiré par le jeu "Tu te mets combien ?" pour aider les apprenti.e.s développeur.ses à améliorer leur culture tech.</p>
             </a>
         </article>
         <article class="project appear" use:scrollEffect={3}>
             <a href="https://photomapper.io" target="_blank">
-                <img src="/images/photomapper.png" alt="" />
+                <img src="/images/projects/photomapper.png" alt="" />
                 <h3>Photomapper</h3>
                 <p>Application mobile de partage de photos géolocalisées partout dans le monde.</p>
             </a>
         </article>
         <article class="project appear" use:scrollEffect={3}>
             <a href="https://apps.apple.com/us/app/crafter-ar-build-battle/id1389840361" target="_blank">
-                <img src="/images/crafter-ar.png" alt="" />
+                <img src="/images/projects/crafter-ar.png" alt="" />
                 <h3>Crafter AR</h3>
                 <p>Jeu mobile de pictionary en réalité augmenté et en temps réel.</p>
             </a>
         </article>
     </div>
+    <h3>Ils nous ont fait confiance</h3>
+    <div style:display="flex" style:gap="2rem" style:flex-wrap="wrap" style:scale="0.7" style:justify-content="center">
+        {#each ['amd', 'bnp', 'bouygues', 'cnes', 'decathlon', 'epitech', 'france', 'tf1'] as client}
+            <img src="/images/clients/{client}.svg" alt={client} />
+        {/each}
+    </div>
+    <p style:text-align="center" style:max-width="40rem" style:margin="auto">
+        * la majorité de nos projets ne figurent pas sur le site car ils ne sont pas publiques mais nous serions ravis d'en discuter avec vous si vous envisagez
+        de travailler avec nous.
+    </p>
 </section>
 <section id="team" class="center" class:focus={section === 'team'} bind:this={teamElement}>
     <h2 use:scrollEffect={0.5} class="appear">Qui sommes-nous ?</h2>
@@ -178,7 +188,7 @@
     <div class="wrap-center">
         <article class="profile appear" use:scrollEffect={1.4}>
             <a class="developer" href="/jeremie">
-                <Eyevatar src="/images/jeremie.png" name="jeremie" left={{x: 84, y: 80}} right={{x: 110, y: 80}} bg="var(--color-pink)" />
+                <Eyevatar src="/images/profiles/jeremie.png" name="jeremie" left={{x: 84, y: 80}} right={{x: 110, y: 80}} bg="var(--color-pink)" />
                 <div class="name">Jeremie</div>
             </a>
             <a href="https://www.linkedin.com/in/jeremie-taboada-16495959/" target="_blank"><LinkedInIcon /></a>
@@ -186,7 +196,7 @@
         </article>
         <article class="profile appear" use:scrollEffect={1}>
             <a class="developer" href="/jonathan">
-                <Eyevatar src="/images/jonathan.png" name="jonathan" left={{x: 84, y: 82}} right={{x: 110, y: 80}} bg="var(--color-cyan)" />
+                <Eyevatar src="/images/profiles/jonathan.png" name="jonathan" left={{x: 84, y: 82}} right={{x: 110, y: 80}} bg="var(--color-cyan)" />
                 <div class="name">Jonathan</div>
             </a>
             <a href="https://www.linkedin.com/in/jonathanpicques/" target="_blank"><LinkedInIcon /></a>
@@ -194,7 +204,7 @@
         </article>
         <article class="profile appear" use:scrollEffect={0.6}>
             <a class="developer" href="/vincent">
-                <Eyevatar src="/images/vincent.png" name="vincent" left={{x: 72, y: 78}} right={{x: 100, y: 75}} bg="var(--color-indigo)" />
+                <Eyevatar src="/images/profiles/vincent.png" name="vincent" left={{x: 72, y: 78}} right={{x: 100, y: 75}} bg="var(--color-indigo)" />
                 <div class="name">Vincent</div>
             </a>
             <a href="https://www.linkedin.com/in/vincentneel/" target="_blank"><LinkedInIcon /></a>
@@ -367,6 +377,15 @@
         margin-top: 0;
         margin-bottom: 0.3em;
         font-size: clamp(2.5rem, 6vw, 4rem);
+        text-align: center;
+        letter-spacing: -1px;
+        text-wrap: balance;
+    }
+
+    section > h3 {
+        margin-top: 0;
+        margin-bottom: 0.3em;
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
         text-align: center;
         letter-spacing: -1px;
         text-wrap: balance;
