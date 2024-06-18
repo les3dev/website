@@ -23,7 +23,7 @@ export const developers: Record<string, Developer> = {
     vincent: {
         name: 'Vincent',
         color: 'var(--color-indigo)',
-        biography: `Je suis développeur fullstack polyvalent et passionné avec plus de 8 ans d'expérience.
+        biography: `Je suis développeur fullstack polyvalent et passionné avec 10 ans d'expérience.
 
 Je travaille principalement sur des projets web (React & SvelteKit) avec une appétence particulière pour le dev back (Node, Golang, PostgreSQL) et une solide connaissance en infra (Docker, Google cloud).
 

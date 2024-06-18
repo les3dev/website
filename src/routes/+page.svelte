@@ -76,7 +76,7 @@
     const meta = {
         title: 'Les 3 dev - Agence de développement web & mobile',
         siteUrl: 'https://les3.dev',
-        description: 'Agence de développeurs web & mobile en freelance',
+        description: 'Nous vous aidons à réaliser des projets ambitieux et sur-mesure.',
         thumbnail: '/thumbnail.png',
     };
 </script>
@@ -104,7 +104,7 @@
     </div>
     <h1 class="big">Vous avez les idées,<br />On les réalise.</h1>
     <div class="subtitle">
-        <strong class="logo">Les3dev</strong> est une agence de développement logiciel et de création d'applications web et mobiles sur-mesure basée à Paris.
+        <strong class="logo">Les3dev</strong> est une agence de développement basée à Paris de création d'applications web et mobiles ambicieuses & sur-mesure.
     </div>
     <a role="button" href="#contact" class="cta">Nous contacter</a>
 </section>
