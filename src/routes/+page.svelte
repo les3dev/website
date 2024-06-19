@@ -140,7 +140,7 @@
         {/each}
     </div>
     <p style:text-align="center" style:max-width="40rem" style:margin="auto">
-        * la majorité de nos projets clients ne figurent pas sur le site car ils ne sont pas publiques mais nous serions ravis d'en discuter plus amplement avec
+        * la majorité de nos projets clients ne figurent pas sur le site car ils ne sont pas publics mais nous serions ravis d'en discuter plus amplement avec
         vous si vous envisagez de travailler avec nous.
     </p>
 </section>
