@@ -21,10 +21,10 @@
     }
     @keyframes move {
         from {
-            translate: calc((50vw + 50%) * var(--dir)) 0;
+            translate: calc((100vw) * var(--dir)) 0;
         }
         to {
-            translate: calc(-1 * (50vw + 50%) * var(--dir)) 0;
+            translate: calc(-1 * (100vw) * var(--dir)) 0;
         }
     }
 </style>
