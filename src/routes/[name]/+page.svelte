@@ -2,28 +2,28 @@
     import Back from '$lib/Back.svelte';
     import GithubIcon from '$lib/GithubIcon.svelte';
     import LinkedInIcon from '$lib/LinkedInIcon.svelte';
+    import {meta} from '$lib/content.js';
 
     export let data;
 
-    const meta = {
-        title: `${data.developer.name} - Les 3 dev`,
-        siteUrl: 'https://www.les3.dev',
-        description: data.developer.biography.split('\n')[0],
-        thumbnail: '/thumbnail.png',
+    const profileMeta = {
+        ...meta,
+        title: `${data.profile.name} - Les 3 dev`,
+        description: data.profile.biography.split('\n')[0],
     };
 </script>
 
 <svelte:head>
-    <title>{meta.title}</title>
-    <meta name="description" content={meta.description} />
-    <meta property="og:title" content={meta.title} />
-    <meta property="og:site_name" content={meta.title} />
-    <meta property="og:image" content={meta.thumbnail} />
-    <meta property="og:url" content={meta.siteUrl} />
-    <meta property="og:description" content={meta.description} />
-    <meta property="twitter:title" content={meta.title} />
-    <meta property="twitter:description" content={meta.description} />
-    <meta property="twitter:image" content={meta.thumbnail} />
+    <title>{profileMeta.title}</title>
+    <meta name="description" content={profileMeta.description} />
+    <meta property="og:title" content={profileMeta.title} />
+    <meta property="og:site_name" content={profileMeta.title} />
+    <meta property="og:image" content={profileMeta.thumbnail} />
+    <meta property="og:url" content={profileMeta.siteUrl} />
+    <meta property="og:description" content={profileMeta.description} />
+    <meta property="twitter:title" content={profileMeta.title} />
+    <meta property="twitter:description" content={profileMeta.description} />
+    <meta property="twitter:image" content={profileMeta.thumbnail} />
 </svelte:head>
 
 <main>
@@ -32,21 +32,20 @@
             <Back />
         </a>
         <div>
-            <a href="https://www.linkedin.com/in/{data.developer.linkedin}" target="_blank" aria-label="Linked In"><LinkedInIcon /></a>
-            <a href="https://github.com/{data.developer.github}" target="_blank" aria-label="Github"><GithubIcon /></a>
+            <a href="https://www.linkedin.com/in/{data.profile.linkedin}" target="_blank" aria-label="Linked In"><LinkedInIcon /></a>
+            <a href="https://github.com/{data.profile.github}" target="_blank" aria-label="Github"><GithubIcon /></a>
         </div>
     </header>
     <section>
         <img
-            src="/images/profiles/{data.developer.name.toLocaleLowerCase()}.png"
-            style:--color-bg={data.developer.color}
-            style:--transition-name={data.developer.name.toLocaleLowerCase()}
+            src="/images/profiles/{data.profile.name.toLocaleLowerCase()}.png"
+            style:--color-bg={data.profile.color}
+            style:--transition-name={data.profile.name.toLocaleLowerCase()}
             alt=""
         />
-
-        <h1>Salut, moi c'est {data.developer.name} 👋</h1>
+        <h1>Salut, moi c'est {data.profile.name} 👋</h1>
         <article>
-            {data.developer.biography}
+            {data.profile.biography}
         </article>
     </section>
 </main>
@@ -55,7 +54,6 @@
     main {
         display: flex;
         flex-direction: column;
-        padding: 3rem 2rem;
         background: #fff;
         width: 100vw;
         height: 100vh;
@@ -63,20 +61,20 @@
     }
     header {
         display: flex;
+        padding: 2rem;
         width: 100%;
         justify-content: space-between;
     }
     section {
-        max-width: 38rem;
-        margin: 0 auto;
         flex: 1;
         overflow: auto;
         display: flex;
         align-items: center;
         flex-direction: column;
+        width: 100%;
     }
     div {
-        gap: 1rem;
+        gap: 2rem;
         display: flex;
         align-items: center;
     }
@@ -88,7 +86,6 @@
         scale: 1.05;
     }
     img {
-        margin-top: 3rem;
         background-color: var(--color-bg);
         max-width: 13rem;
         max-height: 13rem;
@@ -99,6 +96,7 @@
         color: var(--color-black);
         font-size: 2.2rem;
         text-align: center;
+        padding: 2rem 2rem 0 2rem;
     }
 
     article {
@@ -106,5 +104,8 @@
         color: var(--color-black);
         font-size: 1.1rem;
         line-height: 1.5;
+        gap: 2rem;
+        padding: 0 1.5rem 1.5rem 1.5rem;
+        max-width: 40rem;
     }
 </style>

@@ -2,7 +2,7 @@
     export let src = '';
     export let left: {x: number; y: number};
     export let right: {x: number; y: number};
-    export let bg: `var(--${string})`;
+    export let bg: string;
     export let name = '';
 
     let leftOffset = {x: 0, y: 0};

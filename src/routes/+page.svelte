@@ -6,6 +6,7 @@
     import LinkedInIcon from '$lib/LinkedInIcon.svelte';
     import GithubIcon from '$lib/GithubIcon.svelte';
     import {serializeSchema} from '$lib/schema';
+    import {faq, meta, profiles, projects} from '$lib/content';
 
     type Section = 'intro' | 'projects' | 'team' | 'faq' | 'contact';
 
@@ -73,75 +74,10 @@
         };
     }
 
-    const questions = [
-        {
-            question: `Pourquoi 3 développeurs ?`,
-            answer: `Nous avons l’habitude de travailler ensemble depuis plusieurs années. Grâce à nos différentes affinités et domaines d’expertise nous pouvons nous
-            répartir efficacement pour répondre au mieux à toutes vos demandes aussi variées soient-elles.`,
-        },
-        {
-            question: `Quel type de projet & fonctionnalités peuvent être réalisées ?`,
-            answer: `Probablement tout ce que vous pourriez imaginer. Avec nos 10 ans d'expériences, on a rencontrés beaucoup de problèmes et tout autant de solution.
-            Nous avons réalisés un grand nombre d'applications ou de sites avec des fonctionnalités très différentes (realtime, collaboration, 3D). Mais aussi
-            des produits sur le long terme, des MVPs pour des startups mais également pour de plus grands organismes comme Decathlon, BNP Paribas ou la base
-            spatiale.`,
-        },
-        {
-            question: `Combien de temps prendrait la réalisation de mon projet ?`,
-            answer: `Cela déprendra de l'urgence de votre côté mais également de nos disponibilités. Nous avons l'habitude de travailler plutôt rapidement et vous
-            fournir des résultats de l'avancement au fur et à mesure. <a href="#contact">Contactez-nous</a> dès maintenant pour avoir une estimation !`,
-        },
-        {
-            question: `Est-ce que je dois m'occuper du design ?`,
-            answer: `La plupart des projets ne nécessitent pas uniquement du code, mais également du design. Nous nous occupons de cette partie également la plupart du
-            temps. Cependant, nous pouvons nous adapter en fonction de votre existant (identité visuelle, logo, etc.) et vos besoins personnels.`,
-        },
-        {
-            question: `Pourquoi pas du No-code ?`,
-            answer: `Nous avons pu utiliser et même créer des outils No-code depuis plusieurs années. Nous sommes donc bien placés pour en comprendre les avantages mais
-            aussi les limitations. Le No-code est très bien pour créer rapidement une version basique et "jetable" de votre idée. En revanche, si vous voulez un
-            projet qualitatif, performant et maintenable sur du long terme, nous vous conseillons de plutôt vous tourner vers du code "classique".`,
-        },
-        {
-            question: `Pourquoi (ne pas) recruter un CTO ?`,
-            answer: ` Avoir un CTO est la solution idéale sur le moyen/long terme pour une startup. Cependant, cela peut-être compliqué et très cher de choisir cette
-            solution au début. C'est pour cela qu'une équipe de développeur.ses experimentée peut vous permettre de faire une première version de qualité de
-            votre produit. Aussi, un CTO a souvent son mot à dire sur la vision de votre société et de votre produit. En travaillant avec des développeur.ses
-            indépendant (comme nous), vous vous assurez que votre vision soit respectée.`,
-        },
-        {
-            question: `Quels outils & technologies utilise-t-on ?`,
-            answer: `Nous privilégions autant que possible les technologies matures et si possible open-source pour créer des projets durables et performants. Nous avons
-            quelques préférences mais nous nous adaptons en fonction des besoins du projet.`,
-        },
-        {
-            question: `Comment puis-je modifier mon projet ?`,
-            answer: `Dans un soucis de transparence, nous vous fournirons toujours le code source du projet, vous seul.e en serez propriétaire. Si vous voulez modifier
-            votre projet, vous pouvez refaire appel à nous quand vous voulez ou même à d'autres développeur.ses. Nous pouvons également développer des solutions
-            afin que vous puissiez facilement faire évoluer votre produit comme une interface d'admin adaptée à vos besoins.`,
-        },
-        {
-            question: `Où sont stockées les données ?`,
-            answer: `À vous de voir. Ça peut être sur vos serveurs ou ceux d'autres services en ligne, mais pas chez nous. Nous ne voulons pas prendre la responsabilité
-            du stockage de vos données.`,
-        },
-        {
-            question: `Ai-je accès au code du projet ?`,
-            answer: `Oui, le code que nous écrivons n'a qu'un seul destinataire : vous. Lorsque nous aurons fini le projet, nous vous donnerons toutes les clés pour que
-            vous soyez propriétaire du projet et que vous puissiez le faire évoluer comme bon vous semble.`,
-        },
-    ];
-
-    const meta = {
-        title: 'Les 3 dev - Agence de développement web & mobile',
-        siteUrl: 'https://www.les3.dev',
-        description: 'Nous vous aidons à réaliser des projets ambitieux et sur-mesure.',
-        thumbnail: '/thumbnail.png',
-    };
     const faqGoogleSEO = {
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
-        mainEntity: questions.slice(0, 4).map(
+        mainEntity: faq.slice(0, 4).map(
             ({question, answer}) =>
                 ({
                     '@type': 'Question',
@@ -187,72 +123,25 @@
     <h2 use:scrollEffect={0.5} class="appear">Aperçu de notre travail</h2>
     <div use:scrollEffect={0.5} class="subtitle appear">Quelques projets réalisés par notre équipe au cours de ces dernières années</div>
     <div class="grid">
-        <article class="project appear" use:scrollEffect={3}>
-            <a href="https://demo.voltask.tech" target="_blank">
-                <img src="/images/projects/voltask.png" alt="" />
-                <h3>Voltask</h3>
-                <p>Outil No-code collaboratif dans le navigateur pour créer des automatisations avec des scénarios visuels.</p>
-            </a>
-        </article>
-        <article class="project appear" use:scrollEffect={3}>
-            <a href="https://codepassport.dev" target="_blank">
-                <img src="/images/projects/codepassport.png" alt="" />
-                <h3>Code Passport</h3>
-                <p>Site web interactif destiné à l'apprentissage du code (JS, HTML & CSS).</p>
-            </a>
-        </article>
-        <article class="project appear" use:scrollEffect={3}>
-            <a href="https://chat.voltask.tech" target="_blank">
-                <img src="/images/projects/voltask-ai.png" alt="" />
-                <h3>Voltask AI</h3>
-                <p>Chatbot IA pour lancer des automatisations Voltask.</p>
-            </a>
-        </article>
-        <article class="project appear" use:scrollEffect={3}>
-            <a href="https://editor.voltapp.tech" target="_blank">
-                <img src="/images/projects/voltapp.png" alt="" />
-                <h3>Voltapp</h3>
-                <p>Voltapp est un outil No-code permettant de créer des applications web grâce à la programmation visuelle.</p>
-            </a>
-        </article>
-        <article class="project appear" use:scrollEffect={3}>
-            <a href="https://creator.celestory.io" target="_blank">
-                <img src="/images/projects/celestory.png" alt="" />
-                <h3>Celestory</h3>
-                <p>Outil pour créer des serious games, formations et visual novels avec un système de choix et de variables en No-code.</p>
-            </a>
-        </article>
-        <article class="project appear" use:scrollEffect={3}>
-            <a href="https://ttmc-ui.vercel.app" target="_blank">
-                <img src="/images/projects/ttmc-for-dev.png" alt="" />
-                <h3>TTMC for dev</h3>
-                <p>Inspiré par le jeu "Tu te mets combien ?" pour aider les apprenti.e.s développeur.ses à améliorer leur culture tech.</p>
-            </a>
-        </article>
-        <article class="project appear" use:scrollEffect={3}>
-            <a href="https://photomapper.io" target="_blank">
-                <img src="/images/projects/photomapper.png" alt="" />
-                <h3>Photomapper</h3>
-                <p>Application mobile de partage de photos géolocalisées partout dans le monde.</p>
-            </a>
-        </article>
-        <article class="project appear" use:scrollEffect={3}>
-            <a href="https://apps.apple.com/us/app/crafter-ar-build-battle/id1389840361" target="_blank">
-                <img src="/images/projects/crafter-ar.png" alt="" />
-                <h3>Crafter AR</h3>
-                <p>Jeu mobile de pictionary en réalité augmenté et en temps réel.</p>
-            </a>
-        </article>
+        {#each projects as project}
+            <article class="project appear" use:scrollEffect={3}>
+                <a href={project.link} target="_blank">
+                    <img src={project.thumbnail} alt="" />
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
+                </a>
+            </article>
+        {/each}
     </div>
     <h3>Ils nous ont fait confiance</h3>
-    <div style:display="flex" style:gap="2rem" style:flex-wrap="wrap" style:scale="0.7" style:justify-content="center">
+    <div style:display="flex" style:gap="3rem" style:flex-wrap="wrap" style:scale="0.7" style:justify-content="center">
         {#each ['amd', 'bnp', 'bouygues', 'cnes', 'decathlon', 'epitech', 'france', 'tf1'] as client}
             <img src="/images/clients/{client}.svg" alt={client} />
         {/each}
     </div>
     <p style:text-align="center" style:max-width="40rem" style:margin="auto">
-        * la majorité de nos projets ne figurent pas sur le site car ils ne sont pas publiques mais nous serions ravis d'en discuter avec vous si vous envisagez
-        de travailler avec nous.
+        * la majorité de nos projets clients ne figurent pas sur le site car ils ne sont pas publiques mais nous serions ravis d'en discuter plus amplement avec
+        vous si vous envisagez de travailler avec nous.
     </p>
 </section>
 <section id="team" class="center" class:focus={section === 'team'} bind:this={teamElement}>
@@ -261,35 +150,21 @@
         3 amis développeurs avec plus de 10 ans d'expérience, pour vous créer des sites web et applications accessibles, innovantes et performantes !
     </div>
     <div class="wrap-center">
-        <article class="profile appear" use:scrollEffect={1.4}>
-            <a class="developer" href="/jeremie">
-                <Eyevatar src="/images/profiles/jeremie.png" name="jeremie" left={{x: 84, y: 80}} right={{x: 110, y: 80}} bg="var(--color-pink)" />
-                <div class="name">Jeremie</div>
-            </a>
-            <a href="https://www.linkedin.com/in/jeremie-taboada-16495959/" target="_blank" aria-label="Linked In"><LinkedInIcon /></a>
-            <a href="https://github.com/jeremt" target="_blank" aria-label="Github"><GithubIcon /></a>
-        </article>
-        <article class="profile appear" use:scrollEffect={1}>
-            <a class="developer" href="/jonathan">
-                <Eyevatar src="/images/profiles/jonathan.png" name="jonathan" left={{x: 84, y: 82}} right={{x: 110, y: 80}} bg="var(--color-cyan)" />
-                <div class="name">Jonathan</div>
-            </a>
-            <a href="https://www.linkedin.com/in/jonathanpicques/" target="_blank" aria-label="Linked In"><LinkedInIcon /></a>
-            <a href="https://github.com/jonathanpicques" target="_blank" aria-label="Github"><GithubIcon /></a>
-        </article>
-        <article class="profile appear" use:scrollEffect={0.6}>
-            <a class="developer" href="/vincent">
-                <Eyevatar src="/images/profiles/vincent.png" name="vincent" left={{x: 72, y: 78}} right={{x: 100, y: 75}} bg="var(--color-indigo)" />
-                <div class="name">Vincent</div>
-            </a>
-            <a href="https://www.linkedin.com/in/vincentneel/" target="_blank" aria-label="Linked In"><LinkedInIcon /></a>
-            <a href="https://github.com/pikanezi" target="_blank" aria-label="Github"><GithubIcon /></a>
-        </article>
+        {#each Object.entries(profiles) as [slug, profile]}
+            <article class="profile appear" use:scrollEffect={1.4}>
+                <a class="developer" href="/{slug}">
+                    <Eyevatar src="/images/profiles/{slug}.png" name={slug} left={profile.eyes.left} right={profile.eyes.right} bg={profile.color} />
+                    <div class="name">{profile.name}</div>
+                </a>
+                <a href="https://www.linkedin.com/in/{profile.linkedin}" target="_blank" aria-label="Linked In"><LinkedInIcon /></a>
+                <a href="https://github.com/{profile.github}" target="_blank" aria-label="Github"><GithubIcon /></a>
+            </article>
+        {/each}
     </div>
 </section>
 <section id="faq" class="top" class:focus={section === 'faq'} bind:this={faqElement}>
     <h2 use:scrollEffect={0.5} class="appear">Foire aux questions</h2>
-    {#each questions as question}
+    {#each faq as question}
         <details use:scrollEffect={0.5} class="appear">
             <summary>{question.question}</summary>
             <div>
@@ -537,6 +412,10 @@
         color: var(--color-black);
         background-color: var(--color-white);
         transition: 0.3s all;
+    }
+    .profile a:not(.developer):hover {
+        color: var(--color-white);
+        background-color: var(--color-black);
     }
     #team article {
         text-align: center;

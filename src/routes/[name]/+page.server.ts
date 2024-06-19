@@ -1,13 +1,15 @@
 import {error} from '@sveltejs/kit';
-import {developers} from '$lib/developers.js';
+import {profiles} from '$lib/content';
+
+export const prerender = true;
 
 export function load({params}) {
-    const developer = developers[params.name];
-    if (!developer) {
+    const profile = profiles[params.name];
+    if (!profile) {
         throw error(404, 'not found');
     }
 
     return {
-        developer,
+        profile,
     };
 }
