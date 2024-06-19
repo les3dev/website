@@ -113,7 +113,7 @@
             <Cloud {y} {size} direction={i % 2 ? -1 : 1} />
         {/each}
     </div>
-    <h1 class="big">Vous avez les idées,<br />On les réalise.</h1>
+    <h1 class="big">Vous avez la vision,<br />On la concrétise.</h1>
     <div class="subtitle">
         <strong class="logo">Les3dev</strong> est une agence de développement basée à Paris de création d'applications web et mobiles ambicieuses & sur-mesure.
     </div>
@@ -134,7 +134,7 @@
         {/each}
     </div>
     <h3>Ils nous ont fait confiance</h3>
-    <div style:display="flex" style:gap="3rem" style:flex-wrap="wrap" style:scale="0.7" style:justify-content="center">
+    <div style:display="flex" style:gap="3rem" style:flex-wrap="wrap" style:scale="0.6" style:justify-content="center">
         {#each ['amd', 'bnp', 'bouygues', 'cnes', 'decathlon', 'epitech', 'france', 'tf1'] as client}
             <img src="/images/clients/{client}.svg" alt={client} />
         {/each}

@@ -64,11 +64,11 @@ export const faq = [
         répartir efficacement pour répondre au mieux à toutes vos demandes aussi variées soient-elles.`,
     },
     {
-        question: `Quel type de projet & fonctionnalités peuvent être réalisées ?`,
-        answer: `Probablement tout ce que vous pourriez imaginer. Avec nos 10 ans d'expériences, on a rencontrés beaucoup de problèmes et tout autant de solution.
-        Nous avons réalisés un grand nombre d'applications ou de sites avec des fonctionnalités très différentes (realtime, collaboration, 3D). Mais aussi
-        des produits sur le long terme, des MVPs pour des startups mais également pour de plus grands organismes comme Decathlon, BNP Paribas ou la base
-        spatiale.`,
+        question: `Quels types de projet & fonctionnalités peuvent être réalisés ?`,
+        answer: `Probablement tout ce que vous pourriez imaginer. Avec nos 10 ans d'expériences, nous avons rencontré beaucoup de contraintes et tout autant de solutions.
+        Nous avons réalisé un grand nombre d'applications ou de sites web avec des fonctionnalités très différentes (realtime, collaboration, 3D, etc.). Nous avons pu réaliser des MVPs pour
+        des startups mais aussi des projets pour de plus grands organismes comme une application de gestion de tickets pour Decathlon, une messagerie temps réel et une application de
+        cartographie pour le CNES (Centre National d'Études spaciales) ou encore une application de gestion de crise pour le GIGN.`,
     },
     {
         question: `Combien de temps prendrait la réalisation de mon projet ?`,
@@ -77,8 +77,7 @@ export const faq = [
     },
     {
         question: `Est-ce que je dois m'occuper du design ?`,
-        answer: `La plupart des projets ne nécessitent pas uniquement du code, mais également du design. Nous nous occupons de cette partie également la plupart du
-        temps. Cependant, nous pouvons nous adapter en fonction de votre existant (identité visuelle, logo, etc.) et vos besoins personnels.`,
+        answer: `La plupart des projets ne nécessitent pas uniquement du code, mais aussi du design. Nous vous proposons de gérer également la partie graphique UI (User Interface). Cependant, nous pouvons nous adapter en fonction de votre existant (identité visuelle, logo, etc.) et vos besoins personnels.`,
     },
     {
         question: `Pourquoi pas du No-code ?`,
@@ -88,7 +87,7 @@ export const faq = [
     },
     {
         question: `Pourquoi (ne pas) recruter un CTO ?`,
-        answer: ` Avoir un CTO est la solution idéale sur le moyen/long terme pour une startup. Cependant, cela peut-être compliqué et très cher de choisir cette
+        answer: ` Avoir un CTO (Chief Technical Officer) est la solution idéale sur le moyen/long terme pour une startup. Cependant, cela peut-être compliqué et très cher de choisir cette
         solution au début. C'est pour cela qu'une équipe de développeur.ses experimentée peut vous permettre de faire une première version de qualité de
         votre produit. Aussi, un CTO a souvent son mot à dire sur la vision de votre société et de votre produit. En travaillant avec des développeur.ses
         indépendant (comme nous), vous vous assurez que votre vision soit respectée.`,
@@ -163,6 +162,6 @@ export const projects = [
         link: 'https://apps.apple.com/us/app/crafter-ar-build-battle/id1389840361',
         thumbnail: '/images/projects/crafter-ar.png',
         title: 'Crafter AR',
-        description: 'Jeu mobile de pictionary en réalité augmenté et en temps réel.',
+        description: 'Jeu mobile de pictionary en réalité augmentée et en temps réel.',
     },
 ];
