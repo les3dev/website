@@ -75,7 +75,7 @@
 
     const meta = {
         title: 'Les 3 dev - Agence de développement web & mobile',
-        siteUrl: 'https://les3.dev',
+        siteUrl: 'https://www.les3.dev',
         description: 'Nous vous aidons à réaliser des projets ambitieux et sur-mesure.',
         thumbnail: '/thumbnail.png',
     };
@@ -191,24 +191,24 @@
                 <Eyevatar src="/images/profiles/jeremie.png" name="jeremie" left={{x: 84, y: 80}} right={{x: 110, y: 80}} bg="var(--color-pink)" />
                 <div class="name">Jeremie</div>
             </a>
-            <a href="https://www.linkedin.com/in/jeremie-taboada-16495959/" target="_blank"><LinkedInIcon /></a>
-            <a href="https://github.com/jeremt" target="_blank"><GithubIcon /></a>
+            <a href="https://www.linkedin.com/in/jeremie-taboada-16495959/" target="_blank" aria-label="Linked In"><LinkedInIcon /></a>
+            <a href="https://github.com/jeremt" target="_blank" aria-label="Github"><GithubIcon /></a>
         </article>
         <article class="profile appear" use:scrollEffect={1}>
             <a class="developer" href="/jonathan">
                 <Eyevatar src="/images/profiles/jonathan.png" name="jonathan" left={{x: 84, y: 82}} right={{x: 110, y: 80}} bg="var(--color-cyan)" />
                 <div class="name">Jonathan</div>
             </a>
-            <a href="https://www.linkedin.com/in/jonathanpicques/" target="_blank"><LinkedInIcon /></a>
-            <a href="https://github.com/jonathanpicques" target="_blank"><GithubIcon /></a>
+            <a href="https://www.linkedin.com/in/jonathanpicques/" target="_blank" aria-label="Linked In"><LinkedInIcon /></a>
+            <a href="https://github.com/jonathanpicques" target="_blank" aria-label="Github"><GithubIcon /></a>
         </article>
         <article class="profile appear" use:scrollEffect={0.6}>
             <a class="developer" href="/vincent">
                 <Eyevatar src="/images/profiles/vincent.png" name="vincent" left={{x: 72, y: 78}} right={{x: 100, y: 75}} bg="var(--color-indigo)" />
                 <div class="name">Vincent</div>
             </a>
-            <a href="https://www.linkedin.com/in/vincentneel/" target="_blank"><LinkedInIcon /></a>
-            <a href="https://github.com/pikanezi" target="_blank"><GithubIcon /></a>
+            <a href="https://www.linkedin.com/in/vincentneel/" target="_blank" aria-label="Linked In"><LinkedInIcon /></a>
+            <a href="https://github.com/pikanezi" target="_blank" aria-label="Github"><GithubIcon /></a>
         </article>
     </div>
 </section>
@@ -587,22 +587,8 @@
         }
     }
 
-    h1.big {
-        opacity: 0;
-        animation: appear 1s forwards;
-        animation-delay: 0.2s;
-    }
-    #intro .subtitle {
-        opacity: 0;
-        animation: appear 1s forwards;
-        animation-delay: 0.3s;
-    }
     #intro .cta {
-        opacity: 0;
-        animation:
-            appear 1s forwards,
-            breath 3s infinite;
-        animation-delay: 0.4s;
+        animation: breath 3s infinite;
     }
     .appear {
         opacity: var(--progress);

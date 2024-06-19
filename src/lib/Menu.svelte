@@ -33,7 +33,7 @@
                 <a href="#{slug}" on:click={() => (isOpen = false)}>{label}</a>
             {/each}
         </div>
-        <button class:isOpen class:isHidden on:click={() => (isOpen = true)}><MenuIcon /></button>
+        <button class:isOpen class:isHidden on:click={() => (isOpen = true)} aria-label="Menu"><MenuIcon /></button>
     {:else if $isMobile !== null}
         <div class="bar" class:isHidden>
             <a href="#intro" id="logo">les3dev</a>

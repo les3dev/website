@@ -4,12 +4,38 @@
     import LinkedInIcon from '$lib/LinkedInIcon.svelte';
 
     export let data;
+
+    const meta = {
+        title: `${data.developer.name} - Les 3 dev`,
+        siteUrl: 'https://www.les3.dev',
+        description: data.developer.biography.split('\n')[0],
+        thumbnail: '/thumbnail.png',
+    };
 </script>
 
+<svelte:head>
+    <title>{meta.title}</title>
+    <meta name="description" content={meta.description} />
+    <meta property="og:title" content={meta.title} />
+    <meta property="og:site_name" content={meta.title} />
+    <meta property="og:image" content={meta.thumbnail} />
+    <meta property="og:url" content={meta.siteUrl} />
+    <meta property="og:description" content={meta.description} />
+    <meta property="twitter:title" content={meta.title} />
+    <meta property="twitter:description" content={meta.description} />
+    <meta property="twitter:image" content={meta.thumbnail} />
+</svelte:head>
+
 <main>
-    <a href="/#team">
-        <Back />
-    </a>
+    <header>
+        <a href="/#team" aria-label="Back">
+            <Back />
+        </a>
+        <div>
+            <a href="https://www.linkedin.com/in/{data.developer.linkedin}" target="_blank" aria-label="Linked In"><LinkedInIcon /></a>
+            <a href="https://github.com/{data.developer.github}" target="_blank" aria-label="Github"><GithubIcon /></a>
+        </div>
+    </header>
     <section>
         <img
             src="/images/profiles/{data.developer.name.toLocaleLowerCase()}.png"
@@ -23,24 +49,28 @@
             {data.developer.biography}
         </article>
     </section>
-    <div>
-        <a href="https://www.linkedin.com/in/{data.developer.linkedin}" target="_blank"><LinkedInIcon /></a>
-        <a href="https://github.com/{data.developer.github}" target="_blank"><GithubIcon /></a>
-    </div>
 </main>
 
 <style>
     main {
         display: flex;
+        flex-direction: column;
         padding: 3rem 2rem;
         background: #fff;
         width: 100vw;
-        min-height: 100vh;
+        height: 100vh;
         align-items: flex-start;
+    }
+    header {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
     }
     section {
         max-width: 38rem;
         margin: 0 auto;
+        flex: 1;
+        overflow: auto;
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -51,8 +81,6 @@
         align-items: center;
     }
     a {
-        opacity: 0;
-        animation: appear 1s forwards;
         color: var(--color-black);
         transition: scale 0.2s;
     }
@@ -61,39 +89,22 @@
     }
     img {
         margin-top: 3rem;
-        opacity: 0;
         background-color: var(--color-bg);
-        animation: appear 1s 0.2s forwards;
         max-width: 13rem;
         max-height: 13rem;
         border-radius: 50%;
         view-transition-name: var(--transition-name);
     }
     h1 {
-        opacity: 0;
-        animation: appear 1s 0.3s forwards;
         color: var(--color-black);
         font-size: 2.2rem;
         text-align: center;
     }
 
     article {
-        opacity: 0;
-        animation: appear 1s 0.5s forwards;
         white-space: pre-line;
         color: var(--color-black);
         font-size: 1.1rem;
         line-height: 1.5;
-    }
-
-    @keyframes appear {
-        from {
-            opacity: 0;
-            transform: translateY(3rem);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
     }
 </style>
