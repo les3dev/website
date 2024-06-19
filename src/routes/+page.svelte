@@ -2,10 +2,10 @@
     import Eyevatar from '$lib/Eyevatar.svelte';
     import Menu from '$lib/Menu.svelte';
     import {onMount} from 'svelte';
-    import {mediaQueries} from '$lib/mediaqueries';
     import Cloud from '$lib/Cloud.svelte';
     import LinkedInIcon from '$lib/LinkedInIcon.svelte';
     import GithubIcon from '$lib/GithubIcon.svelte';
+    import {serializeSchema} from '$lib/schema';
 
     type Section = 'intro' | 'projects' | 'team' | 'faq' | 'contact';
 
@@ -73,12 +73,86 @@
         };
     }
 
+    const questions = [
+        {
+            question: `Pourquoi 3 développeurs ?`,
+            answer: `Nous avons l’habitude de travailler ensemble depuis plusieurs années. Grâce à nos différentes affinités et domaines d’expertise nous pouvons nous
+            répartir efficacement pour répondre au mieux à toutes vos demandes aussi variées soient-elles.`,
+        },
+        {
+            question: `Quel type de projet & fonctionnalités peuvent être réalisées ?`,
+            answer: `Probablement tout ce que vous pourriez imaginer. Avec nos 10 ans d'expériences, on a rencontrés beaucoup de problèmes et tout autant de solution.
+            Nous avons réalisés un grand nombre d'applications ou de sites avec des fonctionnalités très différentes (realtime, collaboration, 3D). Mais aussi
+            des produits sur le long terme, des MVPs pour des startups mais également pour de plus grands organismes comme Decathlon, BNP Paribas ou la base
+            spatiale.`,
+        },
+        {
+            question: `Combien de temps prendrait la réalisation de mon projet ?`,
+            answer: `Cela déprendra de l'urgence de votre côté mais également de nos disponibilités. Nous avons l'habitude de travailler plutôt rapidement et vous
+            fournir des résultats de l'avancement au fur et à mesure. <a href="mailto:contact@les3.dev">Contactez-nous</a> dès maintenant pour avoir une estimation !`,
+        },
+        {
+            question: `Est-ce que je dois m'occuper du design ?`,
+            answer: `La plupart des projets ne nécessitent pas uniquement du code, mais également du design. Nous nous occupons de cette partie également la plupart du
+            temps. Cependant, nous pouvons nous adapter en fonction de votre existant (identité visuelle, logo, etc.) et vos besoins personnels.`,
+        },
+        {
+            question: `Pourquoi pas du No-code ?`,
+            answer: `Nous avons pu utiliser et même créer des outils No-code depuis plusieurs années. Nous sommes donc bien placés pour en comprendre les avantages mais
+            aussi les limitations. Le No-code est très bien pour créer rapidement une version basique et "jetable" de votre idée. En revanche, si vous voulez un
+            projet qualitatif, performant et maintenable sur du long terme, nous vous conseillons de plutôt vous tourner vers du code "classique".`,
+        },
+        {
+            question: `Pourquoi (ne pas) recruter un CTO ?`,
+            answer: ` Avoir un CTO est la solution idéale sur le moyen/long terme pour une startup. Cependant, cela peut-être compliqué et très cher de choisir cette
+            solution au début. C'est pour cela qu'une équipe de développeur.ses experimentée peut vous permettre de faire une première version de qualité de
+            votre produit. Aussi, un CTO a souvent son mot à dire sur la vision de votre société et de votre produit. En travaillant avec des développeur.ses
+            indépendant (comme nous), vous vous assurez que votre vision soit respectée.`,
+        },
+        {
+            question: `Quels outils & technologies utilise-t-on ?`,
+            answer: `Nous privilégions autant que possible les technologies matures et si possible open-source pour créer des projets durables et performants. Nous avons
+            quelques préférences mais nous nous adaptons en fonction des besoins du projet.`,
+        },
+        {
+            question: `Comment puis-je modifier mon projet ?`,
+            answer: `Dans un soucis de transparence, nous vous fournirons toujours le code source du projet, vous seul.e en serez propriétaire. Si vous voulez modifier
+            votre projet, vous pouvez refaire appel à nous quand vous voulez ou même à d'autres développeur.ses. Nous pouvons également développer des solutions
+            afin que vous puissiez facilement faire évoluer votre produit comme une interface d'admin adaptée à vos besoins.`,
+        },
+        {
+            question: `Où sont stockées les données ?`,
+            answer: `À vous de voir. Ça peut être sur vos serveurs ou ceux d'autres services en ligne, mais pas chez nous. Nous ne voulons pas prendre la responsabilité
+            du stockage de vos données.`,
+        },
+        {
+            question: `Ai-je accès au code du projet ?`,
+            answer: `Oui, le code que nous écrivons n'a qu'un seul destinataire : vous. Lorsque nous aurons fini le projet, nous vous donnerons toutes les clés pour que
+            vous soyez propriétaire du projet et que vous puissiez le faire évoluer comme bon vous semble.`,
+        },
+    ];
+
     const meta = {
         title: 'Les 3 dev - Agence de développement web & mobile',
         siteUrl: 'https://www.les3.dev',
         description: 'Nous vous aidons à réaliser des projets ambitieux et sur-mesure.',
         thumbnail: '/thumbnail.png',
     };
+    const faqGoogleSEO = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: questions.slice(0, 4).map(
+            ({question, answer}) =>
+                ({
+                    '@type': 'Question',
+                    name: question,
+                    acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: answer,
+                    },
+                }) as const,
+        ),
+    } as const;
 </script>
 
 <svelte:head>
@@ -92,6 +166,7 @@
     <meta property="twitter:title" content={meta.title} />
     <meta property="twitter:description" content={meta.description} />
     <meta property="twitter:image" content={meta.thumbnail} />
+    {@html serializeSchema(faqGoogleSEO)}
 </svelte:head>
 
 <svelte:window on:scroll={handleScroll} on:mousemove={() => (movedAfterScroll = true)} />
@@ -214,83 +289,14 @@
 </section>
 <section id="faq" class="top" class:focus={section === 'faq'} bind:this={faqElement}>
     <h2 use:scrollEffect={0.5} class="appear">Foire aux questions</h2>
-    <details use:scrollEffect={0.5} class="appear">
-        <summary>Pourquoi pas du No-code ?</summary>
-        <div>
-            Nous avons pu utiliser et même créer des outils No-code depuis plusieurs années. Nous sommes donc bien placés pour en comprendre les avantages mais
-            aussi les limitations. Le No-code est très bien pour créer rapidement une version basique et "jetable" de votre idée. En revanche, si vous voulez un
-            projet qualitatif, performant et maintenable sur du long terme, nous vous conseillons de plutôt vous tourner vers du code "classique".
-        </div>
-    </details>
-    <details use:scrollEffect={0.5} class="appear">
-        <summary>Pourquoi (ne pas) recruter un CTO ?</summary>
-        <div>
-            Avoir un CTO est la solution idéale sur le moyen/long terme pour une startup. Cependant, cela peut-être compliqué et très cher de choisir cette
-            solution au début. C'est pour cela qu'une équipe de développeur.ses experimentée peut vous permettre de faire une première version de qualité de
-            votre produit. Aussi, un CTO a souvent son mot à dire sur la vision de votre société et de votre produit. En travaillant avec des développeur.ses
-            indépendant (comme nous), vous vous assurez que votre vision soit respectée.
-        </div>
-    </details>
-    <details use:scrollEffect={0.5} class="appear">
-        <summary>Pourquoi 3 développeurs ?</summary>
-        <div>
-            Nous avons l’habitude de travailler ensemble depuis plusieurs années. Grâce à nos différentes affinités et domaines d’expertise nous pouvons nous
-            répartir efficacement pour répondre au mieux à toutes vos demandes aussi variées soient-elles.
-        </div>
-    </details>
-    <details use:scrollEffect={0.5} class="appear">
-        <summary>Combien de temps prendrait la réalisation de mon projet ?</summary>
-        <div>
-            Cela déprendra de l'urgence de votre côté mais également de nos disponibilités. Nous avons l'habitude de travailler plutôt rapidement et vous
-            fournir des résultats de l'avancement au fur et à mesure. <a href="mailto:contact@les3.dev">Contactez-nous</a> dès maintenant pour avoir une estimation
-            !
-        </div>
-    </details>
-    <details use:scrollEffect={0.5} class="appear">
-        <summary>Est-ce que je dois m'occuper du design ?</summary>
-        <div>
-            La plupart des projets ne nécessitent pas uniquement du code, mais également du design. Nous nous occupons de cette partie également la plupart du
-            temps. Cependant, nous pouvons nous adapter en fonction de votre existant (identité visuelle, logo, etc.) et vos besoins personnels.
-        </div>
-    </details>
-    <details use:scrollEffect={0.5} class="appear">
-        <summary>Quel type de projet & fonctionnalités peuvent être réalisées ?</summary>
-        <div>
-            Probablement tout ce que vous pourriez imaginer. Avec nos 10 ans d'expériences, on a rencontrés beaucoup de problèmes et tout autant de solution.
-            Nous avons réalisés un grand nombre d'applications ou de sites avec des fonctionnalités très différentes (realtime, collaboration, 3D). Mais aussi
-            des produits sur le long terme, des MVPs pour des startups mais également pour de plus grands organismes comme Decathlon, BNP Paribas ou la base
-            spatiale.
-        </div>
-    </details>
-    <details use:scrollEffect={0.5} class="appear">
-        <summary>Comment puis-je modifier mon projet ?</summary>
-        <div>
-            Dans un soucis de transparence, nous vous fournirons toujours le code source du projet, vous seul.e en serez propriétaire. Si vous voulez modifier
-            votre projet, vous pouvez refaire appel à nous quand vous voulez ou même à d'autres développeur.ses. Nous pouvons également développer des solutions
-            afin que vous puissiez facilement faire évoluer votre produit comme une interface d'admin adaptée à vos besoins.
-        </div>
-    </details>
-    <details use:scrollEffect={0.5} class="appear">
-        <summary>Où sont stockées les données ?</summary>
-        <div>
-            À vous de voir. Ça peut être sur vos serveurs ou ceux d'autres services en ligne, mais pas chez nous. Nous ne voulons pas prendre la responsabilité
-            du stockage de vos données.
-        </div>
-    </details>
-    <details use:scrollEffect={0.5} class="appear">
-        <summary>Ai-je accès au code du projet ?</summary>
-        <div>
-            Oui, le code que nous écrivons n'a qu'un seul destinataire : vous. Lorsque nous aurons fini le projet, nous vous donnerons toutes les clés pour que
-            vous soyez propriétaire du projet et que vous puissiez le faire évoluer comme bon vous semble.
-        </div>
-    </details>
-    <details use:scrollEffect={0.5} class="appear">
-        <summary>Quels outils & technologies utilise-t-on ?</summary>
-        <div>
-            Nous privilégions autant que possible les technologies matures et si possible open-source pour créer des projets durables et performants. Nous avons
-            quelques préférences mais nous nous adaptons en fonction des besoins du projet.
-        </div>
-    </details>
+    {#each questions as question}
+        <details use:scrollEffect={0.5} class="appear">
+            <summary>{question.question}</summary>
+            <div>
+                {question.answer}
+            </div>
+        </details>
+    {/each}
 </section>
 <section id="contact" class="center" class:focus={section === 'contact'} bind:this={contactElement}>
     <h2 class="big appear" use:scrollEffect={1}>Envie de travailler avec nous ?</h2>
