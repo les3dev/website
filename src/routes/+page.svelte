@@ -89,7 +89,7 @@
         {
             question: `Combien de temps prendrait la réalisation de mon projet ?`,
             answer: `Cela déprendra de l'urgence de votre côté mais également de nos disponibilités. Nous avons l'habitude de travailler plutôt rapidement et vous
-            fournir des résultats de l'avancement au fur et à mesure. <a href="mailto:contact@les3.dev">Contactez-nous</a> dès maintenant pour avoir une estimation !`,
+            fournir des résultats de l'avancement au fur et à mesure. <a href="#contact">Contactez-nous</a> dès maintenant pour avoir une estimation !`,
         },
         {
             question: `Est-ce que je dois m'occuper du design ?`,
@@ -293,7 +293,7 @@
         <details use:scrollEffect={0.5} class="appear">
             <summary>{question.question}</summary>
             <div>
-                {question.answer}
+                {@html question.answer}
             </div>
         </details>
     {/each}
@@ -373,6 +373,7 @@
         text-align: center;
         letter-spacing: -1px;
         text-wrap: balance;
+        text-shadow: 0 0 3rem hsla(0, 0%, 0%, 0.3);
     }
 
     h2.big {
@@ -404,6 +405,7 @@
         margin-bottom: 2em;
         margin-inline: auto;
         max-width: 60rem;
+        text-shadow: 0 0 1.5rem hsla(0, 0%, 0%, 0.3);
     }
     .logo {
         font-family: var(--font-logo);
@@ -549,7 +551,7 @@
         margin: auto;
         line-height: 1.6;
     }
-    #faq details a {
+    #faq details :global(a) {
         color: var(--color-indigo);
     }
     #faq details summary {
