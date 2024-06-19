@@ -8,6 +8,7 @@
     import {serializeSchema} from '$lib/schema';
     import {faq, meta, profiles, projects} from '$lib/content';
     import InfiniteSlide from '$lib/InfiniteSlide.svelte';
+    import Clouds from '$lib/Clouds.svelte';
 
     type Section = 'intro' | 'projects' | 'team' | 'faq' | 'contact';
 
@@ -119,6 +120,7 @@
         <strong class="logo">Les3dev</strong> est une agence de développement basée à Paris de création d'applications web et mobiles ambitieuses & sur-mesure.
     </div>
     <a role="button" href="#contact" class="cta">Nous contacter</a>
+    <Clouds></Clouds>
 </section>
 <section id="projects" class="top" class:focus={section === 'projects'} class:active={movedAfterScroll} bind:this={projectsElement}>
     <h2 use:scrollEffect={0.5} class="appear">Aperçu de notre travail</h2>
@@ -298,15 +300,6 @@
     }
 
     /* Intro */
-
-    #sky {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        overflow: hidden;
-    }
 
     #intro .cta {
         background-color: var(--color-yellow);
