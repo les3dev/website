@@ -115,7 +115,7 @@
     </div>
     <h1 class="big">Vous avez la vision,<br />On la concrétise.</h1>
     <div class="subtitle">
-        <strong class="logo">Les3dev</strong> est une agence de développement basée à Paris de création d'applications web et mobiles ambicieuses & sur-mesure.
+        <strong class="logo">Les3dev</strong> est une agence de développement basée à Paris de création d'applications web et mobiles ambitieuses & sur-mesure.
     </div>
     <a role="button" href="#contact" class="cta">Nous contacter</a>
 </section>
