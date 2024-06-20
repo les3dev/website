@@ -40,7 +40,7 @@
     .logos:after {
         position: absolute;
         top: 0;
-        width: 250px;
+        width: 20%;
         height: 100%;
         content: '';
         z-index: 2;

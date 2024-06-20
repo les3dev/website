@@ -1,6 +1,8 @@
 <script lang="ts">
+    import {onMount} from 'svelte';
     import MenuIcon from './MenuIcon.svelte';
     import {mediaQueries} from './mediaqueries';
+    import {browser} from '$app/environment';
 
     const links = [
         {slug: 'projects', label: 'Projets'},
@@ -13,6 +15,24 @@
 
     let isOpen = false;
     let isHidden = false;
+
+    let selected = browser ? location.hash : '';
+
+    onMount(() => {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            anchor.addEventListener('click', function (e) {
+                const href = anchor.getAttribute('href');
+                if (href === null) {
+                    return;
+                }
+                e.preventDefault();
+                document.querySelector(href)?.scrollIntoView({
+                    behavior: 'smooth',
+                });
+                selected = href;
+            });
+        });
+    });
 </script>
 
 <svelte:window
@@ -36,9 +56,9 @@
         <button class:isOpen class:isHidden on:click={() => (isOpen = true)} aria-label="Menu"><MenuIcon /></button>
     {:else if $isMobile !== null}
         <div class="bar" class:isHidden>
-            <a href="#intro" id="logo">les3dev</a>
+            <a href="#intro" id="logo" class:selected={selected === '' || selected === '#intro'}>les3dev</a>
             {#each links as { slug, label }}
-                <a href="#{slug}">{label}</a>
+                <a href="#{slug}" class:selected={selected === `#${slug}`}>{label}</a>
             {/each}
         </div>
     {/if}
@@ -77,6 +97,7 @@
         border-radius: 3rem;
         z-index: 2;
         height: 4rem;
+        gap: 0.5rem;
         transition: 0.3s transform;
     }
     nav .bar.isHidden {
@@ -94,10 +115,19 @@
         transition: all 0.3s;
     }
     nav a:hover,
-    nav a:focus {
+    nav a:focus,
+    nav a.selected {
         scale: 1;
-        color: var(--color-black);
         outline: none;
+    }
+
+    nav a:hover,
+    nav a:focus {
+        background-color: var(--color-black-1);
+    }
+
+    nav a.selected {
+        color: var(--color-black);
         background-color: var(--color-white);
     }
 

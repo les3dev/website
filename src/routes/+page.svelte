@@ -90,17 +90,6 @@
                 }) as const,
         ),
     } as const;
-
-    onMount(() => {
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(anchor.getAttribute('href')!)?.scrollIntoView({
-                    behavior: 'smooth',
-                });
-            });
-        });
-    });
 </script>
 
 <svelte:head>
@@ -256,6 +245,7 @@
         text-align: center;
         letter-spacing: -1px;
         text-wrap: balance;
+        line-height: 1;
         text-shadow: 0 0 3rem hsla(0, 0%, 0%, 0.3);
     }
 
@@ -320,7 +310,6 @@
 
     #intro .cta {
         background-color: var(--color-yellow);
-        margin-bottom: 6rem;
     }
     #intro .cta:hover,
     #intro .cta:focus {
