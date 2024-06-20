@@ -1,7 +1,10 @@
 <script lang="ts">
-    import {onMount} from 'svelte';
-    import {onNavigate} from '$app/navigation';
     import '../app.css';
+
+    import posthog from 'posthog-js';
+    import {onMount} from 'svelte';
+    import {afterNavigate, beforeNavigate, onNavigate} from '$app/navigation';
+    import {browser, dev} from '$app/environment';
 
     onMount(() => {
         window.history.scrollRestoration = 'auto';
@@ -19,6 +22,11 @@
             });
         });
     });
+
+    if (browser && !dev) {
+        beforeNavigate(() => posthog.capture('$pageleave'));
+        afterNavigate(() => posthog.capture('$pageview'));
+    }
 </script>
 
 <slot />
