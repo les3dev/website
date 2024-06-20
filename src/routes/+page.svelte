@@ -136,7 +136,7 @@
     </div>
     <h3>Ils nous ont fait confiance</h3>
     <InfiniteSlide logos={['amd', 'bnp', 'bouygues', 'cnes', 'decathlon', 'epitech', 'france', 'tf1']} />
-    <p style:text-align="center" style:max-width="40rem" style:margin="auto">
+    <p style:text-align="center" style:max-width="50rem" style:margin="auto">
         * la majorité de nos projets clients ne figurent pas sur le site car ils ne sont pas publics mais nous serions ravis d'en discuter plus amplement avec
         vous si vous envisagez de travailler avec nous.
     </p>
