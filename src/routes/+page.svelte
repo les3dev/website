@@ -7,6 +7,7 @@
     import GithubIcon from '$lib/GithubIcon.svelte';
     import {serializeSchema} from '$lib/schema';
     import {faq, meta, profiles, projects} from '$lib/content';
+    import InfiniteSlide from '$lib/InfiniteSlide.svelte';
 
     type Section = 'intro' | 'projects' | 'team' | 'faq' | 'contact';
 
@@ -145,11 +146,7 @@
         {/each}
     </div>
     <h3>Ils nous ont fait confiance</h3>
-    <div style:display="flex" style:gap="3rem" style:flex-wrap="wrap" style:scale="0.6" style:justify-content="center">
-        {#each ['amd', 'bnp', 'bouygues', 'cnes', 'decathlon', 'epitech', 'france', 'tf1'] as client}
-            <img src="/images/clients/{client}.svg" alt={client} />
-        {/each}
-    </div>
+    <InfiniteSlide logos={['amd', 'bnp', 'bouygues', 'cnes', 'decathlon', 'epitech', 'france', 'tf1']} />
     <p style:text-align="center" style:max-width="40rem" style:margin="auto">
         * la majorité de nos projets clients ne figurent pas sur le site car ils ne sont pas publics mais nous serions ravis d'en discuter plus amplement avec
         vous si vous envisagez de travailler avec nous.
