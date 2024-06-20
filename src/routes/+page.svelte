@@ -110,17 +110,12 @@
 <svelte:window on:scroll={handleScroll} on:mousemove={() => (movedAfterScroll = true)} />
 
 <section id="intro" class="center" class:focus={section === 'intro'} bind:this={introElement}>
-    <div id="sky">
-        {#each [[10, 1], [30, 0.7], [50, 0.5], [65, 1], [80, 1.2]] as [y, size], i}
-            <Cloud {y} {size} direction={i % 2 ? -1 : 1} />
-        {/each}
-    </div>
+    <Clouds />
     <h1 class="big">Vous avez la vision,<br />On la concrétise.</h1>
     <div class="subtitle">
         <strong class="logo">Les3dev</strong> est une agence de développement basée à Paris de création d'applications web et mobiles ambitieuses & sur-mesure.
     </div>
     <a role="button" href="#contact" class="cta">Nous contacter</a>
-    <Clouds></Clouds>
 </section>
 <section id="projects" class="top" class:focus={section === 'projects'} class:active={movedAfterScroll} bind:this={projectsElement}>
     <h2 use:scrollEffect={0.5} class="appear">Aperçu de notre travail</h2>
