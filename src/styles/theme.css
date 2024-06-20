@@ -15,11 +15,6 @@
     --color-cyan: #6bfffe;
 }
 
-/* Root */
-:root {
-    scroll-behavior: smooth;
-}
-
 ::view-transition-old(root),
 ::view-transition-new(root) {
     animation-duration: 0.3s;
