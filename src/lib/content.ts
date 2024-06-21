@@ -2,7 +2,7 @@ export const meta = {
     title: 'Les 3 dev - Agence de développement web & mobile',
     siteUrl: 'https://www.les3.dev',
     description: 'Nous vous aidons à réaliser des projets ambitieux et sur-mesure.',
-    thumbnail: '/thumbnail.png',
+    thumbnail: '/thumbnail.webp',
 };
 
 export interface Profile {
@@ -119,7 +119,7 @@ export const projects = [
     {
         slug: 'voltask',
         link: 'https://demo.voltask.tech',
-        thumbnail: '/images/projects/voltask.png',
+        thumbnail: '/images/projects/voltask.webp',
         title: 'Voltask',
         description: 'Outil No-Code collaboratif dans le navigateur pour créer des automatisations avec des scénarios visuels.',
         video: '/videos/voltask.mp4',
@@ -133,14 +133,14 @@ Voltask a été développé en <strong>TypeScript</strong> avec <strong>React</s
     {
         slug: 'codepassport',
         link: 'https://codepassport.dev',
-        thumbnail: '/images/projects/codepassport.png',
+        thumbnail: '/images/projects/codepassport.webp',
         title: 'Code Passport',
         description: "Site web interactif destiné à l'apprentissage du code (JS, HTML & CSS).",
         carousel: [
-            '/images/projects/codepassport-screen-0.gif',
-            '/images/projects/codepassport-screen-1.gif',
-            '/images/projects/codepassport-screen-2.gif',
-            '/images/projects/codepassport-screen-3.gif',
+            '/images/projects/codepassport-screen-0.webp',
+            '/images/projects/codepassport-screen-1.webp',
+            '/images/projects/codepassport-screen-2.webp',
+            '/images/projects/codepassport-screen-3.webp',
         ],
         content: `Code Passport est une plateforme intéractive qui permet l'apprentissage du code à travers des <strong>guides illustrés</strong>, des <strong>exercices</strong> interactifs avec un éditeur intégré et des <strong>quiz</strong>. Chaque cours est représenté par une map en 3d avec l'ensemble des étapes débloquables au fur et à mesure.
     
@@ -149,7 +149,7 @@ Le site est développé avec le framework <strong>SvelteKit</strong> et utilise 
     {
         slug: 'voltask-ai',
         link: 'https://chat.voltask.tech',
-        thumbnail: '/images/projects/voltask-ai.png',
+        thumbnail: '/images/projects/voltask-ai.webp',
         title: 'Voltask AI',
         description: 'Chatbot IA pour lancer des automatisations Voltask.',
         video: '/videos/voltask-ai.mp4',
@@ -160,7 +160,7 @@ Voltask AI a été développé en <strong>TypeScript</strong> avec <strong>Svelt
     {
         slug: 'voltapp',
         link: 'https://editor.voltapp.tech',
-        thumbnail: '/images/projects/voltapp.png',
+        thumbnail: '/images/projects/voltapp.webp',
         title: 'Voltapp',
         description: 'Voltapp est un outil No-Code permettant de créer des applications web grâce à la programmation visuelle.',
         video: '/videos/voltapp.mp4',
@@ -176,7 +176,7 @@ Voltapp a été développé en <strong>TypeScript</strong> avec <strong>React</s
     {
         slug: 'celestory',
         link: 'https://creator.celestory.io',
-        thumbnail: '/images/projects/celestory.png',
+        thumbnail: '/images/projects/celestory.webp',
         title: 'Celestory',
         description: 'Outil pour créer des serious games, formations et visual novels avec un système de choix et de variables en No-Code.',
         video: '/videos/celestory.mp4',
@@ -187,10 +187,10 @@ Celestory a été développé en <strong>TypeScript</strong> avec <strong>React<
     {
         slug: 'ttmc-for-dev',
         link: 'https://ttmc-ui.vercel.app',
-        thumbnail: '/images/projects/ttmc-for-dev.png',
+        thumbnail: '/images/projects/ttmc-for-dev.webp',
         title: 'TTMC for dev',
         description: 'Inspiré par le jeu "Tu te mets combien ?" pour aider les apprenti.e.s développeur.ses à améliorer leur culture tech.',
-        carousel: ['/images/projects/ttmc-for-dev-screen-0.gif', '/images/projects/ttmc-for-dev-screen-1.gif'],
+        carousel: ['/images/projects/ttmc-for-dev-screen-0.webp', '/images/projects/ttmc-for-dev-screen-1.webp'],
         content: `TTMC est un jeu gratuit et Open-source que nous avons développé pour aider les développeur.ses à améliorer leur culture générale en développement informatique.
 
 Les cartes du jeux sont créées de manière collaborative sur Github. N’hésitez pas à contribuer si vous avez des idées !
@@ -200,15 +200,15 @@ Le projet a été réalisé avec le framework SvelteKit en JavaScript.`,
     {
         slug: 'photomapper',
         link: 'https://photomapper.io',
-        thumbnail: '/images/projects/photomapper.png',
+        thumbnail: '/images/projects/photomapper.webp',
         title: 'Photomapper',
         description: 'Application mobile de partage de photos géolocalisées partout dans le monde.',
         carousel: [
-            '/images/projects/photomapper-screen-0.png',
-            '/images/projects/photomapper-screen-1.png',
-            '/images/projects/photomapper-screen-2.png',
-            '/images/projects/photomapper-screen-3.png',
-            '/images/projects/photomapper-screen-4.png',
+            '/images/projects/photomapper-screen-0.webp',
+            '/images/projects/photomapper-screen-1.webp',
+            '/images/projects/photomapper-screen-2.webp',
+            '/images/projects/photomapper-screen-3.webp',
+            '/images/projects/photomapper-screen-4.webp',
         ],
         content: `Photomapper est une application <strong>iOS</strong> et <strong>Android</strong> qui permet de partager des spots de photos géolocalisés sur une map.
 
@@ -217,15 +217,15 @@ L’application a du être optimisée pour permettre d’afficher une grande qua
     {
         slug: 'crafter',
         link: 'https://apps.apple.com/us/app/crafter-ar-build-battle/id1389840361',
-        thumbnail: '/images/projects/crafter-ar.png',
+        thumbnail: '/images/projects/crafter-ar.webp',
         title: 'Crafter AR',
         description: 'Jeu mobile de pictionary en réalité augmentée et en temps réel.',
         carousel: [
-            '/images/projects/crafter-screen-0.png',
-            '/images/projects/crafter-screen-1.png',
-            '/images/projects/crafter-screen-2.png',
-            '/images/projects/crafter-screen-3.png',
-            '/images/projects/crafter-screen-4.png',
+            '/images/projects/crafter-screen-0.webp',
+            '/images/projects/crafter-screen-1.webp',
+            '/images/projects/crafter-screen-2.webp',
+            '/images/projects/crafter-screen-3.webp',
+            '/images/projects/crafter-screen-4.webp',
         ],
         content: `Crafter est un jeu mobile multi-joueur disponible sur <strong>iOS</strong> et <strong>Android</strong>.  Le principe du jeu est d’utiliser des cubes pour créer des constructions qui représentent des concepts à faire deviner à ses ami.e.s.
 

@@ -163,7 +163,7 @@
         {#each Object.entries(profiles) as [slug, profile]}
             <article class="profile appear" use:scrollEffect={1.4}>
                 <a class="developer" href="/profiles/{slug}">
-                    <Eyevatar src="/images/profiles/{slug}.png" name={slug} left={profile.eyes.left} right={profile.eyes.right} bg={profile.color} />
+                    <Eyevatar src="/images/profiles/{slug}.webp" name={slug} left={profile.eyes.left} right={profile.eyes.right} bg={profile.color} />
                     <div class="name">{profile.name}</div>
                 </a>
                 <a href="https://www.linkedin.com/in/{profile.linkedin}" target="_blank" aria-label="Linked In"><LinkedInIcon /></a>

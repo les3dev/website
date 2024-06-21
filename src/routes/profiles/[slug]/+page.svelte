@@ -38,7 +38,7 @@
     </header>
     <section>
         <img
-            src="/images/profiles/{data.profile.name.toLocaleLowerCase()}.png"
+            src="/images/profiles/{data.profile.name.toLocaleLowerCase()}.webp"
             style:--color-bg={data.profile.color}
             style:view-transition-name={data.profile.name.toLocaleLowerCase()}
             alt=""
