@@ -130,9 +130,9 @@ export const projects = [
         thumbnail: '/images/projects/codepassport.png',
         title: 'Code Passport',
         description: "Site web interactif destiné à l'apprentissage du code (JS, HTML & CSS).",
-        content: `Code Passport est une plateforme intéractive qui permet l'apprentissage du code à travers des guides illustrés, des exercices interactifs avec un éditeur intégré et des quiz. Chaque cours est représenté par une map en 3d avec l'ensemble des étapes débloquables au fur et à mesure.
+        content: `Code Passport est une plateforme intéractive qui permet l'apprentissage du code à travers des <strong>guides illustrés</strong>, des <strong>exercices</strong> interactifs avec un éditeur intégré et des <strong>quiz</strong>. Chaque cours est représenté par une map en 3d avec l'ensemble des étapes débloquables au fur et à mesure.
     
-Le site est développé avec le framework SvelteKit et utilise PostgreSQL pour la base de donnée. La scène 3d utilise la technologie ThreeJS.`,
+Le site est développé avec le framework <strong>SvelteKit</strong> et utilise <strong>PostgreSQL</strong> pour la base de donnée. La scène <strong>3d</strong> utilise la technologie <strong>ThreeJS</strong>.`,
     },
     {
         slug: 'voltask-ai',
@@ -183,9 +183,9 @@ Le projet a été réalisé avec le framework SvelteKit en JavaScript.`,
             '/images/projects/photomapper-screen-3.png',
             '/images/projects/photomapper-screen-4.png',
         ],
-        content: `Photomapper est une application iOS et Android qui permet de partager des spots de photos géolocalisés sur une map.
+        content: `Photomapper est une application <strong>iOS</strong> et <strong>Android</strong> qui permet de partager des spots de photos géolocalisés sur une map.
 
-L’application a du être optimisée pour permettre d’afficher une grande quantité de spots en même temps sur la map. Elle a été développé en utilisant le framework React Native avec la technologie Mapbox. Elle inclue également des In-App purchase.`,
+L’application a du être optimisée pour permettre d’afficher une grande quantité de spots en même temps sur la map. Elle a été développé en utilisant le framework <strong>React Native</strong> avec la technologie <strong>Mapbox</strong>. Elle inclue également des <strong>In-App purchase</strong>.`,
     },
     {
         slug: 'crafter',
@@ -200,8 +200,8 @@ L’application a du être optimisée pour permettre d’afficher une grande qua
             '/images/projects/crafter-screen-3.png',
             '/images/projects/crafter-screen-4.png',
         ],
-        content: `Crafter est un jeu mobile multi-joueur disponible sur iOS et Android.  Le principe du jeu est d’utiliser des cubes pour créer des constructions qui représentent des concepts à faire deviner à ses ami.e.s.
+        content: `Crafter est un jeu mobile multi-joueur disponible sur <strong>iOS</strong> et <strong>Android</strong>.  Le principe du jeu est d’utiliser des cubes pour créer des constructions qui représentent des concepts à faire deviner à ses ami.e.s.
 
-Le jeu est développé avec le moteur de jeux Unity, il utilise la technologie de Google Firebase pour la base de données et la gestion du temps réel. Il contient également des fonctionnalités comme l’In-App purchase et la possibilité de partager ses créations en réalité augmentée.`,
+Le jeu est développé avec le moteur de jeux <strong>Unity</strong>, il utilise la technologie de <strong>Google Firebase</strong> pour la base de données et la gestion du temps réel. Il contient également des fonctionnalités comme <strong>l’In-App purchase</strong> et la possibilité de partager ses créations en <strong>réalité augmentée</strong>.`,
     },
 ];

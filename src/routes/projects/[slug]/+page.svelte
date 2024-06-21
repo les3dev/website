@@ -124,4 +124,7 @@
         line-height: 1.7;
         white-space: pre-wrap;
     }
+    article :global(strong) {
+        color: var(--color-white);
+    }
 </style>
