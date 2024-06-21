@@ -2,7 +2,6 @@
     import Eyevatar from '$lib/Eyevatar.svelte';
     import Menu from '$lib/Menu.svelte';
     import {onMount} from 'svelte';
-    import Cloud from '$lib/Cloud.svelte';
     import LinkedInIcon from '$lib/LinkedInIcon.svelte';
     import GithubIcon from '$lib/GithubIcon.svelte';
     import {serializeSchema} from '$lib/schema';

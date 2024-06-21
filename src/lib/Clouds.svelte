@@ -5,6 +5,10 @@
     let skyDiv: HTMLDivElement;
     let canvas: HTMLCanvasElement;
 
+    function lerp(a: number, b: number, alpha: number) {
+        return a * (1 - alpha) + b * alpha;
+    }
+
     function random(max: number, min: number) {
         return Math.random() * (max - min) + min;
     }
@@ -20,45 +24,50 @@
         canvas.height = skyDiv.clientHeight;
     }
 
+    const speed = 0.1;
+    const padding = 50;
+    const cloudWidth = 235;
+
     onMount(() => {
+        let prev = 0;
+
         handleResize();
 
-        const positions: Map<number, number> = new Map();
-
         const ctx = canvas.getContext('2d')!;
-        const cloudWidth = 235;
         const clouds = new Array(amount).fill(0).map((_, i) => {
             const scale = random(0.5, 1.5);
+            const width = scale * cloudWidth;
+            const position = random(0, 1);
             const direction = i % 2 === 0 ? 1 : -1;
-            const width = cloudWidth * scale;
-            const startPosition = direction === 1 ? -width : ctx.canvas.width + width;
-            positions.set(i, random(-width, ctx.canvas.width + width));
+
             return {
-                id: i,
                 y: (i * (canvas.height - 75)) / amount,
-                speed: 1,
-                direction,
+                width,
                 scale,
-                startPosition,
+                position,
+                direction,
             };
         });
-        let prev = 0;
 
         requestAnimationFrame(draw);
 
         function draw(now: number) {
-            const dt = now - prev;
+            const dt = (now - prev) / 1000;
             prev = now;
             ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
             ctx.save();
-            for (const {id, y, speed, scale, direction, startPosition} of clouds) {
+            for (const cloud of clouds) {
+                const {y, scale, direction} = cloud;
+                const ratio = canvas.height / canvas.width;
+                const halfWidth = (scale * cloudWidth) / 2;
+
+                cloud.position += dt * speed * ratio * direction;
+                if (cloud.position > 1) cloud.position = 0;
+                else if (cloud.position < 0) cloud.position = 1;
+
                 ctx.setTransform(1, 0, 0, 1, 0, 0);
-                let position = positions.get(id)! + dt * speed * direction;
-                if (position >= ctx.canvas.width + 235 * scale || position <= -235 * scale) {
-                    position = startPosition;
-                }
-                positions.set(id, position);
-                ctx.translate(position, y);
+                ctx.translate(-halfWidth, 0);
+                ctx.translate(lerp(-padding - halfWidth, canvas.width + halfWidth + padding, cloud.position), y);
                 ctx.fillStyle = `rgba(255, 255, 255, 0.2)`;
                 ctx.scale(scale, scale);
                 ctx.fill(createCloud());
