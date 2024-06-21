@@ -128,7 +128,7 @@ export const projects = [
 Il a été pensé pour interconnecter des outils <strong>IA</strong> tels que <strong>OpenAI</strong>, <strong>MistralAI</strong> ou encore <strong>Langchain</strong> avec d'autres plus conventionnels comme <strong>Supabase</strong>, <strong>Discord</strong> ou l'envoi d'e-mail.
 Voltask a été également pensé pour être installé en interne afin de permettre aux sociétés de garantir la souveraineté et la sécurité de leurs données.
 
-Voltask a été développé en <strong>TypeScript</strong> avec <strong>React</strong> pour la partie frontend, <strong>NodeJS</strong> pour la partie backend, <strong>Go</strong> pour l'exécution des scénarios, <strong>Deno</strong> et <strong>Bun</strong> pour les différentes intégrations. Pour le temps réel, nous avons utilisé des <strong>WebSockets</strong>. Enfin, nous avons utilisé <strong>Docker</strong> pour permettre aux clients de déployer leur propre instance de Voltask en interne ou sur des providers comme <strong>GCP</strong> ou <strong>Outscale</strong>.`,
+Voltask a été développé en <strong>TypeScript</strong> avec <strong>React</strong> pour la partie frontend, <strong>NodeJS</strong> et <strong>PostgreSQL</strong> pour la partie backend, <strong>Go</strong> pour l'exécution des scénarios, <strong>Deno</strong> et <strong>Bun</strong> pour les différentes intégrations. Pour le temps réel, nous avons utilisé des <strong>WebSockets</strong>. Enfin, nous avons utilisé <strong>Docker</strong> pour permettre aux clients de déployer leur propre instance de Voltask en interne ou sur des providers comme <strong>GCP</strong> ou <strong>Outscale</strong>.`,
     },
     {
         slug: 'codepassport',
@@ -171,7 +171,7 @@ Nous avons développés de nombreux nœuds pour intéragir avec différents serv
 
 Voltapp a été utilisé entre autres pour développer des applications pour le Centre National de l'Étude Spatiale (<strong>CNES</strong>) en Guyane ou encore <strong>Decathlon</strong>.
 
-Voltapp a été développé en <strong>TypeScript</strong> avec <strong>React</strong> pour la partie frontend, <strong>Redux</strong> pour la partie data et <strong>NodeJS</strong> pour la partie backend et déployé sur Google Cloud.`,
+Voltapp a été développé en <strong>TypeScript</strong> avec <strong>React</strong> pour la partie frontend, <strong>Redux</strong> pour la partie data et <strong>NodeJS</strong> et <strong>PostgreSQL</strong> pour la partie backend et déployé sur Google Cloud.`,
     },
     {
         slug: 'celestory',
@@ -182,7 +182,7 @@ Voltapp a été développé en <strong>TypeScript</strong> avec <strong>React</s
         video: '/videos/celestory.mp4',
         content: `Celestory est un outil No-Code permettant de créer des formations, visual novels ou jeux textuels en utilisant un système de graphes pour représenter le scénario.
 
-Celestory a été développé en <strong>TypeScript</strong> avec <strong>React</strong> pour la partie frontend, <strong>Redux</strong> pour la partie data et <strong>NodeJS</strong> pour la partie backend et déployé sur Google Cloud.`,
+Celestory a été développé en <strong>TypeScript</strong> avec <strong>React</strong> pour la partie frontend, <strong>Redux</strong> pour la partie data et <strong>NodeJS</strong> et <strong>PostgreSQL</strong> pour la partie backend et déployé sur Google Cloud.`,
     },
     {
         slug: 'ttmc-for-dev',
