@@ -27,6 +27,7 @@
     const speed = 0.1;
     const padding = 50;
     const cloudWidth = 235;
+    const cloudHeight = 73;
 
     onMount(() => {
         let prev = 0;
@@ -37,14 +38,13 @@
         const clouds = new Array(amount).fill(0).map((_, i) => {
             const scale = random(0.5, 1.5);
             const width = scale * cloudWidth;
-            const position = random(0, 1);
             const direction = i % 2 === 0 ? 1 : -1;
 
             return {
-                y: (i * (canvas.height - 75)) / amount,
+                x: random(0, 1),
+                y: i / amount,
                 width,
                 scale,
-                position,
                 direction,
             };
         });
@@ -57,17 +57,21 @@
             ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
             ctx.save();
             for (const cloud of clouds) {
-                const {y, scale, direction} = cloud;
+                const {scale, direction} = cloud;
                 const ratio = canvas.height / canvas.width;
                 const halfWidth = (scale * cloudWidth) / 2;
+                const halfHeight = (scale * cloudHeight) / 2;
 
-                cloud.position += dt * speed * ratio * direction;
-                if (cloud.position > 1) cloud.position = 0;
-                else if (cloud.position < 0) cloud.position = 1;
+                cloud.x += dt * speed * ratio * direction;
+                if (cloud.x > 1) cloud.x = 0;
+                else if (cloud.x < 0) cloud.x = 1;
 
                 ctx.setTransform(1, 0, 0, 1, 0, 0);
-                ctx.translate(-halfWidth, 0);
-                ctx.translate(lerp(-padding - halfWidth, canvas.width + halfWidth + padding, cloud.position), y);
+                ctx.translate(-halfWidth, -halfHeight);
+                ctx.translate(
+                    lerp(-padding - halfWidth, canvas.width + halfWidth + padding, cloud.x),
+                    lerp(-padding - halfHeight, canvas.height + halfHeight + padding, cloud.y),
+                );
                 ctx.fillStyle = `rgba(255, 255, 255, 0.2)`;
                 ctx.scale(scale, scale);
                 ctx.fill(createCloud());
