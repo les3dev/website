@@ -364,11 +364,13 @@
         #projects.active .grid:hover article.project a {
             opacity: 0.75;
             filter: blur(0.2rem) saturate(0.3);
+            -webkit-filter: blur(0.2rem) saturate(0.3);
         }
 
         #projects .grid:hover article.project a:hover {
             opacity: 1;
             filter: blur(0);
+            -webkit-filter: blur(0);
         }
     }
 

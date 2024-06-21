@@ -89,6 +89,7 @@
     main::after {
         z-index: -2;
         filter: blur(30px);
+        -webkit-filter: blur(30px);
         background-size: 100%;
         background-repeat: no-repeat;
         opacity: 0.3;
