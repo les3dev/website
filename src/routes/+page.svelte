@@ -8,6 +8,7 @@
     import {faq, meta, profiles, projects} from '$lib/content';
     import InfiniteSlide from '$lib/InfiniteSlide.svelte';
     import Clouds from '$lib/Clouds.svelte';
+    import {pushState} from '$app/navigation';
 
     type Section = 'intro' | 'projects' | 'team' | 'faq' | 'contact';
 
@@ -59,6 +60,22 @@
 
     onMount(() => {
         handleScroll();
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            anchor.addEventListener('click', function (e) {
+                const href = anchor.getAttribute('href');
+
+                if (href) {
+                    const event = new CustomEvent('pushstate', {detail: href});
+
+                    e.preventDefault();
+                    pushState(href, {});
+                    window.dispatchEvent(event);
+                    document.querySelector(href)?.scrollIntoView({
+                        behavior: 'smooth',
+                    });
+                }
+            });
+        });
     });
 
     function scrollEffect(element: HTMLElement, factor = 1) {

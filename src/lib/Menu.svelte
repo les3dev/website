@@ -2,7 +2,6 @@
     import {onMount} from 'svelte';
     import MenuIcon from './MenuIcon.svelte';
     import {mediaQueries} from './mediaqueries';
-    import {browser} from '$app/environment';
 
     const links = [
         {slug: 'projects', label: 'Projets'},
@@ -15,23 +14,27 @@
 
     let isOpen = false;
     let isHidden = false;
-
-    let selected = browser ? location.hash : '';
+    let selected = '';
 
     onMount(() => {
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-            anchor.addEventListener('click', function (e) {
-                const href = anchor.getAttribute('href');
-                if (href === null) {
-                    return;
-                }
-                e.preventDefault();
-                document.querySelector(href)?.scrollIntoView({
-                    behavior: 'smooth',
-                });
-                selected = href;
-            });
-        });
+        selected = window.location.hash;
+
+        const pushstate = (event: Event | CustomEvent) => {
+            if ('detail' in event && typeof event.detail === 'string') {
+                selected = event.detail;
+            }
+        };
+        const hashchange = (event: HashChangeEvent) => {
+            const newUrl = new URL(event.newURL);
+            selected = newUrl.hash;
+        };
+
+        window.addEventListener('pushstate', pushstate);
+        window.addEventListener('hashchange', hashchange);
+        return () => {
+            window.removeEventListener('hashchange', hashchange);
+            window.removeEventListener('pushstate', pushstate);
+        };
     });
 </script>
 
