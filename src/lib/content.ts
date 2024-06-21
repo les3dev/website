@@ -49,7 +49,7 @@ J'accorde une attention particulière à l'accompagnement des clients pour répo
         color: 'var(--color-cyan)',
         biography: `Je suis un développeur passionné et touche-à-tout.
 
-Mon expérience m'a permis de faire du jeu vidéo (Godot, Unity, Unreal, C#, C++), du front et du back (React, Svelte, Go, TypeScript, PostgreSQL), d'écrire des langages (PEG, Rust) ou encore des outils de création no-code dans le navigateur (Redux, WebSocket).
+Mon expérience m'a permis de faire du jeu vidéo (Godot, Unity, Unreal, C#, C++), du front et du back (React, Svelte, Go, TypeScript, PostgreSQL), d'écrire des langages (PEG, Rust) ou encore des outils de création No-Code dans le navigateur (Redux, WebSocket).
 
 J'ai travaillé avec des grands noms comme Airbus, TF1, BNP, Décathlon ou encore le CNES.`,
         github: `jonathanpicques`,
@@ -80,9 +80,9 @@ export const faq = [
         answer: `La plupart des projets ne nécessitent pas uniquement du code, mais aussi du design. Nous vous proposons de gérer également la partie graphique UI (User Interface). Cependant, nous pouvons nous adapter en fonction de votre existant (identité visuelle, logo, etc.) et vos besoins personnels.`,
     },
     {
-        question: `Pourquoi pas du No-code ?`,
-        answer: `Nous avons pu utiliser et même créer des outils No-code depuis plusieurs années. Nous sommes donc bien placés pour en comprendre les avantages mais
-        aussi les limitations. Le No-code est très bien pour créer rapidement une version basique et "jetable" de votre idée. En revanche, si vous voulez un
+        question: `Pourquoi pas du No-Code ?`,
+        answer: `Nous avons pu utiliser et même créer des outils No-Code depuis plusieurs années. Nous sommes donc bien placés pour en comprendre les avantages mais
+        aussi les limitations. Le No-Code est très bien pour créer rapidement une version basique et "jetable" de votre idée. En revanche, si vous voulez un
         projet qualitatif, performant et maintenable sur du long terme, nous vous conseillons de plutôt vous tourner vers du code "classique".`,
     },
     {
@@ -121,8 +121,14 @@ export const projects = [
         link: 'https://demo.voltask.tech',
         thumbnail: '/images/projects/voltask.png',
         title: 'Voltask',
-        description: 'Outil No-code collaboratif dans le navigateur pour créer des automatisations avec des scénarios visuels.',
+        description: 'Outil No-Code collaboratif dans le navigateur pour créer des automatisations avec des scénarios visuels.',
         video: '/videos/voltask.mp4',
+        content: `Voltask est un outil permettant de créer des automatisations (comme <strong>Zapier</strong> ou <strong>Make</strong>). Il est entièrement collaboratif en temps réel : plusieurs personnes peuvent éditer un projet en même temps (comme <strong>Figma</strong>).
+
+Il a été pensé pour interconnecter des outils <strong>IA</strong> tels que <strong>OpenAI</strong>, <strong>MistralAI</strong> ou encore <strong>Langchain</strong> avec d'autres plus conventionnels comme <strong>Supabase</strong>, <strong>Discord</strong> ou l'envoi d'e-mail.
+Voltask a été également pensé pour être installé en interne afin de permettre aux sociétés de garantir la souveraineté et la sécurité de leurs données.
+
+Voltask a été développé en <strong>TypeScript</strong> avec <strong>React</strong> pour la partie frontend, <strong>NodeJS</strong> pour la partie backend, <strong>Go</strong> pour l'exécution des scénarios, <strong>Deno</strong> et <strong>Bun</strong> pour les différentes intégrations. Pour le temps réel, nous avons utilisé des <strong>WebSockets</strong>. Enfin, nous avons utilisé <strong>Docker</strong> pour permettre aux clients de déployer leur propre instance de Voltask en interne ou sur des providers comme <strong>GCP</strong> ou <strong>Outscale</strong>.`,
     },
     {
         slug: 'codepassport',
@@ -141,22 +147,36 @@ Le site est développé avec le framework <strong>SvelteKit</strong> et utilise 
         title: 'Voltask AI',
         description: 'Chatbot IA pour lancer des automatisations Voltask.',
         video: '/videos/voltask-ai.mp4',
+        content: `Voltask AI est une application de discussion avec une <strong>IA générative</strong> (<strong>Mistral</strong>) connectée directement au système d'automatisation de Voltask. En utilisant un système de prompt, <strong>l'IA</strong> peut proposer d'exécuter des automatisations définies dans un scénario Voltask.
+
+Voltask AI a été développé en <strong>TypeScript</strong> avec <strong>Svelte</strong> pour la partie Frontend et utilise Voltask pour la partie backend.`,
     },
     {
         slug: 'voltapp',
         link: 'https://editor.voltapp.tech',
         thumbnail: '/images/projects/voltapp.png',
         title: 'Voltapp',
-        description: 'Voltapp est un outil No-code permettant de créer des applications web grâce à la programmation visuelle.',
+        description: 'Voltapp est un outil No-Code permettant de créer des applications web grâce à la programmation visuelle.',
         video: '/videos/voltapp.mp4',
+        content: `Voltapp est un outil permettant de créer des applications web en No-Code (comme <strong>Bubble</strong> ou <strong>Webflow</strong>).
+
+Il a été pensé pour créer des applications rapidement grâce à un système de nœud personnalisable et réutilisable. Nous avons développé un langage de programmation visuel sous forme de graphe permettant d'ajouter des comportements spécifiques à chaque nœud sans écrire une ligne de code.
+Nous avons développés de nombreux nœuds pour intéragir avec différents services externes tels que <strong>Airtable</strong>, <strong>Supabase</strong>, <strong>Mapbox</strong> ou encore <strong>Google Sheet</strong>.
+
+Voltapp a été utilisé entre autres pour développer des applications pour le Centre National de l'Étude Spatiale (<strong>CNES</strong>) en Guyane ou encore <strong>Decathlon</strong>.
+
+Voltapp a été développé en <strong>TypeScript</strong> avec <strong>React</strong> pour la partie frontend, <strong>Redux</strong> pour la partie data et <strong>NodeJS</strong> pour la partie backend et déployé sur Google Cloud.`,
     },
     {
         slug: 'celestory',
         link: 'https://creator.celestory.io',
         thumbnail: '/images/projects/celestory.png',
         title: 'Celestory',
-        description: 'Outil pour créer des serious games, formations et visual novels avec un système de choix et de variables en No-code.',
+        description: 'Outil pour créer des serious games, formations et visual novels avec un système de choix et de variables en No-Code.',
         video: '/videos/celestory.mp4',
+        content: `Celestory est un outil No-Code permettant de créer des formations, visual novels ou jeux textuels en utilisant un système de graphes pour représenter le scénario.
+
+Celestory a été développé en <strong>TypeScript</strong> avec <strong>React</strong> pour la partie frontend, <strong>Redux</strong> pour la partie data et <strong>NodeJS</strong> pour la partie backend et déployé sur Google Cloud.`,
     },
     {
         slug: 'ttmc-for-dev',
