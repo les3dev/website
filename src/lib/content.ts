@@ -136,6 +136,12 @@ Voltask a été développé en <strong>TypeScript</strong> avec <strong>React</s
         thumbnail: '/images/projects/codepassport.png',
         title: 'Code Passport',
         description: "Site web interactif destiné à l'apprentissage du code (JS, HTML & CSS).",
+        carousel: [
+            '/images/projects/codepassport-screen-0.gif',
+            '/images/projects/codepassport-screen-1.gif',
+            '/images/projects/codepassport-screen-2.gif',
+            '/images/projects/codepassport-screen-3.gif',
+        ],
         content: `Code Passport est une plateforme intéractive qui permet l'apprentissage du code à travers des <strong>guides illustrés</strong>, des <strong>exercices</strong> interactifs avec un éditeur intégré et des <strong>quiz</strong>. Chaque cours est représenté par une map en 3d avec l'ensemble des étapes débloquables au fur et à mesure.
     
 Le site est développé avec le framework <strong>SvelteKit</strong> et utilise <strong>PostgreSQL</strong> pour la base de donnée. La scène <strong>3d</strong> utilise la technologie <strong>ThreeJS</strong>.`,
@@ -184,6 +190,7 @@ Celestory a été développé en <strong>TypeScript</strong> avec <strong>React<
         thumbnail: '/images/projects/ttmc-for-dev.png',
         title: 'TTMC for dev',
         description: 'Inspiré par le jeu "Tu te mets combien ?" pour aider les apprenti.e.s développeur.ses à améliorer leur culture tech.',
+        carousel: ['/images/projects/ttmc-for-dev-screen-0.gif', '/images/projects/ttmc-for-dev-screen-1.gif'],
         content: `TTMC est un jeu gratuit et Open-source que nous avons développé pour aider les développeur.ses à améliorer leur culture générale en développement informatique.
 
 Les cartes du jeux sont créées de manière collaborative sur Github. N’hésitez pas à contribuer si vous avez des idées !
