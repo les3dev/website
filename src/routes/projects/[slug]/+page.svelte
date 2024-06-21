@@ -1,9 +1,29 @@
 <script lang="ts">
     import Back from '$lib/Back.svelte';
-    import InfiniteSlide from '$lib/InfiniteSlide.svelte';
+    import {meta} from '$lib/content.js';
 
     export let data;
+
+    const projectMeta = {
+        ...meta,
+        title: `${data.project.title} - Les 3 dev`,
+        description: data.project.description.split('\n')[0],
+        thumbnail: data.project.thumbnail,
+    };
 </script>
+
+<svelte:head>
+    <title>{projectMeta.title}</title>
+    <meta name="description" content={projectMeta.description} />
+    <meta property="og:title" content={projectMeta.title} />
+    <meta property="og:site_name" content={projectMeta.title} />
+    <meta property="og:image" content={projectMeta.thumbnail} />
+    <meta property="og:url" content={projectMeta.siteUrl} />
+    <meta property="og:description" content={projectMeta.description} />
+    <meta property="twitter:title" content={projectMeta.title} />
+    <meta property="twitter:description" content={projectMeta.description} />
+    <meta property="twitter:image" content={projectMeta.thumbnail} />
+</svelte:head>
 
 <a id="back" href="/#projects" aria-label="Back">
     <Back />
