@@ -40,7 +40,7 @@
         <img
             src="/images/profiles/{data.profile.name.toLocaleLowerCase()}.png"
             style:--color-bg={data.profile.color}
-            style:--transition-name={data.profile.name.toLocaleLowerCase()}
+            style:view-transition-name={data.profile.name.toLocaleLowerCase()}
             alt=""
         />
         <h1>Salut, moi c'est {data.profile.name} 👋</h1>
@@ -90,7 +90,6 @@
         max-width: 13rem;
         max-height: 13rem;
         border-radius: 50%;
-        view-transition-name: var(--transition-name);
     }
     h1 {
         color: var(--color-black);

@@ -122,6 +122,7 @@ export const projects = [
         thumbnail: '/images/projects/voltask.png',
         title: 'Voltask',
         description: 'Outil No-code collaboratif dans le navigateur pour créer des automatisations avec des scénarios visuels.',
+        video: '/videos/voltask.mp4',
     },
     {
         slug: 'codepassport',
@@ -129,6 +130,9 @@ export const projects = [
         thumbnail: '/images/projects/codepassport.png',
         title: 'Code Passport',
         description: "Site web interactif destiné à l'apprentissage du code (JS, HTML & CSS).",
+        content: `Code Passport est une plateforme intéractive qui permet l'apprentissage du code à travers des guides illustrés, des exercices interactifs avec un éditeur intégré et des quiz. Chaque cours est représenté par une map en 3d avec l'ensemble des étapes débloquables au fur et à mesure.
+    
+Le site est développé avec le framework SvelteKit et utilise PostgreSQL pour la base de donnée. La scène 3d utilise la technologie ThreeJS.`,
     },
     {
         slug: 'voltask-ai',
@@ -136,6 +140,7 @@ export const projects = [
         thumbnail: '/images/projects/voltask-ai.png',
         title: 'Voltask AI',
         description: 'Chatbot IA pour lancer des automatisations Voltask.',
+        video: '/videos/voltask-ai.mp4',
     },
     {
         slug: 'voltapp',
@@ -143,6 +148,7 @@ export const projects = [
         thumbnail: '/images/projects/voltapp.png',
         title: 'Voltapp',
         description: 'Voltapp est un outil No-code permettant de créer des applications web grâce à la programmation visuelle.',
+        video: '/videos/voltapp.mp4',
     },
     {
         slug: 'celestory',
@@ -150,6 +156,7 @@ export const projects = [
         thumbnail: '/images/projects/celestory.png',
         title: 'Celestory',
         description: 'Outil pour créer des serious games, formations et visual novels avec un système de choix et de variables en No-code.',
+        video: '/videos/celestory.mp4',
     },
     {
         slug: 'ttmc-for-dev',

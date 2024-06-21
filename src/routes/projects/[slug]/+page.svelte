@@ -11,13 +11,19 @@
 
 <main style:--bg="url({data.project.thumbnail})">
     <header>
-        <img src={data.project.thumbnail} alt="" />
+        <img src={data.project.thumbnail} style:view-transition-name="{data.project.slug}-thumbnail" alt="" />
         <div>
-            <h1>{data.project.title}</h1>
-            <p>{data.project.description}</p>
+            <h1 style:view-transition-name="{data.project.slug}-title">{data.project.title}</h1>
+            <p style:view-transition-name="{data.project.slug}-description">{data.project.description}</p>
             <a role="button" style:--fg="var(--color-black)" style:--bg="var(--color-white)" href={data.project.link} target="_blank">Ouvrir le projet</a>
         </div>
     </header>
+    {#if data.project.video}
+        <video autoplay controls muted>
+            <source src={data.project.video} type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+    {/if}
     {#if data.project.carousel}
         <div id="carousel">
             {#each data.project.carousel as img}
@@ -106,6 +112,11 @@
     }
     #carousel img {
         max-height: 400px;
+    }
+
+    video {
+        max-width: 100%;
+        border-radius: 1rem;
     }
     article {
         color: var(--color-white-1);

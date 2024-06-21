@@ -123,9 +123,9 @@
         {#each projects as project}
             <article class="project appear" use:scrollEffect={3}>
                 <a href="/projects/{project.slug}">
-                    <img src={project.thumbnail} alt="" />
-                    <h3>{project.title}</h3>
-                    <p>{project.description}</p>
+                    <img style:view-transition-name="{project.slug}-thumbnail" src={project.thumbnail} alt="" />
+                    <h3 style:view-transition-name="{project.slug}-title">{project.title}</h3>
+                    <p style:view-transition-name="{project.slug}-description">{project.description}</p>
                 </a>
             </article>
         {/each}
