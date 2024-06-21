@@ -4,7 +4,7 @@ import {profiles} from '$lib/content';
 export const prerender = true;
 
 export function load({params}) {
-    const profile = profiles[params.name];
+    const profile = profiles[params.slug];
     if (!profile) {
         throw error(404, 'not found');
     }

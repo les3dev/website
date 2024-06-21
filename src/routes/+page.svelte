@@ -122,7 +122,7 @@
     <div class="grid">
         {#each projects as project}
             <article class="project appear" use:scrollEffect={3}>
-                <a href={project.link} target="_blank">
+                <a href="/projects/{project.slug}">
                     <img src={project.thumbnail} alt="" />
                     <h3>{project.title}</h3>
                     <p>{project.description}</p>
@@ -145,7 +145,7 @@
     <div class="wrap-center">
         {#each Object.entries(profiles) as [slug, profile]}
             <article class="profile appear" use:scrollEffect={1.4}>
-                <a class="developer" href="/{slug}">
+                <a class="developer" href="/profiles/{slug}">
                     <Eyevatar src="/images/profiles/{slug}.png" name={slug} left={profile.eyes.left} right={profile.eyes.right} bg={profile.color} />
                     <div class="name">{profile.name}</div>
                 </a>

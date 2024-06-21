@@ -117,51 +117,69 @@ export const faq = [
 
 export const projects = [
     {
+        slug: 'voltask',
         link: 'https://demo.voltask.tech',
         thumbnail: '/images/projects/voltask.png',
         title: 'Voltask',
         description: 'Outil No-code collaboratif dans le navigateur pour créer des automatisations avec des scénarios visuels.',
     },
     {
+        slug: 'codepassport',
         link: 'https://codepassport.dev',
         thumbnail: '/images/projects/codepassport.png',
         title: 'Code Passport',
         description: "Site web interactif destiné à l'apprentissage du code (JS, HTML & CSS).",
     },
     {
+        slug: 'voltask-ai',
         link: 'https://chat.voltask.tech',
         thumbnail: '/images/projects/voltask-ai.png',
         title: 'Voltask AI',
         description: 'Chatbot IA pour lancer des automatisations Voltask.',
     },
     {
+        slug: 'voltapp',
         link: 'https://editor.voltapp.tech',
         thumbnail: '/images/projects/voltapp.png',
         title: 'Voltapp',
         description: 'Voltapp est un outil No-code permettant de créer des applications web grâce à la programmation visuelle.',
     },
     {
+        slug: 'celestory',
         link: 'https://creator.celestory.io',
         thumbnail: '/images/projects/celestory.png',
         title: 'Celestory',
         description: 'Outil pour créer des serious games, formations et visual novels avec un système de choix et de variables en No-code.',
     },
     {
+        slug: 'ttmc-for-dev',
         link: 'https://ttmc-ui.vercel.app',
         thumbnail: '/images/projects/ttmc-for-dev.png',
         title: 'TTMC for dev',
         description: 'Inspiré par le jeu "Tu te mets combien ?" pour aider les apprenti.e.s développeur.ses à améliorer leur culture tech.',
     },
     {
+        slug: 'photomapper',
         link: 'https://photomapper.io',
         thumbnail: '/images/projects/photomapper.png',
         title: 'Photomapper',
         description: 'Application mobile de partage de photos géolocalisées partout dans le monde.',
     },
     {
+        slug: 'crafter',
         link: 'https://apps.apple.com/us/app/crafter-ar-build-battle/id1389840361',
         thumbnail: '/images/projects/crafter-ar.png',
         title: 'Crafter AR',
         description: 'Jeu mobile de pictionary en réalité augmentée et en temps réel.',
+        carousel: [
+            '/images/projects/crafter-screen-0.png',
+            '/images/projects/crafter-screen-1.png',
+            '/images/projects/crafter-screen-2.png',
+            '/images/projects/crafter-screen-3.png',
+            '/images/projects/crafter-screen-4.png',
+        ],
+        content: `Crafter est un jeu mobile multi-joueur disponible sur iOS et Android.  Le principe du jeu est d’utiliser des cubes pour créer des constructions qui représentent des concepts à faire deviner à ses ami.e.s.
+
+Le jeu est développé avec le moteur de jeux Unity, il utilise la technologie de Google Firebase pour la base de données et la gestion du temps réel. Il contient également des fonctionnalités comme l’In-App purchase et la possibilité de partager ses créations en réalité augmentée.`,
     },
 ];

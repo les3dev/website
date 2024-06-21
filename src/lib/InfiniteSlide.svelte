@@ -36,8 +36,8 @@
         margin: auto;
     }
 
-    .logos:before,
-    .logos:after {
+    .logos::before,
+    .logos::after {
         position: absolute;
         top: 0;
         width: 20%;
@@ -46,12 +46,12 @@
         z-index: 2;
     }
 
-    .logos:before {
+    .logos::before {
         left: 0;
         background: linear-gradient(to left, rgba(0, 0, 0, 0), var(--color-black));
     }
 
-    .logos:after {
+    .logos::after {
         right: 0;
         background: linear-gradient(to right, rgba(0, 0, 0, 0), var(--color-black));
     }
