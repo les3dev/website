@@ -106,7 +106,7 @@
     nav a {
         display: flex;
         align-items: center;
-        color: var(--color-white);
+        color: var(--color-white-1);
         font-weight: bold;
         text-decoration: none;
         padding-inline: 1.5rem;
@@ -123,6 +123,7 @@
 
     nav a:hover,
     nav a:focus {
+        color: var(--color-white);
         background-color: var(--color-black-1);
     }
 
