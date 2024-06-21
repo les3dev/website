@@ -9,7 +9,7 @@
     <Back />
 </a>
 
-<main>
+<main style:--bg="url({data.project.thumbnail})">
     <header>
         <img src={data.project.thumbnail} alt="" />
         <div>
@@ -39,9 +39,36 @@
     main {
         display: grid;
         max-width: 50rem;
-        margin: 1rem auto;
+        margin: auto;
+        padding-bottom: 3rem;
         gap: 2rem;
     }
+
+    main::before,
+    main::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    main::before {
+        z-index: -1;
+        height: 20rem;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), var(--color-black));
+    }
+
+    main::after {
+        z-index: -2;
+        filter: blur(30px);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        opacity: 0.3;
+        background-image: var(--bg);
+        height: 15rem;
+    }
+
     header {
         display: flex;
         gap: 2rem;

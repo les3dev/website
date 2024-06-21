@@ -157,6 +157,11 @@ export const projects = [
         thumbnail: '/images/projects/ttmc-for-dev.png',
         title: 'TTMC for dev',
         description: 'Inspiré par le jeu "Tu te mets combien ?" pour aider les apprenti.e.s développeur.ses à améliorer leur culture tech.',
+        content: `TTMC est un jeu gratuit et Open-source que nous avons développé pour aider les développeur.ses à améliorer leur culture générale en développement informatique.
+
+Les cartes du jeux sont créées de manière collaborative sur Github. N’hésitez pas à contribuer si vous avez des idées !
+
+Le projet a été réalisé avec le framework SvelteKit en JavaScript.`,
     },
     {
         slug: 'photomapper',
@@ -164,6 +169,16 @@ export const projects = [
         thumbnail: '/images/projects/photomapper.png',
         title: 'Photomapper',
         description: 'Application mobile de partage de photos géolocalisées partout dans le monde.',
+        carousel: [
+            '/images/projects/photomapper-screen-0.png',
+            '/images/projects/photomapper-screen-1.png',
+            '/images/projects/photomapper-screen-2.png',
+            '/images/projects/photomapper-screen-3.png',
+            '/images/projects/photomapper-screen-4.png',
+        ],
+        content: `Photomapper est une application iOS et Android qui permet de partager des spots de photos géolocalisés sur une map.
+
+L’application a du être optimisée pour permettre d’afficher une grande quantité de spots en même temps sur la map. Elle a été développé en utilisant le framework React Native avec la technologie Mapbox. Elle inclue également des In-App purchase.`,
     },
     {
         slug: 'crafter',
