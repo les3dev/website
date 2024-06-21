@@ -66,6 +66,7 @@
         display: grid;
         max-width: 50rem;
         margin: auto;
+        padding-inline: 2rem;
         padding-bottom: 3rem;
         gap: 2rem;
     }
@@ -116,6 +117,16 @@
     header p {
         color: var(--color-white-1);
     }
+
+    @media (max-width: 800px) {
+        header {
+            flex-direction: column;
+        }
+        header > img {
+            max-width: 100%;
+        }
+    }
+
     #carousel {
         display: flex;
         gap: 1rem;
