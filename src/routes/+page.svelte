@@ -129,7 +129,8 @@
     <Clouds />
     <h1 class="big">Vous avez la vision,<br />On la concrétise.</h1>
     <div class="subtitle">
-        <strong class="logo">Les3dev</strong> est une agence de développement basée à Paris de création d'applications web et mobiles ambitieuses & sur-mesure.
+        <strong class="logo">Les3dev</strong> est une agence de développement basée à Paris.<br />
+        Nous sommes spécialisés dans la création d'applications web et mobiles, ambitieuses & sur-mesure.
     </div>
     <a role="button" href="#contact" class="cta">Nous contacter</a>
 </section>
@@ -290,7 +291,7 @@
         text-align: center;
         margin-bottom: 2em;
         margin-inline: auto;
-        max-width: 60rem;
+        max-width: 50rem;
         text-shadow: 0 0 1.5rem hsla(0, 0%, 0%, 0.3);
     }
     .logo {
@@ -314,6 +315,7 @@
 
     #intro .cta {
         background-color: var(--color-yellow);
+        margin-bottom: 2rem;
     }
     #intro .cta:hover,
     #intro .cta:focus {
