@@ -49,12 +49,12 @@
             };
         });
 
-        requestAnimationFrame(draw);
+        let animationFrameId = requestAnimationFrame(draw);
 
         function draw(now: number) {
             const dt = (now - prev) / 1000;
             prev = now;
-            ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.save();
             for (const cloud of clouds) {
                 const {scale, direction} = cloud;
@@ -76,10 +76,11 @@
                 ctx.scale(scale, scale);
                 ctx.fill(createCloud());
             }
-
             ctx.restore();
-            requestAnimationFrame(draw);
+            animationFrameId = requestAnimationFrame(draw);
         }
+
+        return () => cancelAnimationFrame(animationFrameId);
     });
 </script>
 
