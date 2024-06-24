@@ -8,7 +8,7 @@
     import {navigationStack} from '$lib/magicBack';
 
     onMount(() => {
-        window.history.scrollRestoration = 'auto';
+        // window.history.scrollRestoration = 'auto';
     });
 
     onNavigate((navigation) => {

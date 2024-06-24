@@ -102,6 +102,7 @@
         height: 4rem;
         gap: 0.5rem;
         transition: 0.3s transform;
+        animation: ease-out 0.3s appear;
     }
     nav .bar.isHidden {
         transform: translateY(10rem);
@@ -164,5 +165,14 @@
     .fullscreen #logo {
         font-size: 3.2rem;
         padding-block: 0.2rem;
+    }
+
+    @keyframes appear {
+        from {
+            translate: 0 10rem;
+        }
+        to {
+            translate: 0 0;
+        }
     }
 </style>
