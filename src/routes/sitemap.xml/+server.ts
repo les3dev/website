@@ -1,9 +1,11 @@
+import {profiles, projects} from '$lib/content';
+
 export const prerender = true;
 
 export async function GET() {
     const headers = {'Content-Type': 'application/xml'};
 
-    const pages = ['jeremie', 'jonathan', 'vincent'];
+    const pages = [...Object.keys(profiles), ...projects.map((p) => p.slug)];
 
     const sitemap = `
 	  <?xml version="1.0" encoding="UTF-8" ?>
