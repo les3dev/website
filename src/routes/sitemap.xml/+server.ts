@@ -18,14 +18,14 @@ export async function GET() {
 	    xmlns:video="https://www.google.com/schemas/sitemap-video/1.1"
 	  >
 		<url>
-			<loc>https://www.les3.dev/</loc>
+			<loc>https://les3.dev/</loc>
 			<lastmod>${new Date().toISOString()}</lastmod>
 		</url>
 	    ${pages
             .map((page) => {
                 return `
 	          <url>
-	            <loc>https://www.les3.dev/${page}</loc>
+	            <loc>https://les3.dev/${page}</loc>
 	            <lastmod>${new Date().toISOString()}</lastmod>
 	          </url>
 	        `;
