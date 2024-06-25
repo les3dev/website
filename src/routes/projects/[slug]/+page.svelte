@@ -1,6 +1,7 @@
 <script lang="ts">
     import Back from '$lib/Back.svelte';
-    import {meta} from '$lib/content.js';
+    import {meta} from '$lib/content';
+    import {magicBack} from '$lib/magicBack';
 
     export let data;
 
@@ -25,7 +26,7 @@
     <meta property="twitter:image" content={projectMeta.thumbnail} />
 </svelte:head>
 
-<a id="back" href="/#projects" aria-label="Back">
+<a id="back" href="/#projects" aria-label="Back" use:magicBack>
     <Back />
 </a>
 

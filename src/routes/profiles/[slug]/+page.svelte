@@ -2,7 +2,8 @@
     import Back from '$lib/Back.svelte';
     import GithubIcon from '$lib/GithubIcon.svelte';
     import LinkedInIcon from '$lib/LinkedInIcon.svelte';
-    import {meta} from '$lib/content.js';
+    import {meta} from '$lib/content';
+    import {magicBack} from '$lib/magicBack';
 
     export let data;
 
@@ -28,7 +29,7 @@
 
 <main>
     <header>
-        <a href="/#team" aria-label="Back">
+        <a href="/#team" aria-label="Back" use:magicBack>
             <Back />
         </a>
         <div>
