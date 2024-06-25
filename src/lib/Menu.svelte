@@ -13,11 +13,12 @@
     const isMobile = mediaQueries('(max-width: 720px)');
 
     let isOpen = false;
-    let isHidden = false;
+    let isHidden = true;
     let selected = '';
 
     onMount(() => {
         selected = window.location.hash;
+        isHidden = false;
 
         const pushstate = (event: Event | CustomEvent) => {
             if ('detail' in event && typeof event.detail === 'string') {
@@ -57,7 +58,7 @@
             {/each}
         </div>
         <button class:isOpen class:isHidden on:click={() => (isOpen = true)} aria-label="Menu"><MenuIcon /></button>
-    {:else if $isMobile !== null}
+    {:else}
         <div class="bar" class:isHidden>
             <a href="#intro" id="logo" class:selected={selected === '' || selected === '#intro'}>les3dev</a>
             {#each links as { slug, label }}
