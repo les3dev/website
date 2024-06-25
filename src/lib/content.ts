@@ -37,7 +37,7 @@ export const profiles: Record<string, Profile> = {
 
 Je travaille principalement sur des projets web (React & SvelteKit) avec une appétence particulière pour le dev back (Node, Golang, PostgreSQL) et une solide connaissance en infra (Docker, Google cloud).
 
-Mon expérience professionnelle en tant que co-fondateur de startup m'a amené à travailler avec de grands groupes comme TF1, la BNP ou encore le CNES. J'ai pu les accompagner de la conception de leurs projets, en passant par le développement, la mise en production, la formation des équipes et la maintenance.
+Mon expérience professionnelle en tant que co-fondateur de startup m'a amené à travailler avec de grands groupes comme TF1, la BNP ou encore le CNES. J'ai pu les accompagner sur la conception de leurs projets, en passant par le développement, la mise en production, la formation des équipes et la maintenance.
 
 J'accorde une attention particulière à l'accompagnement des clients pour répondre le plus efficacement possible à leurs attentes.`,
         github: `pikanezi`,

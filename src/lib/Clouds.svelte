@@ -2,6 +2,8 @@
     import {onMount} from 'svelte';
 
     export let amount = 5;
+    export let verticalOffset = '2rem';
+
     let skyDiv: HTMLDivElement;
     let canvas: HTMLCanvasElement;
 
@@ -86,17 +88,17 @@
 
 <svelte:window on:resize={handleResize} />
 
-<div id="sky" bind:this={skyDiv}>
+<div id="sky" bind:this={skyDiv} style:--vertical-offset={verticalOffset} aria-hidden="true">
     <canvas bind:this={canvas}></canvas>
 </div>
 
 <style>
     #sky {
         position: absolute;
-        top: 2rem;
+        top: var(--vertical-offset);
         left: 0;
         right: 0;
-        bottom: 2rem;
+        bottom: var(--vertical-offset);
         overflow: hidden;
     }
     canvas {

@@ -127,12 +127,12 @@
 
 <section id="intro" class="center" class:focus={section === 'intro'} bind:this={introElement}>
     <Clouds />
-    <h1 class="big">Vous avez la vision,<br />On la concrétise.</h1>
-    <div class="subtitle">
+    <h1 class="big" style:z-index="1">Vous avez la vision,<br />On la concrétise.</h1>
+    <div class="subtitle" style:z-index="1">
         <strong class="logo">Les3dev</strong> est une agence de développement basée à Paris.<br />
         Nous sommes spécialisés dans la création d'applications web et mobiles, ambitieuses & sur-mesure.
     </div>
-    <a role="button" href="#contact" class="cta">Nous contacter</a>
+    <a role="button" href="#contact" class="cta" style:z-index="1">Nous contacter</a>
 </section>
 <section id="projects" class="top" class:focus={section === 'projects'} class:active={movedAfterScroll} bind:this={projectsElement}>
     <h2 use:scrollEffect={0.5} class="appear">Aperçu de notre travail</h2>
