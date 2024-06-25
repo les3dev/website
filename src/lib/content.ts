@@ -232,3 +232,14 @@ L’application a du être optimisée pour permettre d’afficher une grande qua
 Le jeu est développé avec le moteur de jeux <strong>Unity</strong>, il utilise la technologie de <strong>Google Firebase</strong> pour la base de données et la gestion du temps réel. Il contient également des fonctionnalités comme <strong>l’In-App purchase</strong> et la possibilité de partager ses créations en <strong>réalité augmentée</strong>.`,
     },
 ];
+
+export const partners = [
+    {slug: 'amd', alt: 'AMD'},
+    {slug: 'bnp', alt: 'BNP Paribas'},
+    {slug: 'bouygues', alt: 'Bouygues'},
+    {slug: 'cnes', alt: `Centre national d'études spatiales`},
+    {slug: 'decathlon', alt: `DECATHLON`},
+    {slug: 'epitech', alt: 'Epitech'},
+    {slug: 'france', alt: 'Gouvernement français'},
+    {slug: 'tf1', alt: 'TF1'},
+];

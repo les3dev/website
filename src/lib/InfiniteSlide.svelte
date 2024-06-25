@@ -1,16 +1,16 @@
 <script lang="ts">
-    export let logos: string[];
+    export let logos: {slug: string; alt: string}[];
 </script>
 
 <div class="logos">
     <div class="logos-slide">
         {#each logos as logo}
-            <img src="/images/clients/{logo}.svg" alt={logo} />
+            <img src="/images/clients/{logo.slug}.svg" alt={logo.alt} width="200" height="60" />
         {/each}
     </div>
     <div class="logos-slide">
         {#each logos as logo}
-            <img src="/images/clients/{logo}.svg" alt={logo} />
+            <img src="/images/clients/{logo.slug}.svg" alt={logo.alt} />
         {/each}
     </div>
 </div>

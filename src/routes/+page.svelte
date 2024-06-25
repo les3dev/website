@@ -5,10 +5,10 @@
     import LinkedInIcon from '$lib/LinkedInIcon.svelte';
     import GithubIcon from '$lib/GithubIcon.svelte';
     import {serializeSchema} from '$lib/schema';
-    import {faq, meta, profiles, projects} from '$lib/content';
     import InfiniteSlide from '$lib/InfiniteSlide.svelte';
     import Clouds from '$lib/Clouds.svelte';
     import {pushState} from '$app/navigation';
+    import {faq, meta, partners, profiles, projects} from '$lib/content';
 
     type Section = 'intro' | 'projects' | 'team' | 'faq' | 'contact';
 
@@ -141,7 +141,7 @@
         {#each projects as project}
             <article class="project appear" use:scrollEffect={3}>
                 <a href="/projects/{project.slug}">
-                    <img style:view-transition-name="{project.slug}-thumbnail" src={project.thumbnail} alt="" />
+                    <img style:view-transition-name="{project.slug}-thumbnail" src={project.thumbnail} alt="" width="640" height="360" />
                     <h3 style:view-transition-name="{project.slug}-title">{project.title}</h3>
                     <p style:view-transition-name="{project.slug}-description">{project.description}</p>
                 </a>
@@ -149,7 +149,7 @@
         {/each}
     </div>
     <h3>Ils nous ont fait confiance</h3>
-    <InfiniteSlide logos={['amd', 'bnp', 'bouygues', 'cnes', 'decathlon', 'epitech', 'france', 'tf1']} />
+    <InfiniteSlide logos={partners} />
     <p style:text-align="center" style:max-width="50rem" style:margin="auto">
         * la majorité de nos projets clients ne figurent pas sur le site car ils ne sont pas publics mais nous serions ravis d'en discuter plus amplement avec
         vous si vous envisagez de travailler avec nous.
@@ -371,6 +371,7 @@
     }
 
     article img {
+        height: auto;
         max-width: 100%;
         border-radius: 1.5rem;
     }

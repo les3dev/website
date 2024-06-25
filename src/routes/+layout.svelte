@@ -7,10 +7,6 @@
     import {browser, dev} from '$app/environment';
     import {navigationStack} from '$lib/magicBack';
 
-    onMount(() => {
-        // window.history.scrollRestoration = 'auto';
-    });
-
     onNavigate((navigation) => {
         if (navigation.type === 'popstate') {
             $navigationStack.pop();
