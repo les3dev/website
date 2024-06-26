@@ -125,7 +125,7 @@
 
 <svelte:window on:scroll={handleScroll} on:mousemove={() => (movedAfterScroll = true)} />
 
-<section id="intro" class="center" class:focus={section === 'intro'} bind:this={introElement}>
+<section id="intro" class="center" class:focus={section === 'intro'} bind:this={introElement} aria-label="Introduction">
     <Clouds />
     <h1 class="big" style:z-index="1">Vous avez la vision,<br />On la concrétise.</h1>
     <div class="subtitle" style:z-index="1">
@@ -134,7 +134,7 @@
     </div>
     <a role="button" href="#contact" class="cta" style:z-index="1">Nous contacter</a>
 </section>
-<section id="projects" class="top" class:focus={section === 'projects'} class:active={movedAfterScroll} bind:this={projectsElement}>
+<section id="projects" class="top" class:focus={section === 'projects'} class:active={movedAfterScroll} bind:this={projectsElement} aria-label="Nos projets">
     <h2 use:scrollEffect={0.5} class="appear">Aperçu de notre travail</h2>
     <div use:scrollEffect={0.5} class="subtitle appear">Quelques projets réalisés par notre équipe au cours de ces dernières années</div>
     <div class="grid">
@@ -155,7 +155,7 @@
         vous si vous envisagez de travailler avec nous.
     </p>
 </section>
-<section id="team" class="center" class:focus={section === 'team'} bind:this={teamElement}>
+<section id="team" class="center" class:focus={section === 'team'} bind:this={teamElement} aria-label="L'équipe">
     <h2 use:scrollEffect={0.5} class="appear">Qui sommes-nous ?</h2>
     <div use:scrollEffect={0.5} class="subtitle appear">
         3 amis développeurs avec plus de 10 ans d'expérience, pour vous créer des sites web et applications accessibles, innovantes et performantes !
@@ -173,7 +173,7 @@
         {/each}
     </div>
 </section>
-<section id="faq" class="top" class:focus={section === 'faq'} bind:this={faqElement}>
+<section id="faq" class="top" class:focus={section === 'faq'} bind:this={faqElement} aria-label="FAQ">
     <h2 use:scrollEffect={0.5} class="appear">Foire aux questions</h2>
     {#each faq as question}
         <details use:scrollEffect={0.5} class="appear">

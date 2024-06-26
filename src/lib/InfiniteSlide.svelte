@@ -8,7 +8,7 @@
             <img src="/images/clients/{logo.slug}.svg" alt={logo.alt} width="200" height="60" />
         {/each}
     </div>
-    <div class="logos-slide">
+    <div class="logos-slide" aria-hidden="true">
         {#each logos as logo}
             <img src="/images/clients/{logo.slug}.svg" alt={logo.alt} />
         {/each}

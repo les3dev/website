@@ -40,7 +40,7 @@
         </div>
     </header>
     {#if data.project.video}
-        <video autoplay controls muted>
+        <video autoplay controls muted aria-hidden="true">
             <source src={data.project.video} type="video/mp4" />
             Your browser does not support the video tag.
         </video>
