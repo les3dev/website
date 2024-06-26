@@ -5,12 +5,12 @@
 <div class="logos">
     <div class="logos-slide">
         {#each logos as logo}
-            <img src="/images/clients/{logo.slug}.svg" alt={logo.alt} width="200" height="60" />
+            <img src="/images/clients/{logo.slug}.svg" alt={logo.alt} width="200" height="60" loading="lazy" />
         {/each}
     </div>
     <div class="logos-slide" aria-hidden="true">
         {#each logos as logo}
-            <img src="/images/clients/{logo.slug}.svg" alt={logo.alt} />
+            <img src="/images/clients/{logo.slug}.svg" alt={logo.alt} width="200" height="60" loading="lazy" />
         {/each}
     </div>
 </div>
