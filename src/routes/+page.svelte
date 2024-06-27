@@ -190,7 +190,7 @@
         <a role="button" href="https://calendly.com/les3dev/30min">Prendre un RDV</a>
         <a role="button" href="mailto:contact@les3.dev">Envoyer un mail</a>
     </div>
-    <div class="subtitle" style:margin-top="2em">(On vous aide gratuitement à définir clairement votre besoin et établir un devis)</div>
+    <div class="subtitle" style:margin-top="2em">On vous aide <strong>gratuitement</strong> à définir clairement votre besoin et établir un devis !</div>
 </section>
 
 <Menu />
