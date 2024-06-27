@@ -246,7 +246,7 @@
     }
     #contact {
         color: var(--color-white);
-        background-color: var(--color-pink);
+        background-color: var(--color-purple);
     }
 
     /* Titles */

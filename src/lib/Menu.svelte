@@ -87,6 +87,7 @@
     nav {
         position: fixed;
         bottom: 1rem;
+        z-index: 2;
         width: 100%;
         display: flex;
         justify-content: center;
