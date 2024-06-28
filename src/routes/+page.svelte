@@ -167,8 +167,7 @@
                     <Eyevatar src="/images/profiles/{slug}.webp" name={slug} left={profile.eyes.left} right={profile.eyes.right} bg={profile.color} />
                     <div class="name">{profile.name}</div>
                 </a>
-                <a href="https://www.linkedin.com/in/{profile.linkedin}" target="_blank" aria-label="Linked In"><LinkedInIcon /></a>
-                <a href="https://github.com/{profile.github}" target="_blank" aria-label="Github"><GithubIcon /></a>
+                <a href="/profiles/{slug}" role="button">Plus d'infos</a>
             </article>
         {/each}
     </div>
@@ -408,20 +407,22 @@
     }
     .profile a:not(.developer) {
         font-size: 1.2rem;
-        margin: 0.3rem;
-        border-radius: 50%;
+        margin-top: 1rem;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 3rem;
-        height: 3rem;
+        height: 2.75rem;
         color: var(--color-black);
         background-color: var(--color-white);
         transition: 0.3s all;
     }
     .profile a:not(.developer):hover {
         color: var(--color-white);
+        translate: 0;
         background-color: var(--color-black);
+    }
+    .profile a:not(.developer):active {
+        translate: 0;
     }
     #team article {
         text-align: center;
