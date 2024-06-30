@@ -5,7 +5,7 @@ export const prerender = true;
 export async function GET() {
     const headers = {'Content-Type': 'application/xml'};
 
-    const pages = [...Object.keys(profiles), ...projects.map((p) => p.slug)];
+    const pages = [...Object.keys(profiles).map((profile) => `profiles/${profile}`), ...projects.map((p) => `projects/${p.slug}`)];
 
     const sitemap = `
 	  <?xml version="1.0" encoding="UTF-8" ?>
