@@ -2,6 +2,7 @@
     import {onMount} from 'svelte';
     import MenuIcon from './MenuIcon.svelte';
     import {mediaQueries} from './mediaqueries';
+    import Logo from './Logo.svelte';
 
     const links = [
         {slug: 'projects', label: 'Projets'},
@@ -52,7 +53,7 @@
 <nav>
     {#if $isMobile}
         <div class="fullscreen" class:isOpen>
-            <a href="#intro" id="logo" on:click={() => (isOpen = false)}>les3dev</a>
+            <a href="#intro" id="logo" on:click={() => (isOpen = false)}><Logo /></a>
             {#each links as { slug, label }}
                 <a href="#{slug}" on:click={() => (isOpen = false)}>{label}</a>
             {/each}
@@ -60,7 +61,7 @@
         <button class:isOpen class:isHidden on:click={() => (isOpen = true)} aria-label="Menu"><MenuIcon /></button>
     {:else}
         <div class="bar" class:isHidden>
-            <a href="#intro" id="logo" class:selected={selected === '' || selected === '#intro'}>les3dev</a>
+            <a href="#intro" id="logo" class:selected={selected === '' || selected === '#intro'}><Logo /></a>
             {#each links as { slug, label }}
                 <a href="#{slug}" class:selected={selected === `#${slug}`}>{label}</a>
             {/each}
@@ -71,7 +72,8 @@
 <style>
     #logo {
         font-family: var(--font-logo);
-        font-size: 1.5rem;
+        --width: 6rem;
+        --height: 2.5rem;
         padding-inline: 1rem;
     }
     button {
@@ -165,8 +167,12 @@
         padding-block: 1rem;
     }
     .fullscreen #logo {
-        font-size: 3.2rem;
-        padding-block: 0.2rem;
+        display: flex;
+        --width: 20rem;
+        --height: 4rem;
+        padding-block: 0.5rem;
+        align-items: center;
+        justify-content: center;
     }
 
     @keyframes appear {
