@@ -71,7 +71,6 @@
 
 <style>
     #logo {
-        font-family: var(--font-logo);
         --width: 6rem;
         --height: 2.5rem;
         padding-inline: 1rem;

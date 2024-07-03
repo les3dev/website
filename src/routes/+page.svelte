@@ -293,10 +293,6 @@
         max-width: 50rem;
         text-shadow: 0 0 1.5rem hsla(0, 0%, 0%, 0.3);
     }
-    .logo {
-        font-family: var(--font-logo);
-        font-weight: normal;
-    }
     @media (max-width: 50rem) {
         .subtitle {
             font-size: 1.2rem;
