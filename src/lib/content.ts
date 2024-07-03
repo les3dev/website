@@ -121,6 +121,7 @@ export const projects = [
         link: 'https://demo.voltask.tech',
         thumbnail: '/images/projects/voltask.webp',
         title: 'Voltask',
+        tags: ['IA', 'Temps-Réel'],
         description: 'Outil No-Code collaboratif dans le navigateur pour créer des automatisations avec des scénarios visuels.',
         video: '/videos/voltask.mp4',
         content: `Voltask est un outil permettant de créer des automatisations (comme <strong>Zapier</strong> ou <strong>Make</strong>). Il est entièrement collaboratif en temps réel : plusieurs personnes peuvent éditer un projet en même temps (comme <strong>Figma</strong>).
@@ -135,6 +136,7 @@ Voltask a été développé en <strong>TypeScript</strong> avec <strong>React</s
         link: 'https://codepassport.dev',
         thumbnail: '/images/projects/codepassport.webp',
         title: 'Code Passport',
+        tags: ['LMS', '3d'],
         description: "Site web interactif destiné à l'apprentissage du code (JS, HTML & CSS).",
         carousel: [
             '/images/projects/codepassport-screen-0.webp',
@@ -151,6 +153,7 @@ Le site est développé avec le framework <strong>SvelteKit</strong> et utilise 
         link: 'https://chat.voltask.tech',
         thumbnail: '/images/projects/voltask-ai.webp',
         title: 'Voltask AI',
+        tags: ['IA', 'Chatbot'],
         description: 'Chatbot IA pour lancer des automatisations Voltask.',
         video: '/videos/voltask-ai.mp4',
         content: `Voltask AI est une application de discussion avec une <strong>IA générative</strong> (<strong>Mistral</strong>) connectée directement au système d'automatisation de Voltask. En utilisant un système de prompt, <strong>l'IA</strong> peut proposer d'exécuter des automatisations définies dans un scénario Voltask.
@@ -162,6 +165,7 @@ Voltask AI a été développé en <strong>TypeScript</strong> avec <strong>Svelt
         link: 'https://editor.voltapp.tech',
         thumbnail: '/images/projects/voltapp.webp',
         title: 'Voltapp',
+        tags: ['SaaS'],
         description: 'Voltapp est un outil No-Code permettant de créer des applications web grâce à la programmation visuelle.',
         video: '/videos/voltapp.mp4',
         content: `Voltapp est un outil permettant de créer des applications web en No-Code (comme <strong>Bubble</strong> ou <strong>Webflow</strong>).
@@ -178,6 +182,7 @@ Voltapp a été développé en <strong>TypeScript</strong> avec <strong>React</s
         link: 'https://creator.celestory.io',
         thumbnail: '/images/projects/celestory.webp',
         title: 'Celestory',
+        tags: ['SaaS'],
         description: 'Outil pour créer des serious games, formations et visual novels avec un système de choix et de variables en No-Code.',
         video: '/videos/celestory.mp4',
         content: `Celestory est un outil No-Code permettant de créer des formations, visual novels ou jeux textuels en utilisant un système de graphes pour représenter le scénario.
@@ -189,6 +194,7 @@ Celestory a été développé en <strong>TypeScript</strong> avec <strong>React<
         link: 'https://photomapper.io',
         thumbnail: '/images/projects/photomapper.webp',
         title: 'Photomapper',
+        tags: ['Mobile', 'Géoloc'],
         description: 'Application mobile de partage de photos géolocalisées partout dans le monde.',
         carousel: [
             '/images/projects/photomapper-screen-0.webp',
@@ -206,6 +212,7 @@ L’application a du être optimisée pour permettre d’afficher une grande qua
         link: 'https://apps.apple.com/us/app/crafter-ar-build-battle/id1389840361',
         thumbnail: '/images/projects/crafter-ar.webp',
         title: 'Crafter AR',
+        tags: ['Mobile', 'Réalité Augmenté', 'Temps-Réel', '3d'],
         description: 'Jeu mobile de pictionary en réalité augmentée et en temps réel.',
         carousel: [
             '/images/projects/crafter-screen-0.webp',

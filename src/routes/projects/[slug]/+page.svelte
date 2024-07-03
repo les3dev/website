@@ -35,6 +35,11 @@
         <img src={data.project.thumbnail} style:view-transition-name="{data.project.slug}-thumbnail" alt="" />
         <div>
             <h1 style:view-transition-name="{data.project.slug}-title">{data.project.title}</h1>
+            <div class="tags" aria-label="Tags">
+                {#each data.project.tags as tag}
+                    <span>{tag}</span>
+                {/each}
+            </div>
             <p style:view-transition-name="{data.project.slug}-description">{data.project.description}</p>
             <a role="button" style:--fg="var(--color-black)" style:--bg="var(--color-white)" href={data.project.link} target="_blank">Ouvrir le projet</a>
         </div>
@@ -106,7 +111,7 @@
         max-width: 40%;
         border-radius: 1rem;
     }
-    header div {
+    header div:not(.tags) {
         display: flex;
         flex-direction: column;
         align-items: start;
@@ -120,6 +125,20 @@
         color: var(--color-white-1);
     }
 
+    header .tags {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+    header .tags span {
+        color: var(--color-white);
+        padding: 0.25rem 0.5rem;
+        font-weight: bold;
+        font-size: 0.75rem;
+        border-radius: 0.3rem;
+        text-transform: uppercase;
+        background-color: var(--color-black-1);
+    }
     @media (max-width: 800px) {
         header {
             flex-direction: column;

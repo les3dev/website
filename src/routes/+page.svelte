@@ -143,6 +143,11 @@
                 <a href="/projects/{project.slug}">
                     <img style:view-transition-name="{project.slug}-thumbnail" src={project.thumbnail} alt="" width="640" height="360" loading="lazy" />
                     <h3 style:view-transition-name="{project.slug}-title">{project.title}</h3>
+                    <div class="tags" aria-label="Tags">
+                        {#each project.tags as tag}
+                            <span>{tag}</span>
+                        {/each}
+                    </div>
                     <p style:view-transition-name="{project.slug}-description">{project.description}</p>
                 </a>
             </article>
@@ -357,6 +362,21 @@
         margin-bottom: 0.5rem;
         color: var(--color-white);
         font-size: 1.4rem;
+    }
+    article.project .tags {
+        padding-inline: 1rem;
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+    article.project span {
+        color: var(--color-white);
+        padding: 0.25rem 0.5rem;
+        font-weight: bold;
+        font-size: 0.75rem;
+        border-radius: 0.3rem;
+        text-transform: uppercase;
+        background-color: var(--color-black-1);
     }
     article p {
         padding-inline: 1rem;
