@@ -185,19 +185,6 @@ Voltapp a été développé en <strong>TypeScript</strong> avec <strong>React</s
 Celestory a été développé en <strong>TypeScript</strong> avec <strong>React</strong> pour la partie frontend, <strong>Redux</strong> pour la partie data et <strong>NodeJS</strong> et <strong>PostgreSQL</strong> pour la partie backend et déployé sur Google Cloud.`,
     },
     {
-        slug: 'ttmc-for-dev',
-        link: 'https://ttmc-ui.vercel.app',
-        thumbnail: '/images/projects/ttmc-for-dev.webp',
-        title: 'TTMC for dev',
-        description: 'Inspiré par le jeu "Tu te mets combien ?" pour aider les apprenti.e.s développeur.ses à améliorer leur culture tech.',
-        carousel: ['/images/projects/ttmc-for-dev-screen-0.webp', '/images/projects/ttmc-for-dev-screen-1.webp'],
-        content: `TTMC est un jeu gratuit et Open-source que nous avons développé pour aider les développeur.ses à améliorer leur culture générale en développement informatique.
-
-Les cartes du jeux sont créées de manière collaborative sur Github. N’hésitez pas à contribuer si vous avez des idées !
-
-Le projet a été réalisé avec le framework SvelteKit en JavaScript.`,
-    },
-    {
         slug: 'photomapper',
         link: 'https://photomapper.io',
         thumbnail: '/images/projects/photomapper.webp',
