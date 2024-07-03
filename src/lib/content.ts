@@ -35,7 +35,7 @@ export const profiles: Record<string, Profile> = {
         color: 'var(--color-indigo)',
         biography: `Je suis développeur fullstack polyvalent et passionné avec 10 ans d'expérience.
 
-Je travaille principalement sur des projets web (React & SvelteKit) avec une appétence particulière pour le dev back (Node, Golang, PostgreSQL) et une solide connaissance en infra (Docker, Google cloud).
+Je travaille principalement sur des projets web (React & SvelteKit) avec une appétence particulière pour le dev back (Node, Golang, PostgreSQL) et une solide connaissance en DevOps (Docker, Google cloud).
 
 Mon expérience professionnelle en tant que co-fondateur de startup m'a amené à travailler avec de grands groupes comme TF1, la BNP ou encore le CNES. J'ai pu les accompagner sur la conception de leurs projets, en passant par le développement, la mise en production, la formation des équipes et la maintenance.
 
