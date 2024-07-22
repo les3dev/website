@@ -5,6 +5,7 @@
     import Logo from './Logo.svelte';
 
     const links = [
+        {slug: 'process', label: 'Process'},
         {slug: 'projects', label: 'Projets'},
         {slug: 'team', label: "L'équipe"},
         {slug: 'faq', label: 'FAQ'},

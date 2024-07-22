@@ -2,17 +2,16 @@
     import Eyevatar from '$lib/Eyevatar.svelte';
     import Menu from '$lib/Menu.svelte';
     import {onMount} from 'svelte';
-    import LinkedInIcon from '$lib/LinkedInIcon.svelte';
-    import GithubIcon from '$lib/GithubIcon.svelte';
     import {serializeSchema} from '$lib/schema';
     import InfiniteSlide from '$lib/InfiniteSlide.svelte';
     import Clouds from '$lib/Clouds.svelte';
     import {pushState} from '$app/navigation';
     import {faq, meta, partners, profiles, projects} from '$lib/content';
 
-    type Section = 'intro' | 'projects' | 'team' | 'faq' | 'contact';
+    type Section = 'intro' | 'process' | 'projects' | 'team' | 'faq' | 'contact';
 
     let introElement: HTMLElement | null = null;
+    let processElement: HTMLElement | null = null;
     let projectsElement: HTMLElement | null = null;
     let teamElement: HTMLElement | null = null;
     let faqElement: HTMLElement | null = null;
@@ -36,6 +35,7 @@
     function handleScroll() {
         movedAfterScroll = false;
         const introRect = introElement?.getBoundingClientRect();
+        const processRect = processElement?.getBoundingClientRect();
         const projectsRect = projectsElement?.getBoundingClientRect();
         const teamRect = teamElement?.getBoundingClientRect();
         const faqRect = faqElement?.getBoundingClientRect();
@@ -43,6 +43,9 @@
 
         if (isInRect(introRect)) {
             section = 'intro';
+        }
+        if (isInRect(processRect)) {
+            section = 'process';
         }
         if (isInRect(projectsRect)) {
             section = 'projects';
@@ -133,6 +136,49 @@
         Nous sommes spécialisés dans la création d'applications web et mobiles, ambitieuses & sur-mesure.
     </div>
     <a role="button" href="#contact" class="cta" style:z-index="1">Nous contacter</a>
+</section>
+<section id="process" class="top" class:focus={section === 'process'} class:active={movedAfterScroll} bind:this={processElement} aria-label="Notre process">
+    <h2>On vous explique notre process !</h2>
+    <div class="steps">
+        <div class="step">
+            <div class="number" aria-hidden="true">1</div>
+            <div class="line" aria-hidden="true"></div>
+            <h3>Conseil & Cadrage</h3>
+            <div>
+                On vous aide à convertir votre vision en un <strong>cahier des charges</strong> avec une liste de fonctionnalités concrètes.<br />
+                On établit ensemble un <strong>devis gratuitement</strong> et on défini une <strong>roadmap</strong> pour le développement du projet.
+            </div>
+        </div>
+        <div class="step">
+            <div class="number" aria-hidden="true">2</div>
+            <div class="line" aria-hidden="true"></div>
+            <h3>Conception & Design</h3>
+            <div>
+                On vous accompagne dans la réalisation de votre <strong>charte graphique</strong> et vos <strong>maquettes</strong>. <br />
+                Après avoir étudié l'<strong>UX/UI</strong>, on valide ensemble les <strong>choix technique</strong> et l'architecture générale en fonction des besoins
+                et contraintes du projet.
+            </div>
+        </div>
+        <div class="step">
+            <div class="number" aria-hidden="true">3</div>
+            <div class="line" aria-hidden="true"></div>
+            <h3>Développement & Déploiement</h3>
+            <div>
+                Notre expertise dans de nombreux domaines (IA, temps réel, 3d, mobile, SaaS, etc.) nous permettent de développer rapidement vos projets.<br />
+                Pour déployer, on s'adapte à vos contraintes : RGPD, serveur interne, cloud, publication sur les stores.
+            </div>
+        </div>
+        <div class="step">
+            <div class="number" aria-hidden="true">4</div>
+            <div class="line" aria-hidden="true"></div>
+            <h3>Formation & Support</h3>
+            <div>
+                Par soucis de transparence, nous vous donnons accès à l'intégralité du code et des outils.<br />
+                Nous pouvons former votre <strong>CTO</strong> ou vos équipes et nous restons toujours à l'écoute pour s'assurer de la réussite du projet sur le
+                long terme.
+            </div>
+        </div>
+    </div>
 </section>
 <section id="projects" class="top" class:focus={section === 'projects'} class:active={movedAfterScroll} bind:this={projectsElement} aria-label="Nos projets">
     <h2 use:scrollEffect={0.5} class="appear">Aperçu de notre travail</h2>
@@ -235,6 +281,10 @@
     #intro {
         color: var(--color-white);
         background-color: var(--color-indigo);
+    }
+    #process {
+        color: var(--color-black);
+        background-color: var(--color-yellow);
     }
     #projects {
         color: var(--color-white);
@@ -339,6 +389,62 @@
         outline: none;
         padding-inline: 1.2em;
         background-color: var(--color-white);
+    }
+
+    /* Process */
+
+    #process .steps {
+        display: flex;
+        margin: auto;
+        flex-direction: column;
+        width: var(--page-width);
+        padding-left: 5rem;
+    }
+
+    #process .step {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    #process .step .number {
+        position: absolute;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        top: 1.5rem;
+        margin-left: -4rem;
+        width: 3rem;
+        height: 3rem;
+        color: var(--color-white);
+        border-radius: 50%;
+        background-color: var(--color-black);
+    }
+
+    #process .step .line {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        background-color: var(--color-black);
+        margin-left: -2.5rem;
+        width: 0.25rem;
+        bottom: 0rem;
+    }
+
+    #process .step:first-of-type .line {
+        top: 1.5rem;
+    }
+
+    #process .step:last-of-type .line {
+        top: 0;
+        height: 1.5rem;
+        bottom: unset;
+    }
+
+    #process .step > h3 {
+        font-size: 2rem;
     }
 
     /* Projects */
