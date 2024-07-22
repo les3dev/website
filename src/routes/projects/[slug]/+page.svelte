@@ -32,7 +32,7 @@
 
 <main style:--bg="url({data.project.thumbnail})">
     <header>
-        <img src={data.project.thumbnail} style:view-transition-name="{data.project.slug}-thumbnail" alt="" />
+        <img src={data.project.thumbnail} style:view-transition-name="{data.project.slug}-thumbnail" alt="" width="294" height="192" />
         <div>
             <h1 style:view-transition-name="{data.project.slug}-title">{data.project.title}</h1>
             <div class="tags" aria-label="Tags">
