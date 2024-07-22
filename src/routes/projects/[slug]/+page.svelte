@@ -109,6 +109,7 @@
     }
     header > img {
         max-width: 40%;
+        object-fit: cover;
         border-radius: 1rem;
     }
     header div:not(.tags) {
