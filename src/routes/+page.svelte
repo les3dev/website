@@ -285,6 +285,7 @@
     #process {
         color: var(--color-black);
         background-color: var(--color-yellow);
+        --number-offset: 1.75rem;
     }
     #projects {
         color: var(--color-white);
@@ -397,7 +398,8 @@
         display: flex;
         margin: auto;
         flex-direction: column;
-        width: var(--page-width);
+        width: 100%;
+        max-width: var(--page-width);
         padding-left: 5rem;
     }
 
@@ -414,7 +416,7 @@
         align-items: center;
         justify-content: center;
         font-size: 2rem;
-        top: 1.5rem;
+        top: var(--number-offset);
         margin-left: -4rem;
         width: 3rem;
         height: 3rem;
@@ -434,12 +436,12 @@
     }
 
     #process .step:first-of-type .line {
-        top: 1.5rem;
+        top: var(--number-offset);
     }
 
     #process .step:last-of-type .line {
         top: 0;
-        height: 1.5rem;
+        height: var(--number-offset);
         bottom: unset;
     }
 
