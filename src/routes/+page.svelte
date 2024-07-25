@@ -138,7 +138,7 @@
     <a role="button" href="#contact" class="cta" style:z-index="1">Nous contacter</a>
 </section>
 <section id="process" class="top" class:focus={section === 'process'} class:active={movedAfterScroll} bind:this={processElement} aria-label="Notre process">
-    <h2>On vous explique notre process !</h2>
+    <h2 class="appear" use:scrollEffect={0.5}>On vous explique notre process !</h2>
     <div class="steps">
         <div class="step">
             <div class="number" aria-hidden="true">1</div>
@@ -609,7 +609,6 @@
         animation: breath 3s infinite;
     }
     .appear {
-        opacity: var(--progress);
         translate: 0 calc((1 - var(--progress)) * 2rem);
     }
 </style>
