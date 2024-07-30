@@ -145,8 +145,8 @@
             <div class="line" aria-hidden="true"></div>
             <h3>Conseil & Cadrage</h3>
             <div>
-                On vous aide à convertir votre vision en un <strong>cahier des charges</strong> avec une liste de fonctionnalités concrètes.<br />
-                On établit ensemble un <strong>devis gratuitement</strong> et on défini une <strong>roadmap</strong> pour le développement du projet.
+                On vous aide à convertir votre vision en un <strong>cahier des charges</strong> avec une liste de fonctionnalités concrètes. On établit ensemble
+                un <strong>devis gratuitement</strong> et on définit une <strong>roadmap</strong> pour le développement du projet.
             </div>
         </div>
         <div class="step">
@@ -154,9 +154,9 @@
             <div class="line" aria-hidden="true"></div>
             <h3>Conception & Design</h3>
             <div>
-                On vous accompagne dans la réalisation de votre <strong>charte graphique</strong> et vos <strong>maquettes</strong>. <br />
-                Après avoir étudié l'<strong>UX/UI</strong>, on valide ensemble les <strong>choix technique</strong> et l'architecture générale en fonction des besoins
-                et contraintes du projet.
+                On vous accompagne dans la réalisation de votre <strong>charte graphique</strong> et de vos <strong>maquettes</strong>. Après avoir étudié l'<strong
+                    >UX/UI</strong
+                >, on valide ensemble les <strong>choix techniques</strong> et l'architecture générale en fonction des besoins et contraintes du projet.
             </div>
         </div>
         <div class="step">
@@ -164,8 +164,8 @@
             <div class="line" aria-hidden="true"></div>
             <h3>Développement & Déploiement</h3>
             <div>
-                Notre expertise dans de nombreux domaines (IA, temps réel, 3d, mobile, SaaS, etc.) nous permettent de développer rapidement vos projets.<br />
-                Pour déployer, on s'adapte à vos contraintes : RGPD, serveur interne, cloud, publication sur les stores.
+                Notre expertise dans de nombreux domaines (<strong>IA, temps réel, 3D, mobile, SaaS</strong>, etc.) nous permet de développer rapidement vos
+                projets. Pour déployer, on s'adapte à vos contraintes : RGPD, serveur interne, cloud, publication sur les stores.
             </div>
         </div>
         <div class="step">
@@ -173,9 +173,8 @@
             <div class="line" aria-hidden="true"></div>
             <h3>Formation & Support</h3>
             <div>
-                Par soucis de transparence, nous vous donnons accès à l'intégralité du code et des outils.<br />
-                Nous pouvons former votre <strong>CTO</strong> ou vos équipes et nous restons toujours à l'écoute pour s'assurer de la réussite du projet sur le
-                long terme.
+                Par souci de <strong>transparence</strong>, nous vous donnons accès à l'intégralité du code et des outils. Nous pouvons former votre
+                <strong>CTO</strong> ou vos équipes et nous restons toujours à l'écoute pour s'assurer de la réussite du projet sur le long terme.
             </div>
         </div>
     </div>
@@ -400,15 +399,28 @@
         flex-direction: column;
         width: 100%;
         max-width: var(--page-width);
-        padding-left: 5rem;
+        padding-left: 6rem;
+        padding-right: 2rem;
+    }
+
+    @media (max-width: 50rem) {
+        #process .steps {
+            padding-left: 5rem;
+            padding-right: 1rem;
+        }
     }
 
     #process .step {
         display: flex;
         flex-direction: column;
         position: relative;
+        font-size: 1.2rem;
+        line-height: 1.5;
     }
 
+    #process .step h3 {
+        margin-bottom: 1rem;
+    }
     #process .step .number {
         position: absolute;
         z-index: 2;
