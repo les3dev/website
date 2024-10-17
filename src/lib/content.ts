@@ -191,7 +191,7 @@ Celestory a été développé en <strong>TypeScript</strong> avec <strong>React<
     },
     {
         slug: 'photomapper',
-        link: 'https://photomapper.io',
+        link: 'https://apps.apple.com/fr/app/photomapper-best-photo-spots/id1438216427',
         thumbnail: '/images/projects/photomapper.webp',
         title: 'Photomapper',
         tags: ['Mobile', 'Géoloc'],
