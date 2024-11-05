@@ -1,9 +1,9 @@
 ---
-title: 'Test d'article'
-thumbnail: '/images/profiles/jonathan.png'
-date: '2024-10-15'
+title: Test d'article
+thumbnail: /images/profiles/jonathan.webp
+date: 2024-10-15
+published: true
 ---
-
 # Jonathan : Le développeur qui sait tout faire
 
 [Insérez ici un GIF de quelqu'un tapant frénétiquement sur un clavier]
