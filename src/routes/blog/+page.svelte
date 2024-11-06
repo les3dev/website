@@ -18,9 +18,9 @@
     <meta property="twitter:image" content={meta.thumbnail} />
 </svelte:head>
 
+<a href="/" id="back"><Back /></a>
 <main>
     <header>
-        <a href="/" id="back"><Back /></a>
         <h1>Nos articles</h1>
     </header>
     {#each data.articles as article}
@@ -48,33 +48,6 @@
         padding-bottom: 3rem;
         gap: 2rem;
     }
-
-    main::before,
-    main::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-    }
-
-    main::before {
-        z-index: -1;
-        height: 20rem;
-        background: var(--color-indigo);
-    }
-
-    main::after {
-        z-index: -2;
-        filter: blur(30px);
-        -webkit-filter: blur(30px);
-        background-size: 100%;
-        background-repeat: no-repeat;
-        opacity: 0.3;
-        background-image: var(--bg);
-        height: 15rem;
-    }
-
     header {
         display: flex;
         align-items: center;
@@ -83,5 +56,32 @@
     header h1 {
         font-size: 2.8rem;
         margin: 0;
+    }
+
+    .article {
+        display: flex;
+        align-items: center;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        transition: all 0.3s;
+        text-decoration: none;
+    }
+    .article:hover {
+        background: var(--color-black-1);
+    }
+    .article img {
+        gap: 1.5rem;
+        width: 50%;
+    }
+    .article .right {
+        display: flex;
+        color: var(--color-white-1);
+        font-size: clamp(1.1rem, 1.8vw, 1.2rem);
+        flex-direction: column;
+        text-decoration: none;
+    }
+    .article .right h2 {
+        color: var(--color-white);
+        font-size: clamp(1.6rem, 4vw, 2.2rem);
     }
 </style>
