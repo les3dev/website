@@ -14,7 +14,6 @@
     let processElement: HTMLElement | null = null;
     let studiesElement: HTMLElement | null = null;
     let teamElement: HTMLElement | null = null;
-    let faqElement: HTMLElement | null = null;
     let contactElement: HTMLElement | null = null;
 
     let section = 'intro' as Section;
@@ -38,9 +37,9 @@
         const processRect = processElement?.getBoundingClientRect();
         const studiesRect = studiesElement?.getBoundingClientRect();
         const teamRect = teamElement?.getBoundingClientRect();
-        const faqRect = faqElement?.getBoundingClientRect();
         const contactRect = contactElement?.getBoundingClientRect();
 
+        const prevSection = section;
         if (isInRect(introRect)) {
             section = 'intro';
         }
@@ -53,11 +52,12 @@
         if (isInRect(teamRect)) {
             section = 'team';
         }
-        if (isInRect(faqRect)) {
-            section = 'faq';
-        }
         if (isInRect(contactRect)) {
             section = 'contact';
+        }
+        if (section !== prevSection) {
+            const newURL = `${window.location.protocol}//${window.location.hostname}${window.location.pathname}#${section}`;
+            window.dispatchEvent(new HashChangeEvent('hashchange', {newURL}));
         }
     }
 
@@ -178,11 +178,17 @@
             </article>
         {/each}
     </div>
-    <h3>Ils nous ont fait confiance</h3>
-    <InfiniteSlide logos={partners} />
+</section>
+<section id="brands" class="center" aria-label="">
+    <h2>Ils nous ont fait confiance</h2>
+    <div class="images">
+        {#each partners as partner}
+            <img src="/images/clients/{partner.slug}.svg" alt={partner.alt} width="200" height="60" loading="lazy" />
+        {/each}
+    </div>
     <p style:text-align="center" style:max-width="50rem" style:margin="auto">
-        * la majorité de nos projets clients ne figurent pas sur le site car ils ne sont pas publics mais nous serions ravis d'en discuter plus amplement avec
-        vous si vous envisagez de travailler avec nous.
+        * certains projets clients ne figurent pas sur le site car ils ne sont pas publics mais nous serions ravis d'en discuter plus amplement avec vous si
+        vous envisagez de travailler avec nous.
     </p>
 </section>
 <section id="team" class="center" class:focus={section === 'team'} bind:this={teamElement} aria-label="L'équipe">
@@ -201,17 +207,6 @@
             </article>
         {/each}
     </div>
-</section>
-<section id="faq" class="top" class:focus={section === 'faq'} bind:this={faqElement} aria-label="FAQ">
-    <h2 class="appear">Foire aux questions</h2>
-    {#each faq as question}
-        <details class="appear">
-            <summary>{question.question}</summary>
-            <div>
-                {@html question.answer}
-            </div>
-        </details>
-    {/each}
 </section>
 <section id="contact" class="center" class:focus={section === 'contact'} bind:this={contactElement}>
     <h2 class="big appear">Envie de travailler avec nous ?</h2>
@@ -261,15 +256,18 @@
     }
     #studies {
         color: var(--color-white);
+        max-width: 65rem;
         background-color: var(--color-black);
+    }
+    #brands {
+        color: var(--color-black);
+        min-height: auto;
+        background-color: var(--color-white);
+        padding-block: 8rem !important;
     }
     #team {
         color: black;
         background-color: #cbfb45;
-    }
-    #faq {
-        color: var(--color-black);
-        background-color: var(--color-white);
     }
     #contact {
         color: var(--color-white);
@@ -303,14 +301,6 @@
         text-wrap: balance;
     }
 
-    section > h3 {
-        margin-top: 0;
-        margin-bottom: 0.3em;
-        font-size: clamp(1.5rem, 4vw, 2.5rem);
-        text-align: center;
-        letter-spacing: -1px;
-        text-wrap: balance;
-    }
     .subtitle {
         font-size: 1.4rem;
         text-wrap: balance;
@@ -442,9 +432,6 @@
         flex-direction: column;
     }
 
-    #studies {
-        max-width: 65rem;
-    }
     .study {
         pointer-events: all;
         text-decoration: none;
@@ -495,6 +482,18 @@
         }
     }
 
+    /* Brands */
+    #brands .images {
+        display: flex;
+        max-width: 65rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4rem;
+        margin-block: 3rem;
+    }
+    #brands h2 {
+        margin-bottom: 0;
+    }
     /* Profiles */
 
     .profile .name {
@@ -528,34 +527,6 @@
     }
     #team article {
         text-align: center;
-    }
-
-    /* Faq */
-
-    #faq details {
-        font-size: 1.2rem;
-        max-width: var(--page-width);
-        color: var(--color-black-1);
-        margin: auto;
-        line-height: 1.6;
-    }
-    #faq details :global(a) {
-        color: var(--color-indigo);
-    }
-    #faq details summary {
-        color: var(--color-black);
-        font-size: 1.6rem;
-        font-weight: bold;
-        cursor: pointer;
-        margin: 1rem 0;
-    }
-    #faq details div {
-        transition: 0.3s all; /* TODO: why anim not working :/ */
-        max-height: 0;
-        padding-inline: 2rem;
-    }
-    #faq details[open] div {
-        max-height: fit-content;
     }
 
     /* Animations */

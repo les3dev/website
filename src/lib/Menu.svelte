@@ -3,26 +3,25 @@
     import MenuIcon from './MenuIcon.svelte';
     import {mediaQueries} from './mediaqueries';
     import Logo from './Logo.svelte';
+    import LinkedInIcon from './LinkedInIcon.svelte';
+    import GithubIcon from './GithubIcon.svelte';
 
     const links = [
         {slug: 'process', label: 'Process'},
         {slug: 'studies', label: 'Études'},
         {slug: 'team', label: "L'équipe"},
-        {slug: 'faq', label: 'FAQ'},
         {slug: 'contact', label: 'Contact'},
     ];
 
     const isMobile = mediaQueries('(max-width: 720px)');
 
     let isOpen = false;
-    let isHidden = true;
     let selected = '';
 
     onMount(() => {
         selected = window.location.hash;
-        isHidden = false;
 
-        const pushstate = (event: Event | CustomEvent) => {
+        const pushstate = (event: Event) => {
             if ('detail' in event && typeof event.detail === 'string') {
                 selected = event.detail;
             }
@@ -41,16 +40,6 @@
     });
 </script>
 
-<svelte:window
-    on:wheel={(e) => {
-        if (e.deltaY > 0) {
-            isHidden = true;
-        } else if (e.deltaY < 0) {
-            isHidden = false;
-        }
-    }}
-/>
-
 <nav>
     {#if $isMobile}
         <div class="fullscreen" class:isOpen>
@@ -58,14 +47,28 @@
             {#each links as { slug, label }}
                 <a href="#{slug}" on:click={() => (isOpen = false)}>{label}</a>
             {/each}
+            <div class="social">
+                <a href="https://www.linkedin.com/company/les3dev/" target="_blank">
+                    <LinkedInIcon />
+                </a>
+                <a href="https://github.com/les3dev" target="_blank">
+                    <GithubIcon />
+                </a>
+            </div>
         </div>
-        <button class:isOpen class:isHidden on:click={() => (isOpen = true)} aria-label="Menu"><MenuIcon /></button>
+        <button class:isOpen on:click={() => (isOpen = true)} aria-label="Menu"><MenuIcon /></button>
     {:else}
-        <div class="bar" class:isHidden>
+        <div class="bar">
             <a href="#intro" id="logo" class:selected={selected === '' || selected === '#intro'}><Logo /></a>
             {#each links as { slug, label }}
                 <a href="#{slug}" class:selected={selected === `#${slug}`}>{label}</a>
             {/each}
+            <a class="round" href="https://www.linkedin.com/company/les3dev/" target="_blank">
+                <LinkedInIcon />
+            </a>
+            <a class="round" href="https://github.com/les3dev" target="_blank">
+                <GithubIcon />
+            </a>
         </div>
     {/if}
 </nav>
@@ -81,10 +84,6 @@
         height: 4.5rem;
         transition: 0.3s all;
         pointer-events: all;
-    }
-    button.isOpen,
-    button.isHidden {
-        scale: 0;
     }
     nav {
         position: fixed;
@@ -108,8 +107,11 @@
         transition: 0.3s transform;
         animation: ease-out 0.3s appear;
     }
-    nav .bar.isHidden {
-        transform: translateY(10rem);
+    nav .social {
+        display: flex;
+        flex-grow: 1;
+        gap: 0.5rem;
+        justify-content: center;
     }
     nav a {
         display: flex;
@@ -121,6 +123,11 @@
         height: 100%;
         border-radius: 3rem;
         transition: all 0.3s;
+    }
+
+    nav a.round {
+        border-radius: 50%;
+        padding: 0.5rem 0.8rem;
     }
     nav a:hover,
     nav a:focus,
@@ -164,7 +171,7 @@
     }
     .fullscreen #logo {
         display: flex;
-        --width: 20rem;
+        --width: 12rem;
         --height: 4rem;
         padding-block: 0.5rem;
         align-items: center;

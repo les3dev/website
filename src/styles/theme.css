@@ -104,3 +104,110 @@ button {
     display: flex;
     background-color: transparent;
 }
+
+/* Prose */
+
+.prose {
+    color: var(--color-fg-1);
+    font-family: var(--font-content);
+}
+
+.prose :is(h1, h2, h3, h4, h5, h6) {
+    color: var(--color-fg);
+    font-family: var(--font-heading);
+}
+
+.prose p {
+    text-wrap: pretty;
+}
+
+.prose h2 {
+    font-size: 2.2rem;
+    margin-block-end: 0.3em;
+    line-height: 1.4;
+}
+
+.prose h3 {
+    font-size: 1.6rem;
+    margin-block-end: 0.2em;
+    line-height: 1.4;
+}
+
+.prose :is(h4, h5, h6) {
+    color: red; /* should not be used */
+}
+
+.prose :is(p, ol, ul) {
+    line-height: 1.7;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-top: 0.6rem;
+    margin-bottom: 0.8rem;
+}
+
+.prose strong {
+    color: var(--color-fg);
+}
+
+.prose blockquote {
+    margin-left: 10px;
+    padding: 10px 15px;
+    font-size: 1.1rem;
+    border-left: 3px solid var(--color-fg);
+    font-style: italic;
+}
+
+@media (max-width: 600px) {
+    .prose blockquote {
+        font-size: 0.9rem;
+    }
+}
+
+.prose blockquote > p {
+    font-style: italic;
+    margin: 0;
+}
+
+.prose img {
+    margin: 0.8rem auto;
+    display: block;
+    max-width: 100%;
+}
+
+.prose video {
+    margin: 0.8rem auto;
+    display: block;
+    max-width: 100%;
+}
+
+.prose a:not([role='button']) {
+    color: var(--color-primary);
+}
+
+.prose a:not([role='button']):visited {
+    color: var(--color-link-visited);
+}
+
+.prose a:hover {
+    filter: brightness(1.3);
+}
+
+.prose :is(h1, h2, h3) > a,
+.prose :is(h1, h2, h3) > a:visited,
+.prose :is(h1, h2, h3) > a:not([role='button']),
+.prose :is(h1, h2, h3) > a:not([role='button']):visited {
+    color: var(--color-fg);
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .prose h2 {
+        font-size: 1.8rem;
+    }
+    .prose h3 {
+        font-size: 1.4rem;
+    }
+    .prose :is(p, ol, ul) {
+        font-size: 1rem;
+    }
+}

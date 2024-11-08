@@ -241,26 +241,54 @@ export const partners = [
 export const studies = [
     {
         slug: 'bnp',
+        title: `BNP Parisbas Mycampus`,
         description: 'Accompagner les 13 000 collaborateurs dans leur utilisation des outils digitaux',
         image: `/images/studies/bnp.webp`,
         color: `rgba(67, 175, 132, 1)`,
-        content: ``,
+        content: `<p>Connue pour son engagement dans la transformation digitale et le développement des compétences de ses collaborateurs, BNP s’est fixé pour objectif d'accompagner ses équipes dans l’adaptation aux nouveaux usages et attentes du secteur bancaire.</p>
+<h2>Accompagner les 13 000 collaborateurs dans leur utilisation des outils digitaux</h2>
+<p>L’objectif du Compagnon Numérique est de former les collaborateurs à l’utilisation des outils digitaux de BNP. En particulier pour les aider à répondre aux questions des clients sur les outils en libre-service.</p>
+<img src="/images/studies/bnp-screen-0.webp" alt="">
+<p>Pour offrir un accompagnement optimal, un questionnaire permettant d'évaluer la maturité numérique du collaborateur lui était proposé. Le chatbot suggérait ensuite les scénarios appropriés.</p>
+<p>Un tableau de bord regroupant les statistiques a été développé pour suivre l’utilisation et l'efficacité du chatbot, permettant à BNP Paribas de monitorer l'engagement de ses collaborateurs.</p>
+<img src="/images/studies/bnp-screen-1.webp" alt="">`,
         alt: 'BNP Paribas',
+        tags: ['SAML 2', 'NodeJS', 'Go', ' Typescript', 'PostgreSQL', 'React'],
     },
     {
         slug: 'cnes',
+        title: `Le Centre National d'Études Spatiales (CNES)`,
         description: `Améliorer la communication et la sécurité du centre spatial Guyanais`,
         image: `/images/studies/cnes.webp`,
         color: `rgba(31, 110, 176, 1)`,
-        content: ``,
+        content: `<p>Le Centre National d'Études Spatiales (CNES) est l'agence spatiale française chargée d'élaborer et de conduire la politique spatiale de la France. Le CNES développe des projets à la fois pour l'exploration spatiale et pour les applications civiles, en soutien aux activités sur le terrain.</p>
+<h2>Améliorer la communication et la sécurité du centre spatial guiyanais</h2>
+<p>Le CNES a souhaité digitaliser la gestion de ses bases, en particulier sa base en Guyane, afin de gagner en réactivité, sécuriser le terrain, et diffuser l’information de manière plus pertinente et accessible.</p>
+<p>Deux applications ont été développées :</p>
+<p><strong>Infobase</strong>, pour partager des informations de manière ciblée sur un périmètre géographique.</p>
+<img src="/images/studies/cnes-screen-1.webp" alt="">
+<p><strong>Géobase</strong>, une application de cartographie permettant de créer et visualiser les bâtiments et localiser les utilisateurs en temps réel.</p>
+<img src="/images/studies/cnes-screen-0.webp" alt="">`,
         alt: 'CNES',
+        tags: ['PostgreSQL', 'WebSocket', 'MapBox', 'React', 'OAuth (CNES)', 'Docker', 'Supabase'],
     },
     {
         slug: 'decathlon',
-        description: `Permettre à DécatClub de faire le lien entre coupons utilisateurs et partenaires, rapidement`,
+        title: `Decathlon : Décat'Club`,
+        description: `Permettre à Décat'Club de faire le lien entre coupons utilisateurs et partenaires, rapidement`,
         image: `/images/studies/decathlon.webp`,
         color: `rgba(61, 75, 201, 1)`,
-        content: ``,
+        content: `<p>Décathlon est un leader mondial dans la distribution d'articles de sport que l’on ne présente plus. Reconnue pour son engagement à rendre le sport accessible au plus grand nombre, cela passe notamment par son programme de fidélité Decat’Club et ses collaborations avec des partenaires locaux.</p>
+<h2>Permettre à DécatClub de faire le lien entre coupons utilisateurs et partenaires, rapidement</h2>
+<p>Créer rapidement, en quelques jours, un outil  permettant aux partenaires de gérer les coupons utilisés par les clients, tout en offrant une interface d’administration pour que Décathlon puisse facilement créer et gérer des offres de partenariat.</p>
+<img src="/images/studies/decath-screen-0.webp" alt="">
+<p>Le projet DecatClub inclut plusieurs fonctionnalités clés :</p>
+<ul>
+<li><strong>La gestion des partenaires</strong> : Les administrateurs de Décathlon peuvent ajouter des partenaires et créer des offres valables contre des points DecatClub.</li>
+<li><strong>Validation des coupons</strong> : Les partenaires, tels que des salles de sport ou des commerces, peuvent vérifier l’utilisation des coupons par les clients. Par exemple, un client échange ses points contre une offre chez un partenaire, qui valide ensuite le coupon dans l’interface.</li>
+<li><strong>Automatisation et externalisation</strong> : L'un des principaux défis était de créer un système qui puisse être géré de manière indépendante par les partenaires, tout en réduisant les charges pour Décathlon.</li>
+</ul>`,
         alt: 'Decathlon',
+        tags: ['Typescript', 'React', 'Airtable', 'No Code'],
     },
 ];

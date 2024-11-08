@@ -2,7 +2,6 @@
     import '../app.css';
 
     import posthog from 'posthog-js';
-    import {onMount} from 'svelte';
     import {afterNavigate, beforeNavigate, onNavigate} from '$app/navigation';
     import {browser, dev} from '$app/environment';
     import {navigationStack} from '$lib/magicBack';
