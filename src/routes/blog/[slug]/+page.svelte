@@ -18,10 +18,10 @@
     <meta property="twitter:image" content={meta.thumbnail} />
 </svelte:head>
 
+<a href="/" id="back"><Back /></a>
 <main>
     <article class="prose page">
         <header>
-            <a href="/blog" class="back"><Back /></a>
             <img src={data.thumbnail} alt="" />
             <h1 class="big">{data.title}</h1>
             <div class="date">{data.formattedDate}</div>
@@ -32,8 +32,15 @@
 </main>
 
 <style>
-    main {
-        margin-top: 3rem;
+    #back {
+        margin: 2rem;
+        display: block;
+        color: var(--color-white);
+    }
+    .page {
+        margin: auto;
+        padding: 1em 2em 2em;
+        max-width: 48rem;
     }
     header {
         margin: 2rem 0;
@@ -45,19 +52,6 @@
             font-family: var(--font-ui);
             font-size: clamp(1.2rem, 2vw, 1.6rem);
             text-align: center;
-        }
-        & .back {
-            display: flex;
-            gap: 0.5rem;
-            text-decoration: none;
-            font-family: var(--font-ui);
-            transition: all 0.3s;
-            &:hover {
-                translate: -0.3rem 0;
-            }
-            &:active {
-                translate: 0 0;
-            }
         }
     }
 </style>
