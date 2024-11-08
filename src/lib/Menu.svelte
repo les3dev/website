@@ -6,7 +6,7 @@
 
     const links = [
         {slug: 'process', label: 'Process'},
-        {slug: 'projects', label: 'Projets'},
+        {slug: 'studies', label: 'Études'},
         {slug: 'team', label: "L'équipe"},
         {slug: 'faq', label: 'FAQ'},
         {slug: 'contact', label: 'Contact'},
@@ -130,14 +130,10 @@
     }
 
     nav a:hover,
-    nav a:focus {
+    nav a:focus,
+    nav a.selected {
         color: var(--color-white);
         background-color: var(--color-black-1);
-    }
-
-    nav a.selected {
-        color: var(--color-black);
-        background-color: var(--color-white);
     }
 
     /* mobile */

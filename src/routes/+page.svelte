@@ -6,13 +6,13 @@
     import InfiniteSlide from '$lib/InfiniteSlide.svelte';
     import Clouds from '$lib/Clouds.svelte';
     import {pushState} from '$app/navigation';
-    import {faq, meta, partners, profiles, projects} from '$lib/content';
+    import {faq, meta, partners, profiles, studies} from '$lib/content';
 
-    type Section = 'intro' | 'process' | 'projects' | 'team' | 'faq' | 'contact';
+    type Section = 'intro' | 'process' | 'studies' | 'team' | 'faq' | 'contact';
 
     let introElement: HTMLElement | null = null;
     let processElement: HTMLElement | null = null;
-    let projectsElement: HTMLElement | null = null;
+    let studiesElement: HTMLElement | null = null;
     let teamElement: HTMLElement | null = null;
     let faqElement: HTMLElement | null = null;
     let contactElement: HTMLElement | null = null;
@@ -36,7 +36,7 @@
         movedAfterScroll = false;
         const introRect = introElement?.getBoundingClientRect();
         const processRect = processElement?.getBoundingClientRect();
-        const projectsRect = projectsElement?.getBoundingClientRect();
+        const studiesRect = studiesElement?.getBoundingClientRect();
         const teamRect = teamElement?.getBoundingClientRect();
         const faqRect = faqElement?.getBoundingClientRect();
         const contactRect = contactElement?.getBoundingClientRect();
@@ -47,8 +47,8 @@
         if (isInRect(processRect)) {
             section = 'process';
         }
-        if (isInRect(projectsRect)) {
-            section = 'projects';
+        if (isInRect(studiesRect)) {
+            section = 'studies';
         }
         if (isInRect(teamRect)) {
             section = 'team';
@@ -80,20 +80,6 @@
             });
         });
     });
-
-    function scrollEffect(element: HTMLElement, factor = 1) {
-        const onScroll = () => {
-            const rect = element.getBoundingClientRect();
-            const progress = clamp(((document.documentElement.clientHeight - rect.top) * factor) / rect.height, 0, 1);
-            element.style.setProperty('--progress', progress.toString());
-        };
-        window.addEventListener('scroll', onScroll);
-        return {
-            destroy: () => {
-                window.removeEventListener('scroll', onScroll);
-            },
-        };
-    }
 
     const faqGoogleSEO = {
         '@context': 'https://schema.org',
@@ -138,7 +124,7 @@
     <a role="button" href="#contact" class="cta" style:z-index="1">Nous contacter</a>
 </section>
 <section id="process" class="top" class:focus={section === 'process'} class:active={movedAfterScroll} bind:this={processElement} aria-label="Notre process">
-    <h2 class="appear" use:scrollEffect={0.5}>On vous explique notre process !</h2>
+    <h2 class="appear">On vous explique notre process !</h2>
     <div class="steps">
         <div class="step">
             <div class="number" aria-hidden="true">1</div>
@@ -179,22 +165,16 @@
         </div>
     </div>
 </section>
-<section id="projects" class="top" class:focus={section === 'projects'} class:active={movedAfterScroll} bind:this={projectsElement} aria-label="Nos projets">
-    <h2 use:scrollEffect={0.5} class="appear">Aperçu de notre travail</h2>
-    <div use:scrollEffect={0.5} class="subtitle appear">Quelques projets réalisés par notre équipe au cours de ces dernières années</div>
-    <div class="grid">
-        {#each projects as project}
-            <article class="project appear" use:scrollEffect={3}>
-                <a href="/projects/{project.slug}">
-                    <img style:view-transition-name="{project.slug}-thumbnail" src={project.thumbnail} alt="" width="640" height="360" loading="lazy" />
-                    <h3 style:view-transition-name="{project.slug}-title">{project.title}</h3>
-                    <div class="tags" aria-label="Tags">
-                        {#each project.tags as tag}
-                            <span>{tag}</span>
-                        {/each}
-                    </div>
-                    <p style:view-transition-name="{project.slug}-description">{project.description}</p>
-                </a>
+<section id="studies" class="top" class:focus={section === 'studies'} class:active={movedAfterScroll} bind:this={studiesElement} aria-label="Nos projets">
+    <h2 class="appear">Études de cas</h2>
+    <div class="studies-list">
+        {#each studies as study, index}
+            <article class={`study appear ${index % 2 === 1 ? 'right' : ''}`}>
+                <img style:view-transition-name="{study.slug}-thumbnail" src={study.image} alt={study.alt} width="640" height="360" loading="lazy" />
+                <div>
+                    <h3 style:view-transition-name="{study.slug}-description">{study.description}</h3>
+                    <a href="/studies/{study.slug}" style:color={study.color}>En savoir plus</a>
+                </div>
             </article>
         {/each}
     </div>
@@ -206,13 +186,13 @@
     </p>
 </section>
 <section id="team" class="center" class:focus={section === 'team'} bind:this={teamElement} aria-label="L'équipe">
-    <h2 use:scrollEffect={0.5} class="appear">Qui sommes-nous ?</h2>
-    <div use:scrollEffect={0.5} class="subtitle appear">
+    <h2 class="appear">Qui sommes-nous ?</h2>
+    <div class="subtitle appear">
         3 amis développeurs avec plus de 10 ans d'expérience, pour vous créer des sites web et applications accessibles, innovantes et performantes !
     </div>
     <div class="wrap-center">
         {#each Object.entries(profiles) as [slug, profile]}
-            <article class="profile appear" use:scrollEffect={1.4}>
+            <article class="profile appear">
                 <a class="developer" href="/profiles/{slug}">
                     <Eyevatar src="/images/profiles/{slug}.webp" name={slug} left={profile.eyes.left} right={profile.eyes.right} bg={profile.color} />
                     <div class="name">{profile.name}</div>
@@ -223,9 +203,9 @@
     </div>
 </section>
 <section id="faq" class="top" class:focus={section === 'faq'} bind:this={faqElement} aria-label="FAQ">
-    <h2 use:scrollEffect={0.5} class="appear">Foire aux questions</h2>
+    <h2 class="appear">Foire aux questions</h2>
     {#each faq as question}
-        <details use:scrollEffect={0.5} class="appear">
+        <details class="appear">
             <summary>{question.question}</summary>
             <div>
                 {@html question.answer}
@@ -234,8 +214,8 @@
     {/each}
 </section>
 <section id="contact" class="center" class:focus={section === 'contact'} bind:this={contactElement}>
-    <h2 class="big appear" use:scrollEffect={1}>Envie de travailler avec nous ?</h2>
-    <div class="options appear" use:scrollEffect={1}>
+    <h2 class="big appear">Envie de travailler avec nous ?</h2>
+    <div class="options appear">
         <a role="button" href="https://calendly.com/les3dev/30min">Prendre un RDV</a>
         <a role="button" href="mailto:contact@les3.dev">Envoyer un mail</a>
     </div>
@@ -268,13 +248,6 @@
         padding-bottom: 3rem;
     }
 
-    .grid {
-        margin-inline: auto;
-        gap: 1.5rem;
-        max-width: var(--page-width);
-        width: 100%;
-    }
-
     /* Section colors */
 
     #intro {
@@ -286,7 +259,7 @@
         background-color: var(--color-yellow);
         --number-offset: 1.75rem;
     }
-    #projects {
+    #studies {
         color: var(--color-white);
         background-color: var(--color-black);
     }
@@ -461,71 +434,64 @@
         font-size: 2rem;
     }
 
-    /* Projects */
-    #projects .grid {
-        pointer-events: none;
+    /* Studies */
+
+    .studies-list {
+        gap: 4rem;
+        display: flex;
+        flex-direction: column;
     }
-    article.project a {
+
+    #studies {
+        max-width: 65rem;
+    }
+    .study {
         pointer-events: all;
         text-decoration: none;
         padding: 1rem;
-        display: block;
+        display: flex;
         border-radius: 2rem;
         transition: 0.3s all;
+        align-items: center;
         border: 3px solid transparent;
+        gap: 3rem;
     }
-    article.project a:focus {
-        outline: 2px solid var(--color-white);
+    .study.right {
+        flex-direction: row-reverse;
     }
-    article.project h3 {
-        padding-inline: 1rem;
-        margin-bottom: 0.5rem;
-        color: var(--color-white);
-        font-size: 1.4rem;
-    }
-    article.project .tags {
-        padding-inline: 1rem;
+    .study div {
+        flex-grow: 1;
         display: flex;
-        gap: 0.5rem;
-        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 1rem;
     }
-    article.project span {
+    .study a {
+        font-size: 1.25rem;
+        font-weight: 700;
+        text-decoration: none;
+    }
+    .study h3 {
+        margin: 0;
+        font-size: 1.75rem;
+        font-weight: 700;
         color: var(--color-white);
-        padding: 0.25rem 0.5rem;
-        font-weight: bold;
-        font-size: 0.75rem;
-        border-radius: 0.3rem;
-        text-transform: uppercase;
-        background-color: var(--color-black-1);
     }
-    article p {
-        padding-inline: 1rem;
-        margin-top: 0.5rem;
-        line-height: 1.5;
-        color: var(--color-white-1);
-    }
-
-    article img {
+    .study img {
+        max-width: 22rem;
         height: auto;
-        max-width: 100%;
         border-radius: 1.5rem;
     }
 
-    #projects .grid article.project {
-        transition: 0.3s all;
-    }
-
-    @media (min-width: 720px) {
-        #projects.active .grid:hover article.project a {
-            opacity: 0.75;
-            filter: blur(0.2rem) saturate(0.3);
-            -webkit-filter: blur(0.2rem) saturate(0.3);
+    @media (max-width: 720px) {
+        .study,
+        .study.right {
+            flex-direction: column;
         }
-
-        #projects .grid:hover article.project a:hover {
-            opacity: 1;
-            filter: blur(0);
-            -webkit-filter: blur(0);
+        .study div {
+            align-items: center;
+        }
+        .study h3 {
+            text-align: center;
         }
     }
 

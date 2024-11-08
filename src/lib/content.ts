@@ -237,3 +237,30 @@ export const partners = [
     {slug: 'france', alt: 'Gouvernement français'},
     {slug: 'tf1', alt: 'TF1'},
 ];
+
+export const studies = [
+    {
+        slug: 'bnp',
+        description: 'Accompagner les 13 000 collaborateurs dans leur utilisation des outils digitaux',
+        image: `/images/studies/bnp.webp`,
+        color: `rgba(67, 175, 132, 1)`,
+        content: ``,
+        alt: 'BNP Paribas',
+    },
+    {
+        slug: 'cnes',
+        description: `Améliorer la communication et la sécurité du centre spatial Guyanais`,
+        image: `/images/studies/cnes.webp`,
+        color: `rgba(31, 110, 176, 1)`,
+        content: ``,
+        alt: 'CNES',
+    },
+    {
+        slug: 'decathlon',
+        description: `Permettre à DécatClub de faire le lien entre coupons utilisateurs et partenaires, rapidement`,
+        image: `/images/studies/decathlon.webp`,
+        color: `rgba(61, 75, 201, 1)`,
+        content: ``,
+        alt: 'Decathlon',
+    },
+];
