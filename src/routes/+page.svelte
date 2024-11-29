@@ -3,7 +3,6 @@
     import Menu from '$lib/Menu.svelte';
     import {onMount} from 'svelte';
     import {serializeSchema} from '$lib/schema';
-    import InfiniteSlide from '$lib/InfiniteSlide.svelte';
     import Clouds from '$lib/Clouds.svelte';
     import {pushState} from '$app/navigation';
     import {faq, meta, partners, profiles, studies} from '$lib/content';

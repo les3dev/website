@@ -43,15 +43,15 @@
 <nav>
     {#if $isMobile}
         <div class="fullscreen" class:isOpen>
-            <a href="#intro" id="logo" on:click={() => (isOpen = false)}><Logo /></a>
+            <a href="#intro" id="logo" on:click={() => (isOpen = false)} aria-label="Page d'accueil"><Logo /></a>
             {#each links as { slug, label }}
                 <a href="#{slug}" on:click={() => (isOpen = false)}>{label}</a>
             {/each}
             <div class="social">
-                <a href="https://www.linkedin.com/company/les3dev/" target="_blank">
+                <a href="https://www.linkedin.com/company/les3dev/" target="_blank" aria-label="LinkedIn">
                     <LinkedInIcon />
                 </a>
-                <a href="https://github.com/les3dev" target="_blank">
+                <a href="https://github.com/les3dev" target="_blank" aria-label="Github">
                     <GithubIcon />
                 </a>
             </div>
@@ -59,14 +59,14 @@
         <button class:isOpen on:click={() => (isOpen = true)} aria-label="Menu"><MenuIcon /></button>
     {:else}
         <div class="bar">
-            <a href="#intro" id="logo" class:selected={selected === '' || selected === '#intro'}><Logo /></a>
+            <a href="#intro" id="logo" class:selected={selected === '' || selected === '#intro'} aria-label="Page d'accueil"><Logo /></a>
             {#each links as { slug, label }}
                 <a href="#{slug}" class:selected={selected === `#${slug}`}>{label}</a>
             {/each}
-            <a class="round" href="https://www.linkedin.com/company/les3dev/" target="_blank">
+            <a class="round" href="https://www.linkedin.com/company/les3dev/" target="_blank" aria-label="LinkedIn">
                 <LinkedInIcon />
             </a>
-            <a class="round" href="https://github.com/les3dev" target="_blank">
+            <a class="round" href="https://github.com/les3dev" target="_blank" aria-label="Github">
                 <GithubIcon />
             </a>
         </div>
