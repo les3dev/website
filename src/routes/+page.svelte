@@ -197,14 +197,28 @@
     </div>
     <div class="wrap-center">
         {#each Object.entries(profiles) as [slug, profile]}
-            <article class="profile appear">
-                <a class="developer" href="/profiles/{slug}">
+            {#if slug !== 'benoit'}
+                <article class="profile appear">
+                    <a class="developer" href="/profiles/{slug}">
                     <Eyevatar src="/images/profiles/{slug}.webp" name={slug} left={profile.eyes.left} right={profile.eyes.right} bg={profile.color} />
                     <div class="name">{profile.name}</div>
-                </a>
-                <a href="/profiles/{slug}" role="button">Plus d'infos</a>
-            </article>
+                    </a>
+                    <a href="/profiles/{slug}" role="button">Plus d'infos</a>
+                </article>
+            {/if}
         {/each}
+    </div>
+    <div class="subtitle appear" style:margin-top="2em">
+        3 + 1 qui font 4 !
+    </div>
+    <div class="wrap-center">
+        <article class="profile appear">
+            <a class="developer" href="/profiles/benoit">
+            <Eyevatar src="/images/profiles/benoit.webp" name="benoit" left={profiles.benoit.eyes.left} right={profiles.benoit.eyes.right} bg={profiles.benoit.color} />
+            <div class="name">{profiles.benoit.name}</div>
+            </a>
+            <a href="/profiles/benoit" role="button">Plus d'infos</a>
+        </article>
     </div>
 </section>
 <section id="contact" class="center" class:focus={section === 'contact'} bind:this={contactElement}>
