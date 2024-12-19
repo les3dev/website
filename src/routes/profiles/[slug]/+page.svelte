@@ -39,9 +39,9 @@
     </header>
     <section>
         <img
-            src="/images/profiles/{data.profile.name.toLocaleLowerCase()}.webp"
+            src="/images/profiles/{data.profile.name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()}.webp"
             style:--color-bg={data.profile.color}
-            style:view-transition-name={data.profile.name.toLocaleLowerCase()}
+            style:view-transition-name={data.profile.name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase()}
             alt=""
         />
         <h1>Salut, moi c'est {data.profile.name} 👋</h1>
