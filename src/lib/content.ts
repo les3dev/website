@@ -1,5 +1,5 @@
 export const meta = {
-    title: 'Les 3 dev - Agence de développement web & mobile',
+    title: 'Les 3 dev - Collectif de développement web & mobile',
     siteUrl: 'https://www.les3.dev',
     description: 'Nous vous aidons à réaliser des projets ambitieux et sur-mesure.',
     thumbnail: '/thumbnail.webp',
@@ -8,6 +8,7 @@ export const meta = {
 export interface Profile {
     name: string;
     eyes: {left: {x: number; y: number}; right: {x: number; y: number}};
+    role: string;
     color: string;
     github: string;
     linkedin: string;
@@ -18,13 +19,14 @@ export const profiles: Record<string, Profile> = {
     jeremie: {
         name: 'Jeremie',
         eyes: {left: {x: 84, y: 80}, right: {x: 110, y: 80}},
+        role: 'Dév / Design',
         color: 'var(--color-pink)',
         biography: `J'ai commencé en travaillant dans la R&D chez GoPro, sur de la 3D et de l'IA (principalement en Python, C++ mais aussi un peu de Swift & Java).
-        
+
         J'ai ensuite continué en freelance, ce qui m'a permis d'explorer différentes technologies web & mobile (React, Swift, React Native, Flutter, Unity, Next, PostgreSQL, WebSockets, Svelte, etc.).
-        
+
         J'ai publié des sites & applications pour ma startup & des clients allant de PMEs aux grands groupes, ce qui m'a permis de m'adapter à un large éventail de problématiques.
-        
+
         Outre le développement, j'ai réalisé le design et l'UX de la plupart des applications sur lesquelles j'ai travaillé. Je serais donc ravi de contribuer en partie ou en totalité au design de votre application. J'adore cette partie de la création !`,
         linkedin: `jeremie-taboada`,
         github: `jeremt`,
@@ -32,6 +34,7 @@ export const profiles: Record<string, Profile> = {
     vincent: {
         name: 'Vincent',
         eyes: {left: {x: 72, y: 78}, right: {x: 100, y: 75}},
+        role: 'Dév / DevOps',
         color: 'var(--color-indigo)',
         biography: `Je suis développeur fullstack polyvalent et passionné avec 10 ans d'expérience.
 
@@ -46,6 +49,7 @@ J'accorde une attention particulière à l'accompagnement des clients pour répo
     jonathan: {
         name: 'Jonathan',
         eyes: {left: {x: 84, y: 82}, right: {x: 110, y: 80}},
+        role: 'Dév / Architecte',
         color: 'var(--color-cyan)',
         biography: `Je suis un développeur passionné et touche-à-tout.
 
@@ -54,6 +58,21 @@ Mon expérience m'a permis de faire du jeu vidéo (Godot, Unity, Unreal, C#, C++
 J'ai travaillé avec des grands noms comme Airbus, TF1, BNP, Décathlon ou encore le CNES.`,
         github: `jonathanpicques`,
         linkedin: `jonathanpicques`,
+    },
+    benoit: {
+        name: 'Benoît',
+        color: 'var(--color-purple)',
+        eyes: {left: {x: 66, y: 73}, right: {x: 102, y: 66}},
+        role: 'Dév / Commercial',
+        biography: `Développeur Ruby on Rails et React mais aussi product manager et commercial !
+
+J’ai mené plusieurs projets entrepreneuriaux et évolué au sein de startups, ce qui m’a permis de développer des compétences multiples.
+
+Du développement web, à la recherche utilisateur, en passant par la gestion de produit et même le bizdev.
+
+Chez Les3dev, mon but est de trouver nos futurs partenaires et les accompagner vers leurs succès !`,
+        github: `beubeubeubeu`,
+        linkedin: `benoitnguyen`,
     },
 };
 
@@ -145,7 +164,7 @@ Voltask a été développé en <strong>TypeScript</strong> avec <strong>React</s
             '/images/projects/codepassport-screen-3.webp',
         ],
         content: `Code Passport est une plateforme intéractive qui permet l'apprentissage du code à travers des <strong>guides illustrés</strong>, des <strong>exercices</strong> interactifs avec un éditeur intégré et des <strong>quiz</strong>. Chaque cours est représenté par une map en 3d avec l'ensemble des étapes débloquables au fur et à mesure.
-    
+
 Le site est développé avec le framework <strong>SvelteKit</strong> et utilise <strong>PostgreSQL</strong> pour la base de donnée. La scène <strong>3d</strong> utilise la technologie <strong>ThreeJS</strong>.`,
     },
     {
