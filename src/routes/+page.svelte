@@ -117,7 +117,7 @@
     <Clouds />
     <h1 class="big" style:z-index="1">Vous avez la vision,<br />On la concrétise.</h1>
     <div class="subtitle" style:z-index="1">
-        <strong class="logo">Les3dev</strong> est une agence de développement basée à Paris.<br />
+        <strong class="logo">Les3dev</strong> est un collectif de quatre développeurs basé à Paris.<br />
         Nous sommes spécialisés dans la création d'applications web et mobiles, ambitieuses & sur-mesure.
     </div>
     <a role="button" href="#contact" class="cta" style:z-index="1">Nous contacter</a>
@@ -193,14 +193,15 @@
 <section id="team" class="center" class:focus={section === 'team'} bind:this={teamElement} aria-label="L'équipe">
     <h2 class="appear">Qui sommes-nous ?</h2>
     <div class="subtitle appear">
-        3 amis développeurs avec plus de 10 ans d'expérience, pour vous créer des sites web et applications accessibles, innovantes et performantes !
+        4 amis développeurs avec plus de 10 ans d'expérience, pour vous créer des sites web et applications accessibles, innovantes et performantes !
     </div>
     <div class="wrap-center">
         {#each Object.entries(profiles) as [slug, profile]}
             <article class="profile appear">
                 <a class="developer" href="/profiles/{slug}">
-                    <Eyevatar src="/images/profiles/{slug}.webp" name={slug} left={profile.eyes.left} right={profile.eyes.right} bg={profile.color} />
-                    <div class="name">{profile.name}</div>
+                <Eyevatar src="/images/profiles/{slug}.webp" name={slug} left={profile.eyes.left} right={profile.eyes.right} bg={profile.color} />
+                <div class="name">{profile.name}</div>
+                <p>{profile.role}</p>
                 </a>
                 <a href="/profiles/{slug}" role="button">Plus d'infos</a>
             </article>
